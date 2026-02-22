@@ -46,10 +46,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Palace Script MT", 28.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(590, 69);
+            label1.Font = new Font("Monotype Corsiva", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Location = new Point(617, 109);
             label1.Name = "label1";
-            label1.Size = new Size(164, 86);
+            label1.Size = new Size(107, 54);
             label1.TabIndex = 0;
             label1.Text = "Fancy dress\r\n\r\n";
             label1.Click += label1_Click;
@@ -57,7 +57,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(603, 177);
+            label2.Location = new Point(512, 189);
             label2.Name = "label2";
             label2.Size = new Size(132, 20);
             label2.TabIndex = 1;
@@ -65,7 +65,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(611, 212);
+            button1.Location = new Point(717, 189);
             button1.Name = "button1";
             button1.Size = new Size(113, 24);
             button1.TabIndex = 2;
@@ -75,7 +75,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(630, 249);
+            label3.Location = new Point(540, 238);
             label3.Name = "label3";
             label3.Size = new Size(70, 20);
             label3.TabIndex = 3;
@@ -83,7 +83,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(611, 283);
+            button2.Location = new Point(717, 238);
             button2.Name = "button2";
             button2.Size = new Size(113, 24);
             button2.TabIndex = 4;
@@ -93,7 +93,7 @@
             // button3
             // 
             button3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.Location = new Point(611, 363);
+            button3.Location = new Point(610, 324);
             button3.Name = "button3";
             button3.Size = new Size(113, 44);
             button3.TabIndex = 5;
@@ -103,7 +103,7 @@
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(603, 423);
+            linkLabel1.Location = new Point(603, 390);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(128, 20);
             linkLabel1.TabIndex = 6;
@@ -113,7 +113,7 @@
             // linkLabel2
             // 
             linkLabel2.AutoSize = true;
-            linkLabel2.Location = new Point(611, 321);
+            linkLabel2.Location = new Point(603, 280);
             linkLabel2.Name = "linkLabel2";
             linkLabel2.Size = new Size(120, 20);
             linkLabel2.TabIndex = 7;
@@ -131,6 +131,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.BackColor = SystemColors.ControlDarkDark;
             pictureBox1.Dock = DockStyle.Fill;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(0, 0);
@@ -145,7 +146,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
-            ClientSize = new Size(859, 572);
+            ClientSize = new Size(961, 572);
             Controls.Add(panel1);
             Controls.Add(linkLabel2);
             Controls.Add(linkLabel1);
