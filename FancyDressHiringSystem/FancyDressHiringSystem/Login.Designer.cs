@@ -31,14 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             label1 = new Label();
             label2 = new Label();
-            button1 = new Button();
             label3 = new Label();
-            button2 = new Button();
-            button3 = new Button();
-            linkLabel1 = new LinkLabel();
+            btnLogin = new Button();
             linkLabel2 = new LinkLabel();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
+            txtUsername = new TextBox();
+            panel2 = new Panel();
+            textBox1 = new TextBox();
+            panel3 = new Panel();
+            panel4 = new Panel();
+            label4 = new Label();
+            panel5 = new Panel();
+            linkLabel1 = new LinkLabel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -48,8 +53,10 @@
             label1.AutoSize = true;
             label1.Font = new Font("Monotype Corsiva", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.Location = new Point(617, 109);
+            label1.Font = new Font("Script MT Bold", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Location = new Point(451, 9);
             label1.Name = "label1";
-            label1.Size = new Size(107, 54);
+            label1.Size = new Size(164, 86);
             label1.TabIndex = 0;
             label1.Text = "Fancy dress\r\n\r\n";
             label1.Click += label1_Click;
@@ -59,23 +66,14 @@
             label2.AutoSize = true;
             label2.Location = new Point(512, 189);
             label2.Name = "label2";
-            label2.Size = new Size(132, 20);
+            label2.Size = new Size(134, 19);
             label2.TabIndex = 1;
             label2.Text = "Email or username";
-            // 
-            // button1
-            // 
-            button1.Location = new Point(717, 189);
-            button1.Name = "button1";
-            button1.Size = new Size(113, 24);
-            button1.TabIndex = 2;
-            button1.Text = "text";
-            button1.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(540, 238);
+            label3.Location = new Point(630, 249);
             label3.Name = "label3";
             label3.Size = new Size(70, 20);
             label3.TabIndex = 3;
@@ -83,37 +81,23 @@
             // 
             // button2
             // 
-            button2.Location = new Point(717, 238);
-            button2.Name = "button2";
-            button2.Size = new Size(113, 24);
-            button2.TabIndex = 4;
-            button2.Text = "text";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.Location = new Point(610, 324);
-            button3.Name = "button3";
-            button3.Size = new Size(113, 44);
-            button3.TabIndex = 5;
-            button3.Text = "LOGIN";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // linkLabel1
-            // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(603, 390);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(128, 20);
-            linkLabel1.TabIndex = 6;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Create an account";
+            btnLogin.BackColor = Color.LightBlue;
+            btnLogin.FlatAppearance.BorderSize = 9;
+            btnLogin.FlatStyle = FlatStyle.Popup;
+            btnLogin.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogin.Location = new Point(498, 283);
+            btnLogin.Margin = new Padding(3, 2, 3, 2);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(142, 39);
+            btnLogin.TabIndex = 5;
+            btnLogin.Text = "LOGIN";
+            btnLogin.UseVisualStyleBackColor = false;
             // 
             // linkLabel2
             // 
             linkLabel2.AutoSize = true;
-            linkLabel2.Location = new Point(603, 280);
+            linkLabel2.LinkColor = Color.Lime;
+            linkLabel2.Location = new Point(612, 256);
             linkLabel2.Name = "linkLabel2";
             linkLabel2.Size = new Size(120, 20);
             linkLabel2.TabIndex = 7;
@@ -126,7 +110,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(450, 572);
+            panel1.Size = new Size(394, 429);
             panel1.TabIndex = 8;
             // 
             // pictureBox1
@@ -145,19 +129,26 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlDark;
-            ClientSize = new Size(961, 572);
+            BackColor = Color.SteelBlue;
+            ClientSize = new Size(752, 429);
+            Controls.Add(linkLabel1);
+            Controls.Add(panel5);
+            Controls.Add(label4);
+            Controls.Add(panel4);
+            Controls.Add(panel3);
+            Controls.Add(textBox1);
+            Controls.Add(panel2);
+            Controls.Add(txtUsername);
             Controls.Add(panel1);
             Controls.Add(linkLabel2);
-            Controls.Add(linkLabel1);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(btnLogin);
             Controls.Add(label3);
-            Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Login";
             Text = "Login";
+            Load += Login_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -168,13 +159,18 @@
 
         private Label label1;
         private Label label2;
-        private Button button1;
         private Label label3;
-        private Button button2;
-        private Button button3;
-        private LinkLabel linkLabel1;
+        private Button btnLogin;
         private LinkLabel linkLabel2;
         private Panel panel1;
         private PictureBox pictureBox1;
+        private TextBox txtUsername;
+        private Panel panel2;
+        private TextBox textBox1;
+        private Panel panel3;
+        private Panel panel4;
+        private Label label4;
+        private Panel panel5;
+        private LinkLabel linkLabel1;
     }
 }
