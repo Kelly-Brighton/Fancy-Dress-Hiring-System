@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Data.SqlClient;
 using System.Text.RegularExpressions;
+using System.Security.Cryptography;
 
 namespace FancyDressHiringSystem
 {
@@ -59,7 +60,7 @@ namespace FancyDressHiringSystem
             // Regular expression pattern for validating email addresses
             string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
 
-            string email = txtUser.Text;
+            string email = txtEmail.Text;
 
             // Validate the email address using the regular expression
             if (Regex.IsMatch(email, emailPattern))
@@ -76,14 +77,9 @@ namespace FancyDressHiringSystem
             string connString = "Server=localhost;Database=FancyDressDB;Trusted_Connection=True;TrustServerCertificate=True;";
 
             // Check if any of the fields are empty
-            if (txtUser.Text == "" || txtPassword.Text == "" || txtConfirm.Text == "")
+            if (txtUser.Text == "" || txtPassword.Text == "" || txtEmail.Text == "")
             {
-                MessageBox.Show("Please fill in all fields.");
-                return;
-            }
-            else if (txtPassword.Text != txtConfirm.Text)
-            {
-                MessageBox.Show("Passwords do not match. Please try again.");
+                MessageBox.Show("Please fill in all fields.", "Information Message", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
                 return;
             }
             else
@@ -101,31 +97,55 @@ namespace FancyDressHiringSystem
                             int count = (int)checkCmd.ExecuteScalar();
                             if (count > 0)
                             {
-                                MessageBox.Show("This email is already registered. Please use a different email.");
+                                MessageBox.Show("This email is already registered. Please use a different email.", "Information Message", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                                 return;
                             }
                         }
                         // Insert the new user into the database
-                        string insertQuery = "INSERT INTO Users (Email, Password) VALUES (@Email, @Password)";
+                        string insertQuery = "INSERT INTO Users (Username, Email, Password) VALUES (@Username, @Email, @Password)";
                         using (SqlCommand cmd = new SqlCommand(insertQuery, conn))
                         {
+                            cmd.Parameters.AddWithValue("@Username", txtUser.Text);
                             cmd.Parameters.AddWithValue("@Email", txtUser.Text);
-                            cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
-                            cmd.ExecuteNonQuery();
-                        }
-                        MessageBox.Show("Registration successful!");
+                            string hashedPassword = HashPassword(txtPassword.Text);
+                            cmd.Parameters.AddWithValue("@Password", hashedPassword);
+                            int rowsAffected = cmd.ExecuteNonQuery();
 
+                            // Check if the insertion was successful
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Registration successful!", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                // Close the current form and open the login form
+                                this.Close();
+                                Login login = new Login();
+                                login.Show();
+                            }
+                        }
                     }
 
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show("An error occurred: " + ex.Message);
+                    MessageBox.Show(ex.ToString(), "Error message", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                 }
             }
+        }
 
+        private string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
 
+                StringBuilder builder = new StringBuilder();
 
+                foreach (byte b in bytes)
+                {
+                    builder.Append(b.ToString("x2"));
+                }
+
+                return builder.ToString();
+            }
         }
     }
 }

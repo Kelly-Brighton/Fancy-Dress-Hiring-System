@@ -66,9 +66,9 @@
             label2.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(370, 97);
             label2.Name = "label2";
-            label2.Size = new Size(134, 19);
+            label2.Size = new Size(77, 19);
             label2.TabIndex = 1;
-            label2.Text = "Email or username";
+            label2.Text = "Username";
             // 
             // label3
             // 
@@ -93,6 +93,7 @@
             btnLogin.TabIndex = 5;
             btnLogin.Text = "LOGIN";
             btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
             // linkLabel2
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,6 +41,63 @@ namespace FancyDressHiringSystem
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            // Get the username and password from the text boxes
+            string username = txtUser.Text;
+            string password = txtPassword.Text;
+
+            // Connection string to connect to the SQL Server database
+            string connString = "Server=localhost;Database=FancyDressDB;Trusted_Connection=True;TrustServerCertificate=True;";
+
+            // Check if any fields are empty
+            if (txtUser.Text == "" || txtPassword.Text == "")
+            {
+                MessageBox.Show("Please fill in all fields.", "Information Message", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                try
+                {
+                    // Create a connection to the database
+                    using (SqlConnection conn = new SqlConnection(connString))
+                    {
+                        conn.Open(); // Open the connection
+
+                        // SQL query to check if the username and password exist in the USERS table
+                        string query = "SELECT COUNT(1) FROM USERS WHERE Username=@Username AND Password=@Password";
+                        using (SqlCommand cmd = new SqlCommand(query, conn))
+                        {
+                            // Use parameters to prevent SQL injection
+                            cmd.Parameters.AddWithValue("@Username", username);
+                            cmd.Parameters.AddWithValue("@Password", password);
+
+                            // Execute the query and get the count of matching records
+                            int count = (int)cmd.ExecuteScalar();
+                            if (count > 0)
+                            {
+                                // If a matching record is found, the login is successful
+                                MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                Mainform mainForm = new Mainform();
+                                mainForm.Show();
+                                this.Hide();
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Invalid username or password. Please try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
