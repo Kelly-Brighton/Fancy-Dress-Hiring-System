@@ -1,6 +1,6 @@
 ﻿namespace FancyDressHiringSystem
 {
-    partial class Signup
+    partial class btnSignUp
     {
         /// <summary>
         /// Required designer variable.
@@ -28,158 +28,186 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Signup));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(btnSignUp));
             button1 = new Button();
-            button3 = new Button();
-            label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            label5 = new Label();
-            button2 = new Button();
-            button4 = new Button();
-            linkLabel1 = new LinkLabel();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
+            txtUser = new TextBox();
+            panel4 = new Panel();
+            txtPassword = new TextBox();
+            panel2 = new Panel();
+            label1 = new Label();
+            panel3 = new Panel();
+            txtEmail = new TextBox();
+            label5 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(637, 345);
+            button1.BackColor = Color.LightBlue;
+            button1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(470, 375);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(171, 29);
+            button1.Size = new Size(124, 38);
             button1.TabIndex = 0;
-            button1.Text = "Create an account\r\n\r\n\r\n";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(754, 162);
-            button3.Name = "button3";
-            button3.Size = new Size(186, 29);
-            button3.TabIndex = 2;
-            button3.Text = "Text";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Monotype Corsiva", 13.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(669, 109);
-            label1.Name = "label1";
-            label1.Size = new Size(107, 27);
-            label1.TabIndex = 6;
-            label1.Text = "Fancy dress\r\n";
-            label1.Click += label1_Click;
+            button1.Text = "Sign Up";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(547, 162);
+            label2.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(361, 104);
             label2.Name = "label2";
-            label2.Size = new Size(134, 20);
+            label2.Size = new Size(135, 19);
             label2.TabIndex = 7;
             label2.Text = "Username or email";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(34, 99);
+            label3.Location = new Point(30, 74);
             label3.Name = "label3";
-            label3.Size = new Size(0, 20);
+            label3.Size = new Size(0, 15);
             label3.TabIndex = 8;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(584, 230);
+            label4.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(367, 289);
             label4.Name = "label4";
-            label4.Size = new Size(70, 20);
+            label4.Size = new Size(72, 19);
             label4.TabIndex = 9;
             label4.Text = "Password";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(552, 294);
-            label5.Name = "label5";
-            label5.Size = new Size(129, 20);
-            label5.TabIndex = 10;
-            label5.Text = "Confirm password";
-            // 
-            // button2
-            // 
-            button2.Location = new Point(754, 230);
-            button2.Name = "button2";
-            button2.Size = new Size(186, 29);
-            button2.TabIndex = 11;
-            button2.Text = "Text";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(754, 294);
-            button4.Name = "button4";
-            button4.Size = new Size(186, 29);
-            button4.TabIndex = 12;
-            button4.Text = "Text";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
-            // 
-            // linkLabel1
-            // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(637, 405);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(171, 20);
-            linkLabel1.TabIndex = 13;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Already have an account";
             // 
             // panel1
             // 
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(450, 547);
+            panel1.Size = new Size(346, 440);
             panel1.TabIndex = 14;
             panel1.Paint += panel1_Paint_1;
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = SystemColors.ControlDarkDark;
-            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.BackColor = Color.SteelBlue;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Location = new Point(0, 9);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(450, 547);
+            pictureBox1.Size = new Size(345, 422);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
-            // Signup
+            // txtUser
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            txtUser.BackColor = Color.SteelBlue;
+            txtUser.BorderStyle = BorderStyle.None;
+            txtUser.Location = new Point(367, 126);
+            txtUser.Multiline = true;
+            txtUser.Name = "txtUser";
+            txtUser.Size = new Size(330, 39);
+            txtUser.TabIndex = 15;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.Black;
+            panel4.Location = new Point(367, 163);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(330, 2);
+            panel4.TabIndex = 16;
+            // 
+            // txtPassword
+            // 
+            txtPassword.BackColor = Color.SteelBlue;
+            txtPassword.BorderStyle = BorderStyle.None;
+            txtPassword.Location = new Point(367, 311);
+            txtPassword.Multiline = true;
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(330, 39);
+            txtPassword.TabIndex = 18;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Black;
+            panel2.Location = new Point(367, 348);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(330, 2);
+            panel2.TabIndex = 19;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Script MT Bold", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.Location = new Point(406, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(267, 58);
+            label1.TabIndex = 21;
+            label1.Text = "Fancy Dress";
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Black;
+            panel3.Location = new Point(367, 258);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(330, 2);
+            panel3.TabIndex = 24;
+            // 
+            // txtEmail
+            // 
+            txtEmail.BackColor = Color.SteelBlue;
+            txtEmail.BorderStyle = BorderStyle.None;
+            txtEmail.Location = new Point(367, 221);
+            txtEmail.Multiline = true;
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(330, 39);
+            txtEmail.TabIndex = 23;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(367, 199);
+            label5.Name = "label5";
+            label5.RightToLeft = RightToLeft.No;
+            label5.Size = new Size(47, 19);
+            label5.TabIndex = 22;
+            label5.Text = "Email";
+            // 
+            // btnSignUp
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ButtonShadow;
-            ClientSize = new Size(1111, 547);
-            Controls.Add(panel1);
-            Controls.Add(linkLabel1);
-            Controls.Add(button4);
-            Controls.Add(button2);
+            BackColor = Color.SteelBlue;
+            ClientSize = new Size(723, 440);
+            Controls.Add(panel3);
+            Controls.Add(txtEmail);
             Controls.Add(label5);
+            Controls.Add(label1);
+            Controls.Add(panel2);
+            Controls.Add(txtPassword);
+            Controls.Add(panel4);
+            Controls.Add(txtUser);
+            Controls.Add(panel1);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(button3);
             Controls.Add(button1);
-            Name = "Signup";
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "btnSignUp";
             Text = "Signup";
             Load += Signup_Load;
             panel1.ResumeLayout(false);
@@ -191,16 +219,18 @@
         #endregion
 
         private Button button1;
-        private Button button3;
-        private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
-        private Label label5;
-        private Button button2;
-        private Button button4;
-        private LinkLabel linkLabel1;
         private Panel panel1;
         private PictureBox pictureBox1;
+        private TextBox txtUser;
+        private Panel panel4;
+        private TextBox txtPassword;
+        private Panel panel2;
+        private Label label1;
+        private Panel panel3;
+        private TextBox txtEmail;
+        private Label label5;
     }
 }

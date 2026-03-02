@@ -1,4 +1,12 @@
 <Solution>
+  <Folder Name="/Resources/">
+    <File Path="../../../../../Users/brigh/Downloads/heart.png" />
+    <File Path="../../../../../Users/brigh/Downloads/home.png" />
+    <File Path="../../../../../Users/brigh/Downloads/like.png" />
+    <File Path="../../../../../Users/brigh/Downloads/logout.png" />
+    <File Path="../../../../../Users/brigh/Downloads/send.png" />
+    <File Path="../../../../../Users/brigh/Downloads/shopping-cart.png" />
+  </Folder>
   <Folder Name="/Solution Items/">
     <File Path=".gitignore" />
   </Folder>
