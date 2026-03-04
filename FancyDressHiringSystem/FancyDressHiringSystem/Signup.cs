@@ -63,11 +63,7 @@ namespace FancyDressHiringSystem
             string email = txtEmail.Text;
 
             // Validate the email address using the regular expression
-            if (Regex.IsMatch(email, emailPattern))
-            {
-                MessageBox.Show("Valid email address.");
-            }
-            else
+            if (!Regex.IsMatch(email, emailPattern))
             {
                 MessageBox.Show("Invalid email address. Try again");
                 return;
