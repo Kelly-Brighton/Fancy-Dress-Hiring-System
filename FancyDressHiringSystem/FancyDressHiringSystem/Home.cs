@@ -102,5 +102,20 @@ namespace FancyDressHiringSystem
         {
 
         }
+
+        private void label3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
