@@ -47,7 +47,7 @@ namespace FancyDressHiringSystem
         {
             // Get the username and password from the text boxes
             string username = txtUser.Text;
-            string password = txtPassword.Text;
+            string password = SecurityHelper.HashPassword(txtPassword.Text.Trim());
 
             // Connection string to connect to the SQL Server database
             string connString = "Server=localhost;Database=FancyDressDB;Trusted_Connection=True;TrustServerCertificate=True;";
@@ -98,6 +98,13 @@ namespace FancyDressHiringSystem
                     MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SignUp signup = new SignUp();
+            signup.Show();
+            this.Hide();
         }
     }
 }

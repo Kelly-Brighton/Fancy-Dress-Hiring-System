@@ -1,6 +1,6 @@
 ﻿namespace FancyDressHiringSystem
 {
-    partial class btnSignUp
+    partial class SignUp
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(btnSignUp));
-            button1 = new Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUp));
+            btnSignup = new Button();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -47,18 +47,18 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // button1
+            // btnSignup
             // 
-            button1.BackColor = Color.LightBlue;
-            button1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(470, 375);
-            button1.Margin = new Padding(3, 2, 3, 2);
-            button1.Name = "button1";
-            button1.Size = new Size(124, 38);
-            button1.TabIndex = 0;
-            button1.Text = "Sign Up";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnSignup.BackColor = Color.LightBlue;
+            btnSignup.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSignup.Location = new Point(470, 375);
+            btnSignup.Margin = new Padding(3, 2, 3, 2);
+            btnSignup.Name = "btnSignup";
+            btnSignup.Size = new Size(124, 38);
+            btnSignup.TabIndex = 0;
+            btnSignup.Text = "Sign Up";
+            btnSignup.UseVisualStyleBackColor = false;
+            btnSignup.Click += button1_Click;
             // 
             // label2
             // 
@@ -187,7 +187,7 @@
             label5.TabIndex = 22;
             label5.Text = "Email";
             // 
-            // btnSignUp
+            // SignUp
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -205,9 +205,9 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(button1);
+            Controls.Add(btnSignup);
             Margin = new Padding(3, 2, 3, 2);
-            Name = "btnSignUp";
+            Name = "SignUp";
             Text = "Signup";
             Load += Signup_Load;
             panel1.ResumeLayout(false);
@@ -218,7 +218,7 @@
 
         #endregion
 
-        private Button button1;
+        private Button btnSignup;
         private Label label2;
         private Label label3;
         private Label label4;

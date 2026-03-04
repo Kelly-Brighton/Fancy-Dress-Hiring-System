@@ -110,7 +110,7 @@
             label1.Location = new Point(893, 61);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(166, 45);
+            label1.Size = new Size(135, 37);
             label1.TabIndex = 0;
             label1.Text = "Attire Hire\r\n";
             // 
@@ -140,7 +140,7 @@
             textBox2.Location = new Point(0, 0);
             textBox2.Margin = new Padding(4);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(375, 24);
+            textBox2.Size = new Size(375, 20);
             textBox2.TabIndex = 0;
             textBox2.Text = "search🔍";
             // 
@@ -162,7 +162,7 @@
             label4.Location = new Point(4, 5);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
-            label4.Size = new Size(107, 25);
+            label4.Size = new Size(86, 20);
             label4.TabIndex = 9;
             label4.Text = "Sort by ▼▲";
             label4.Click += label4_Click;
@@ -177,7 +177,7 @@
             Sortby.Location = new Point(0, 0);
             Sortby.Margin = new Padding(4);
             Sortby.Name = "Sortby";
-            Sortby.Size = new Size(188, 33);
+            Sortby.Size = new Size(188, 27);
             Sortby.TabIndex = 0;
             Sortby.SelectedIndexChanged += comboBox1_SelectedIndexChanged_2;
             // 
@@ -200,7 +200,7 @@
             label17.AutoSize = true;
             label17.Location = new Point(182, 270);
             label17.Name = "label17";
-            label17.Size = new Size(37, 25);
+            label17.Size = new Size(30, 20);
             label17.TabIndex = 12;
             label17.Text = "🔗";
             // 
@@ -209,7 +209,7 @@
             label13.AutoSize = true;
             label13.Location = new Point(96, 270);
             label13.Name = "label13";
-            label13.Size = new Size(37, 25);
+            label13.Size = new Size(30, 20);
             label13.TabIndex = 11;
             label13.Text = "💬";
             // 
@@ -218,9 +218,10 @@
             label5.AutoSize = true;
             label5.Location = new Point(19, 270);
             label5.Name = "label5";
-            label5.Size = new Size(37, 25);
+            label5.Size = new Size(30, 20);
             label5.TabIndex = 10;
             label5.Text = "❤️";
+            label5.Click += label5_Click;
             // 
             // pictureBox1
             // 
@@ -251,7 +252,7 @@
             label18.AutoSize = true;
             label18.Location = new Point(183, 270);
             label18.Name = "label18";
-            label18.Size = new Size(37, 25);
+            label18.Size = new Size(30, 20);
             label18.TabIndex = 13;
             label18.Text = "🔗";
             // 
@@ -260,7 +261,7 @@
             label14.AutoSize = true;
             label14.Location = new Point(99, 270);
             label14.Name = "label14";
-            label14.Size = new Size(37, 25);
+            label14.Size = new Size(30, 20);
             label14.TabIndex = 12;
             label14.Text = "💬";
             // 
@@ -269,7 +270,7 @@
             label6.AutoSize = true;
             label6.Location = new Point(20, 270);
             label6.Name = "label6";
-            label6.Size = new Size(37, 25);
+            label6.Size = new Size(30, 20);
             label6.TabIndex = 11;
             label6.Text = "❤️";
             // 
@@ -302,7 +303,7 @@
             label19.AutoSize = true;
             label19.Location = new Point(182, 271);
             label19.Name = "label19";
-            label19.Size = new Size(37, 25);
+            label19.Size = new Size(30, 20);
             label19.TabIndex = 13;
             label19.Text = "🔗";
             // 
@@ -311,7 +312,7 @@
             label15.AutoSize = true;
             label15.Location = new Point(96, 271);
             label15.Name = "label15";
-            label15.Size = new Size(37, 25);
+            label15.Size = new Size(30, 20);
             label15.TabIndex = 12;
             label15.Text = "💬";
             // 
@@ -320,7 +321,7 @@
             label7.AutoSize = true;
             label7.Location = new Point(19, 271);
             label7.Name = "label7";
-            label7.Size = new Size(37, 25);
+            label7.Size = new Size(30, 20);
             label7.TabIndex = 11;
             label7.Text = "❤️";
             // 
@@ -353,7 +354,7 @@
             label20.AutoSize = true;
             label20.Location = new Point(183, 271);
             label20.Name = "label20";
-            label20.Size = new Size(37, 25);
+            label20.Size = new Size(30, 20);
             label20.TabIndex = 13;
             label20.Text = "🔗";
             // 
@@ -362,7 +363,7 @@
             label16.AutoSize = true;
             label16.Location = new Point(99, 271);
             label16.Name = "label16";
-            label16.Size = new Size(37, 25);
+            label16.Size = new Size(30, 20);
             label16.TabIndex = 12;
             label16.Text = "💬";
             // 
@@ -371,7 +372,7 @@
             label12.AutoSize = true;
             label12.Location = new Point(20, 271);
             label12.Name = "label12";
-            label12.Size = new Size(37, 25);
+            label12.Size = new Size(30, 20);
             label12.TabIndex = 11;
             label12.Text = "❤️";
             // 
@@ -513,7 +514,7 @@
             label11.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.Location = new Point(21, 473);
             label11.Name = "label11";
-            label11.Size = new Size(56, 31);
+            label11.Size = new Size(46, 25);
             label11.TabIndex = 9;
             label11.Text = "Size";
             label11.Click += label11_Click;
@@ -524,7 +525,7 @@
             label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label10.Location = new Point(260, 386);
             label10.Name = "label10";
-            label10.Size = new Size(46, 23);
+            label10.Size = new Size(41, 19);
             label10.TabIndex = 9;
             label10.Text = "£100";
             // 
@@ -534,7 +535,7 @@
             label9.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label9.Location = new Point(6, 386);
             label9.Name = "label9";
-            label9.Size = new Size(28, 23);
+            label9.Size = new Size(25, 19);
             label9.TabIndex = 9;
             label9.Text = "£0";
             // 
@@ -542,7 +543,7 @@
             // 
             trackBar1.Location = new Point(28, 368);
             trackBar1.Name = "trackBar1";
-            trackBar1.Size = new Size(246, 56);
+            trackBar1.Size = new Size(246, 45);
             trackBar1.TabIndex = 11;
             // 
             // label8
@@ -551,7 +552,7 @@
             label8.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.Location = new Point(18, 325);
             label8.Name = "label8";
-            label8.Size = new Size(136, 31);
+            label8.Size = new Size(113, 25);
             label8.TabIndex = 10;
             label8.Text = "Price Range";
             // 
@@ -562,7 +563,7 @@
             comboBox1.Location = new Point(202, 99);
             comboBox1.Margin = new Padding(4);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(46, 39);
+            comboBox1.Size = new Size(46, 33);
             comboBox1.TabIndex = 2;
             // 
             // label3
@@ -572,7 +573,7 @@
             label3.Location = new Point(85, 102);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(110, 31);
+            label3.Size = new Size(91, 25);
             label3.TabIndex = 1;
             label3.Text = "Category";
             label3.Click += label3_Click;
@@ -584,7 +585,7 @@
             label2.Location = new Point(85, 5);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(118, 46);
+            label2.Size = new Size(96, 37);
             label2.TabIndex = 0;
             label2.Text = "Filters";
             label2.Click += label2_Click;
@@ -610,7 +611,7 @@
             label25.AutoSize = true;
             label25.Location = new Point(35, 862);
             label25.Name = "label25";
-            label25.Size = new Size(47, 25);
+            label25.Size = new Size(38, 20);
             label25.TabIndex = 11;
             label25.Text = "🚪  ";
             // 
@@ -619,7 +620,7 @@
             label24.AutoSize = true;
             label24.Location = new Point(35, 135);
             label24.Name = "label24";
-            label24.Size = new Size(37, 25);
+            label24.Size = new Size(30, 20);
             label24.TabIndex = 11;
             label24.Text = "📦";
             // 
@@ -628,7 +629,7 @@
             label23.AutoSize = true;
             label23.Location = new Point(35, 48);
             label23.Name = "label23";
-            label23.Size = new Size(37, 25);
+            label23.Size = new Size(30, 20);
             label23.TabIndex = 11;
             label23.Text = "🏠";
             // 
@@ -637,7 +638,7 @@
             label22.AutoSize = true;
             label22.Location = new Point(35, 226);
             label22.Name = "label22";
-            label22.Size = new Size(37, 25);
+            label22.Size = new Size(30, 20);
             label22.TabIndex = 11;
             label22.Text = "❤️";
             label22.Click += label22_Click;
@@ -694,7 +695,7 @@
             label21.BorderStyle = BorderStyle.FixedSingle;
             label21.Location = new Point(60, 7);
             label21.Name = "label21";
-            label21.Size = new Size(67, 27);
+            label21.Size = new Size(55, 22);
             label21.TabIndex = 11;
             label21.Text = "Page 1";
             // 
@@ -721,7 +722,7 @@
             // 
             // Home
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel10);
             Controls.Add(panel9);

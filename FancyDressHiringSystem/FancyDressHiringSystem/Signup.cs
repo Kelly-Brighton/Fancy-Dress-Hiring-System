@@ -13,9 +13,9 @@ using System.Security.Cryptography;
 
 namespace FancyDressHiringSystem
 {
-    public partial class btnSignUp : Form
+    public partial class SignUp : Form
     {
-        public btnSignUp()
+        public SignUp()
         {
             InitializeComponent();
         }
@@ -93,7 +93,7 @@ namespace FancyDressHiringSystem
                         string checkEmailQuery = "SELECT COUNT(*) FROM Users WHERE Email = @Email";
                         using (SqlCommand checkCmd = new SqlCommand(checkEmailQuery, conn))
                         {
-                            checkCmd.Parameters.AddWithValue("@Email", txtUser.Text);
+                            checkCmd.Parameters.AddWithValue("@Email", txtEmail.Text);
                             int count = (int)checkCmd.ExecuteScalar();
                             if (count > 0)
                             {
@@ -106,8 +106,8 @@ namespace FancyDressHiringSystem
                         using (SqlCommand cmd = new SqlCommand(insertQuery, conn))
                         {
                             cmd.Parameters.AddWithValue("@Username", txtUser.Text);
-                            cmd.Parameters.AddWithValue("@Email", txtUser.Text);
-                            string hashedPassword = HashPassword(txtPassword.Text);
+                            cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
+                            string hashedPassword = SecurityHelper.HashPassword(txtPassword.Text.Trim());
                             cmd.Parameters.AddWithValue("@Password", hashedPassword);
                             int rowsAffected = cmd.ExecuteNonQuery();
 
@@ -128,23 +128,6 @@ namespace FancyDressHiringSystem
                 {
                     MessageBox.Show(ex.ToString(), "Error message", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                 }
-            }
-        }
-
-        private string HashPassword(string password)
-        {
-            using (SHA256 sha256 = SHA256.Create())
-            {
-                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-
-                StringBuilder builder = new StringBuilder();
-
-                foreach (byte b in bytes)
-                {
-                    builder.Append(b.ToString("x2"));
-                }
-
-                return builder.ToString();
             }
         }
     }

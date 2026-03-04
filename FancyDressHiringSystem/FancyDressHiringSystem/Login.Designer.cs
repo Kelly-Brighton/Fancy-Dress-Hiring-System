@@ -213,6 +213,7 @@
             linkLabel1.TabIndex = 16;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Create An Account";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked_1;
             // 
             // Login
             // 
