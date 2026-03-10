@@ -79,12 +79,22 @@ namespace FancyDressHiringSystem
                             int count = (int)cmd.ExecuteScalar();
                             if (count > 0)
                             {
-                                // If a matching record is found, the login is successful
-                                MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                Mainform mainForm = new Mainform();
-                                mainForm.Show();
-                                this.Hide();
-
+                                if (username == "admin")
+                                {
+                                    Admin adminForm = new Admin();
+                                    adminForm.Show();
+                                    this.Hide();
+                                    return;
+                                }
+                                else
+                                {
+                                    // If a matching record is found, the login is successful
+                                    MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    Mainform mainForm = new Mainform();
+                                    mainForm.Show();
+                                    this.Hide();
+                                    return;
+                                }
                             }
                             else
                             {
@@ -102,6 +112,7 @@ namespace FancyDressHiringSystem
 
         private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            // When the "Create an account" link is clicked, open the SignUp form and hide the Login form
             SignUp signup = new SignUp();
             signup.Show();
             this.Hide();

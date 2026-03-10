@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace FancyDressHiringSystem
 {
-    public partial class Mainform : Form
+    public partial class Admin : Form
     {
-        public Mainform()
+        public Admin()
         {
             InitializeComponent();
         }
 
-        private void Mainform_Load(object sender, EventArgs e)
+        private void Admin_Load(object sender, EventArgs e)
         {
             panelContainer.Controls.Clear();
-            Home home = new Home();
-            LoadControl(home);
+            UC_Inventory inventory = new UC_Inventory();
+            LoadControl(inventory);
         }
 
         private void LoadControl(UserControl uc)
@@ -31,28 +31,22 @@ namespace FancyDressHiringSystem
             panelContainer.Controls.Add(uc);
         }
 
-        private void btnHome_Click(object sender, EventArgs e)
+        private void btnInventory_Click(object sender, EventArgs e)
         {
-            panelContainer.Controls.Clear();
-            Home home = new Home();
-            LoadControl(home);
+            LoadControl(new UC_Inventory());
         }
 
         private void btnOrders_Click(object sender, EventArgs e)
         {
-            panelContainer.Controls.Clear();
-            Orders orders = new Orders();
-            LoadControl(orders);
+            LoadControl(new UC_Orders());
         }
 
-        private void btnLikes_Click(object sender, EventArgs e)
+        private void btnUpload_Click(object sender, EventArgs e)
         {
-            panelContainer.Controls.Clear();
-            Likes likes = new Likes();
-            LoadControl(likes);
+            LoadControl(new UC_Upload());
         }
 
-        private void btnLog_Click(object sender, EventArgs e)
+        private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Close();
             Login login = new Login();

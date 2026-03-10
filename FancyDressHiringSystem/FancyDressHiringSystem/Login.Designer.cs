@@ -136,6 +136,7 @@
             txtUser.Name = "txtUser";
             txtUser.Size = new Size(330, 39);
             txtUser.TabIndex = 9;
+            txtUser.TextAlign = HorizontalAlignment.Center;
             // 
             // panel3
             // 
@@ -153,8 +154,10 @@
             txtPassword.Location = new Point(370, 209);
             txtPassword.Multiline = true;
             txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
             txtPassword.Size = new Size(330, 39);
             txtPassword.TabIndex = 11;
+            txtPassword.TextAlign = HorizontalAlignment.Center;
             // 
             // panel4
             // 

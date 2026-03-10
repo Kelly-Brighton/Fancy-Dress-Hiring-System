@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             panel1 = new Panel();
+            lblKids = new Label();
+            lblWomen = new Label();
+            lblMen = new Label();
             btnApply = new Button();
             btnXXL = new Button();
             btnXL = new Button();
@@ -86,6 +89,9 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.Info;
+            panel1.Controls.Add(lblKids);
+            panel1.Controls.Add(lblWomen);
+            panel1.Controls.Add(lblMen);
             panel1.Controls.Add(btnApply);
             panel1.Controls.Add(btnXXL);
             panel1.Controls.Add(btnXL);
@@ -103,17 +109,44 @@
             panel1.Controls.Add(btnMen);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
-            panel1.Location = new Point(17, 61);
+            panel1.Location = new Point(17, 40);
             panel1.Name = "panel1";
-            panel1.Size = new Size(247, 654);
+            panel1.Size = new Size(235, 574);
             panel1.TabIndex = 0;
+            // 
+            // lblKids
+            // 
+            lblKids.AutoSize = true;
+            lblKids.Location = new Point(138, 202);
+            lblKids.Name = "lblKids";
+            lblKids.Size = new Size(58, 20);
+            lblKids.TabIndex = 19;
+            lblKids.Text = "label18";
+            // 
+            // lblWomen
+            // 
+            lblWomen.AutoSize = true;
+            lblWomen.Location = new Point(138, 144);
+            lblWomen.Name = "lblWomen";
+            lblWomen.Size = new Size(58, 20);
+            lblWomen.TabIndex = 18;
+            lblWomen.Text = "label18";
+            // 
+            // lblMen
+            // 
+            lblMen.AutoSize = true;
+            lblMen.Location = new Point(138, 86);
+            lblMen.Name = "lblMen";
+            lblMen.Size = new Size(58, 20);
+            lblMen.TabIndex = 17;
+            lblMen.Text = "label18";
             // 
             // btnApply
             // 
             btnApply.BackColor = SystemColors.GradientActiveCaption;
-            btnApply.Location = new Point(31, 566);
+            btnApply.Location = new Point(31, 517);
             btnApply.Name = "btnApply";
-            btnApply.Size = new Size(173, 62);
+            btnApply.Size = new Size(173, 45);
             btnApply.TabIndex = 16;
             btnApply.Text = "APPLY ALL";
             btnApply.UseVisualStyleBackColor = false;
@@ -121,7 +154,7 @@
             // btnXXL
             // 
             btnXXL.BackColor = SystemColors.GradientInactiveCaption;
-            btnXXL.Location = new Point(157, 497);
+            btnXXL.Location = new Point(157, 448);
             btnXXL.Name = "btnXXL";
             btnXXL.Size = new Size(63, 46);
             btnXXL.TabIndex = 15;
@@ -131,7 +164,7 @@
             // btnXL
             // 
             btnXL.BackColor = SystemColors.GradientInactiveCaption;
-            btnXL.Location = new Point(88, 497);
+            btnXL.Location = new Point(88, 448);
             btnXL.Name = "btnXL";
             btnXL.Size = new Size(63, 46);
             btnXL.TabIndex = 14;
@@ -141,7 +174,7 @@
             // btnL
             // 
             btnL.BackColor = SystemColors.GradientInactiveCaption;
-            btnL.Location = new Point(19, 497);
+            btnL.Location = new Point(19, 448);
             btnL.Name = "btnL";
             btnL.Size = new Size(63, 46);
             btnL.TabIndex = 13;
@@ -151,7 +184,7 @@
             // btnM
             // 
             btnM.BackColor = SystemColors.GradientInactiveCaption;
-            btnM.Location = new Point(157, 437);
+            btnM.Location = new Point(157, 388);
             btnM.Name = "btnM";
             btnM.Size = new Size(63, 46);
             btnM.TabIndex = 12;
@@ -161,7 +194,7 @@
             // btnS
             // 
             btnS.BackColor = SystemColors.GradientInactiveCaption;
-            btnS.Location = new Point(88, 437);
+            btnS.Location = new Point(88, 388);
             btnS.Name = "btnS";
             btnS.Size = new Size(63, 46);
             btnS.TabIndex = 11;
@@ -171,7 +204,7 @@
             // btnXS
             // 
             btnXS.BackColor = SystemColors.GradientInactiveCaption;
-            btnXS.Location = new Point(19, 437);
+            btnXS.Location = new Point(19, 388);
             btnXS.Name = "btnXS";
             btnXS.Size = new Size(63, 46);
             btnXS.TabIndex = 10;
@@ -182,7 +215,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label8.Location = new Point(19, 391);
+            label8.Location = new Point(19, 342);
             label8.Name = "label8";
             label8.Size = new Size(42, 21);
             label8.TabIndex = 9;
@@ -191,7 +224,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(183, 347);
+            label7.Location = new Point(183, 295);
             label7.Name = "label7";
             label7.Size = new Size(41, 20);
             label7.TabIndex = 8;
@@ -200,7 +233,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(3, 347);
+            label6.Location = new Point(3, 295);
             label6.Name = "label6";
             label6.Size = new Size(25, 20);
             label6.TabIndex = 7;
@@ -208,7 +241,7 @@
             // 
             // trackBar1
             // 
-            trackBar1.Location = new Point(31, 347);
+            trackBar1.Location = new Point(31, 295);
             trackBar1.Name = "trackBar1";
             trackBar1.Size = new Size(162, 45);
             trackBar1.TabIndex = 6;
@@ -217,7 +250,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 11F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label5.Location = new Point(19, 290);
+            label5.Location = new Point(19, 261);
             label5.Name = "label5";
             label5.Size = new Size(107, 20);
             label5.TabIndex = 5;
@@ -226,7 +259,7 @@
             // btnWomen
             // 
             btnWomen.BackColor = SystemColors.GradientInactiveCaption;
-            btnWomen.Location = new Point(19, 156);
+            btnWomen.Location = new Point(19, 126);
             btnWomen.Name = "btnWomen";
             btnWomen.Size = new Size(155, 54);
             btnWomen.TabIndex = 4;
@@ -236,7 +269,7 @@
             // btnKids
             // 
             btnKids.BackColor = SystemColors.GradientInactiveCaption;
-            btnKids.Location = new Point(19, 216);
+            btnKids.Location = new Point(19, 186);
             btnKids.Name = "btnKids";
             btnKids.Size = new Size(155, 50);
             btnKids.TabIndex = 3;
@@ -246,7 +279,7 @@
             // btnMen
             // 
             btnMen.BackColor = SystemColors.GradientInactiveCaption;
-            btnMen.Location = new Point(19, 104);
+            btnMen.Location = new Point(19, 71);
             btnMen.Name = "btnMen";
             btnMen.Size = new Size(155, 49);
             btnMen.TabIndex = 2;
@@ -257,7 +290,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Stencil", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label4.Location = new Point(19, 72);
+            label4.Location = new Point(19, 49);
             label4.Name = "label4";
             label4.Size = new Size(88, 19);
             label4.TabIndex = 1;
@@ -277,17 +310,17 @@
             // textBox1
             // 
             textBox1.BackColor = SystemColors.Info;
-            textBox1.Location = new Point(281, 110);
+            textBox1.Location = new Point(282, 84);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(483, 67);
+            textBox1.Size = new Size(468, 59);
             textBox1.TabIndex = 1;
             textBox1.TextChanged += textBox1_TextChanged_2;
             // 
             // button1
             // 
             button1.BackColor = SystemColors.Info;
-            button1.Location = new Point(356, 677);
+            button1.Location = new Point(332, 588);
             button1.Name = "button1";
             button1.Size = new Size(163, 47);
             button1.TabIndex = 2;
@@ -297,7 +330,7 @@
             // button2
             // 
             button2.BackColor = SystemColors.Info;
-            button2.Location = new Point(535, 677);
+            button2.Location = new Point(537, 588);
             button2.Name = "button2";
             button2.Size = new Size(163, 47);
             button2.TabIndex = 3;
@@ -329,9 +362,9 @@
             panel2.Controls.Add(label11);
             panel2.Controls.Add(label10);
             panel2.Controls.Add(pictureBox1);
-            panel2.Location = new Point(295, 198);
+            panel2.Location = new Point(282, 149);
             panel2.Name = "panel2";
-            panel2.Size = new Size(213, 212);
+            panel2.Size = new Size(213, 201);
             panel2.TabIndex = 23;
             // 
             // label11
@@ -357,6 +390,7 @@
             pictureBox1.Location = new Point(18, 19);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(177, 152);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -366,15 +400,15 @@
             panel3.Controls.Add(label15);
             panel3.Controls.Add(label12);
             panel3.Controls.Add(pictureBox2);
-            panel3.Location = new Point(544, 198);
+            panel3.Location = new Point(537, 149);
             panel3.Name = "panel3";
-            panel3.Size = new Size(206, 212);
+            panel3.Size = new Size(213, 201);
             panel3.TabIndex = 24;
             // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(152, 174);
+            label15.Location = new Point(167, 174);
             label15.Name = "label15";
             label15.Size = new Size(30, 20);
             label15.TabIndex = 3;
@@ -392,9 +426,10 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Location = new Point(15, 19);
+            pictureBox2.Location = new Point(20, 19);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(180, 152);
+            pictureBox2.Size = new Size(177, 152);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             // 
@@ -404,15 +439,15 @@
             panel4.Controls.Add(label16);
             panel4.Controls.Add(label13);
             panel4.Controls.Add(pictureBox3);
-            panel4.Location = new Point(295, 432);
+            panel4.Location = new Point(282, 365);
             panel4.Name = "panel4";
-            panel4.Size = new Size(213, 216);
+            panel4.Size = new Size(213, 201);
             panel4.TabIndex = 25;
             // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(152, 175);
+            label16.Location = new Point(165, 175);
             label16.Name = "label16";
             label16.Size = new Size(30, 20);
             label16.TabIndex = 3;
@@ -429,9 +464,10 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.Location = new Point(27, 20);
+            pictureBox3.Location = new Point(18, 20);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(168, 152);
+            pictureBox3.Size = new Size(177, 152);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 1;
             pictureBox3.TabStop = false;
             // 
@@ -441,15 +477,15 @@
             panel5.Controls.Add(label17);
             panel5.Controls.Add(label14);
             panel5.Controls.Add(pictureBox4);
-            panel5.Location = new Point(544, 432);
+            panel5.Location = new Point(537, 365);
             panel5.Name = "panel5";
-            panel5.Size = new Size(206, 216);
+            panel5.Size = new Size(213, 201);
             panel5.TabIndex = 26;
             // 
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(160, 175);
+            label17.Location = new Point(167, 175);
             label17.Name = "label17";
             label17.Size = new Size(30, 20);
             label17.TabIndex = 3;
@@ -466,9 +502,10 @@
             // 
             // pictureBox4
             // 
-            pictureBox4.Location = new Point(15, 20);
+            pictureBox4.Location = new Point(20, 20);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(180, 152);
+            pictureBox4.Size = new Size(177, 152);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 1;
             pictureBox4.TabStop = false;
             // 
@@ -477,7 +514,7 @@
             pictureBox5.BackColor = SystemColors.Info;
             pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
             pictureBox5.BackgroundImageLayout = ImageLayout.None;
-            pictureBox5.Location = new Point(295, 125);
+            pictureBox5.Location = new Point(294, 92);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(40, 37);
             pictureBox5.TabIndex = 27;
@@ -487,7 +524,7 @@
             // 
             label9.AutoSize = true;
             label9.BackColor = SystemColors.Info;
-            label9.Location = new Point(356, 131);
+            label9.Location = new Point(340, 109);
             label9.Name = "label9";
             label9.Size = new Size(64, 20);
             label9.TabIndex = 28;
@@ -513,7 +550,7 @@
             Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4);
             Name = "Home";
-            Size = new Size(777, 739);
+            Size = new Size(777, 646);
             Load += Home_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -577,5 +614,8 @@
         private Label label14;
         private Label label16;
         private Label label17;
+        private Label lblMen;
+        private Label lblKids;
+        private Label lblWomen;
     }
 }
