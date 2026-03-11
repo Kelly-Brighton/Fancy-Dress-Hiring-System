@@ -40,20 +40,38 @@ namespace FancyDressHiringSystem
             // If the user confirms, delete the costume from the database
             if (confirm == DialogResult.Yes)
             {
-                using (SqlConnection conn = new SqlConnection(connString))
+                string checkOrders = "SELECT COUNT(*) FROM Orders WHERE CostumeId = @CostumeId";
+
+                // Check if there are any orders associated with this costume before deleting
+                using (SqlCommand checkCmd = new SqlCommand(checkOrders, new SqlConnection(connString)))
                 {
-                    conn.Open();
-                    string query = "DELETE FROM Costumes WHERE Id = @Id";
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    checkCmd.Parameters.AddWithValue("@CostumeId", CostumeID);
+                    checkCmd.Connection.Open();
+                    int orderCount = (int)checkCmd.ExecuteScalar();
+                    checkCmd.Connection.Close();
+                    if (orderCount > 0) // If there are orders associated with this costume, show an error message and do not delete
                     {
-                        cmd.Parameters.AddWithValue("@Id", CostumeID);
-                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Cannot delete this costume because it is associated with existing orders.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    else // If there are no orders associated with this costume, proceed to delete it from the database
+                    {
+                        // Create a connection to the database and delete the costume
+                        using (SqlConnection conn = new SqlConnection(connString))
+                        {
+                            conn.Open();
+                            string query = "DELETE FROM Costumes WHERE Id = @Id";
+                            using (SqlCommand cmd = new SqlCommand(query, conn))
+                            {
+                                cmd.Parameters.AddWithValue("@Id", CostumeID);
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
+                        // Show a success message and remove the costume card from the parent control
+                        MessageBox.Show(CostumeName + " has been deleted.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Parent.Controls.Remove(this); // Remove the costume card from the parent control
                     }
                 }
-
-                MessageBox.Show(CostumeName + " has been deleted.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                this.Parent.Controls.Remove(this); // Remove the costume card from the parent control
             }
             else
             {   // If the user cancels, do nothing
