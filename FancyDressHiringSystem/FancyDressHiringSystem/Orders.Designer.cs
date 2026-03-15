@@ -29,14 +29,6 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            label23 = new Label();
-            label24 = new Label();
-            label22 = new Label();
-            label25 = new Label();
             label1 = new Label();
             textBox1 = new TextBox();
             label2 = new Label();
@@ -54,6 +46,15 @@
             label8 = new Label();
             panel3 = new Panel();
             pictureBox2 = new PictureBox();
+            panel6 = new Panel();
+            label9 = new Label();
+            panel4 = new Panel();
+            label10 = new Label();
+            panel5 = new Panel();
+            panel7 = new Panel();
+            label11 = new Label();
+            label12 = new Label();
+            panel8 = new Panel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -64,90 +65,18 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ControlDarkDark;
-            panel1.Controls.Add(label25);
-            panel1.Controls.Add(label22);
-            panel1.Controls.Add(label24);
-            panel1.Controls.Add(label23);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(label12);
+            panel1.Controls.Add(label11);
+            panel1.Controls.Add(panel7);
+            panel1.Controls.Add(panel5);
+            panel1.Controls.Add(label10);
+            panel1.Controls.Add(panel4);
+            panel1.Controls.Add(label9);
+            panel1.Controls.Add(panel6);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(290, 718);
             panel1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(63, 36);
-            button1.Name = "button1";
-            button1.Size = new Size(201, 64);
-            button1.TabIndex = 1;
-            button1.Text = "Home";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(63, 126);
-            button2.Name = "button2";
-            button2.Size = new Size(201, 64);
-            button2.TabIndex = 2;
-            button2.Text = "Order";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(63, 220);
-            button3.Name = "button3";
-            button3.Size = new Size(201, 64);
-            button3.TabIndex = 2;
-            button3.Text = "Likes";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(63, 581);
-            button4.Name = "button4";
-            button4.Size = new Size(201, 64);
-            button4.TabIndex = 2;
-            button4.Text = "Logout";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.Location = new Point(27, 58);
-            label23.Name = "label23";
-            label23.Size = new Size(30, 20);
-            label23.TabIndex = 13;
-            label23.Text = "🏠";
-            // 
-            // label24
-            // 
-            label24.AutoSize = true;
-            label24.Location = new Point(27, 148);
-            label24.Name = "label24";
-            label24.Size = new Size(30, 20);
-            label24.TabIndex = 13;
-            label24.Text = "📦";
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Location = new Point(27, 242);
-            label22.Name = "label22";
-            label22.Size = new Size(30, 20);
-            label22.TabIndex = 13;
-            label22.Text = "❤️";
-            // 
-            // label25
-            // 
-            label25.AutoSize = true;
-            label25.Location = new Point(19, 603);
-            label25.Name = "label25";
-            label25.Size = new Size(38, 20);
-            label25.TabIndex = 13;
-            label25.Text = "🚪  ";
             // 
             // label1
             // 
@@ -307,10 +236,91 @@
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
             // 
+            // panel6
+            // 
+            panel6.BackColor = Color.Black;
+            panel6.Location = new Point(0, 106);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(363, 2);
+            panel6.TabIndex = 17;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.Location = new Point(63, 40);
+            label9.Name = "label9";
+            label9.Size = new Size(148, 41);
+            label9.TabIndex = 20;
+            label9.Text = "🏠 Home";
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.Black;
+            panel4.Location = new Point(3, 202);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(363, 2);
+            panel4.TabIndex = 17;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.Location = new Point(63, 128);
+            label10.Name = "label10";
+            label10.Size = new Size(144, 41);
+            label10.TabIndex = 19;
+            label10.Text = "📦 Order";
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.Black;
+            panel5.Location = new Point(3, 294);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(363, 2);
+            panel5.TabIndex = 18;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.Black;
+            panel7.Location = new Point(0, 573);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(363, 2);
+            panel7.TabIndex = 18;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.Location = new Point(63, 225);
+            label11.Name = "label11";
+            label11.Size = new Size(119, 41);
+            label11.TabIndex = 18;
+            label11.Text = "❤️ Like";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.Location = new Point(63, 618);
+            label12.Name = "label12";
+            label12.Size = new Size(170, 41);
+            label12.TabIndex = 17;
+            label12.Text = "🚪Logout  ";
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.Black;
+            panel8.Location = new Point(285, 405);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(977, 2);
+            panel8.TabIndex = 19;
+            // 
             // Orders
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(panel8);
             Controls.Add(button7);
             Controls.Add(button8);
             Controls.Add(label6);
@@ -329,6 +339,7 @@
             Controls.Add(panel1);
             Name = "Orders";
             Size = new Size(1262, 718);
+            Load += Orders_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
@@ -342,14 +353,6 @@
         #endregion
 
         private Panel panel1;
-        private Button button4;
-        private Button button3;
-        private Button button2;
-        private Button button1;
-        private Label label23;
-        private Label label24;
-        private Label label22;
-        private Label label25;
         private Label label1;
         private TextBox textBox1;
         private Label label2;
@@ -367,5 +370,14 @@
         private Label label8;
         private Panel panel3;
         private PictureBox pictureBox2;
+        private Panel panel6;
+        private Label label9;
+        private Panel panel4;
+        private Panel panel7;
+        private Panel panel5;
+        private Label label10;
+        private Label label11;
+        private Label label12;
+        private Panel panel8;
     }
 }
