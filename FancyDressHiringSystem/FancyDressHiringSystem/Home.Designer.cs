@@ -30,9 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             panel1 = new Panel();
-            lblKids = new Label();
-            lblWomen = new Label();
-            lblMen = new Label();
             btnApply = new Button();
             btnXXL = new Button();
             btnXL = new Button();
@@ -89,9 +86,6 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.Info;
-            panel1.Controls.Add(lblKids);
-            panel1.Controls.Add(lblWomen);
-            panel1.Controls.Add(lblMen);
             panel1.Controls.Add(btnApply);
             panel1.Controls.Add(btnXXL);
             panel1.Controls.Add(btnXL);
@@ -113,33 +107,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(235, 574);
             panel1.TabIndex = 0;
-            // 
-            // lblKids
-            // 
-            lblKids.AutoSize = true;
-            lblKids.Location = new Point(138, 202);
-            lblKids.Name = "lblKids";
-            lblKids.Size = new Size(58, 20);
-            lblKids.TabIndex = 19;
-            lblKids.Text = "label18";
-            // 
-            // lblWomen
-            // 
-            lblWomen.AutoSize = true;
-            lblWomen.Location = new Point(138, 144);
-            lblWomen.Name = "lblWomen";
-            lblWomen.Size = new Size(58, 20);
-            lblWomen.TabIndex = 18;
-            lblWomen.Text = "label18";
-            // 
-            // lblMen
-            // 
-            lblMen.AutoSize = true;
-            lblMen.Location = new Point(138, 86);
-            lblMen.Name = "lblMen";
-            lblMen.Size = new Size(58, 20);
-            lblMen.TabIndex = 17;
-            lblMen.Text = "label18";
             // 
             // btnApply
             // 
@@ -217,16 +184,16 @@
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label8.Location = new Point(19, 342);
             label8.Name = "label8";
-            label8.Size = new Size(42, 21);
+            label8.Size = new Size(63, 32);
             label8.TabIndex = 9;
             label8.Text = "SIZE";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(183, 295);
+            label7.Location = new Point(171, 295);
             label7.Name = "label7";
-            label7.Size = new Size(41, 20);
+            label7.Size = new Size(61, 30);
             label7.TabIndex = 8;
             label7.Text = "£100";
             // 
@@ -235,7 +202,7 @@
             label6.AutoSize = true;
             label6.Location = new Point(3, 295);
             label6.Name = "label6";
-            label6.Size = new Size(25, 20);
+            label6.Size = new Size(37, 30);
             label6.TabIndex = 7;
             label6.Text = "£0";
             // 
@@ -243,7 +210,7 @@
             // 
             trackBar1.Location = new Point(31, 295);
             trackBar1.Name = "trackBar1";
-            trackBar1.Size = new Size(162, 45);
+            trackBar1.Size = new Size(162, 69);
             trackBar1.TabIndex = 6;
             // 
             // label5
@@ -252,7 +219,7 @@
             label5.Font = new Font("Segoe UI", 11F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label5.Location = new Point(19, 261);
             label5.Name = "label5";
-            label5.Size = new Size(107, 20);
+            label5.Size = new Size(155, 30);
             label5.TabIndex = 5;
             label5.Text = "PRICE RANGE";
             // 
@@ -292,7 +259,7 @@
             label4.Font = new Font("Stencil", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label4.Location = new Point(19, 49);
             label4.Name = "label4";
-            label4.Size = new Size(88, 19);
+            label4.Size = new Size(131, 29);
             label4.TabIndex = 1;
             label4.Text = "CATEGORY";
             // 
@@ -302,7 +269,7 @@
             label3.Font = new Font("Segoe UI Black", 16F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label3.Location = new Point(51, 9);
             label3.Name = "label3";
-            label3.Size = new Size(98, 30);
+            label3.Size = new Size(142, 45);
             label3.TabIndex = 0;
             label3.Text = "FILTERS";
             label3.Click += label3_Click_1;
@@ -310,10 +277,10 @@
             // textBox1
             // 
             textBox1.BackColor = SystemColors.Info;
-            textBox1.Location = new Point(282, 84);
+            textBox1.Location = new Point(282, 89);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(468, 59);
+            textBox1.Size = new Size(468, 49);
             textBox1.TabIndex = 1;
             textBox1.TextChanged += textBox1_TextChanged_2;
             // 
@@ -342,17 +309,17 @@
             label1.AutoSize = true;
             label1.Location = new Point(387, 40);
             label1.Name = "label1";
-            label1.Size = new Size(0, 20);
+            label1.Size = new Size(0, 30);
             label1.TabIndex = 4;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Script MT Bold", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label2.Location = new Point(340, 8);
+            label2.Location = new Point(320, 0);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(267, 58);
+            label2.Size = new Size(399, 87);
             label2.TabIndex = 22;
             label2.Text = "Fancy Dress";
             // 
@@ -370,9 +337,9 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(167, 174);
+            label11.Location = new Point(170, 171);
             label11.Name = "label11";
-            label11.Size = new Size(30, 20);
+            label11.Size = new Size(43, 30);
             label11.TabIndex = 2;
             label11.Text = "\U0001f6d2";
             // 
@@ -381,7 +348,7 @@
             label10.AutoSize = true;
             label10.Location = new Point(9, 174);
             label10.Name = "label10";
-            label10.Size = new Size(30, 20);
+            label10.Size = new Size(43, 30);
             label10.TabIndex = 1;
             label10.Text = "❤️";
             // 
@@ -408,9 +375,9 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(167, 174);
+            label15.Location = new Point(167, 171);
             label15.Name = "label15";
-            label15.Size = new Size(30, 20);
+            label15.Size = new Size(43, 30);
             label15.TabIndex = 3;
             label15.Text = "\U0001f6d2";
             label15.Click += label15_Click;
@@ -418,9 +385,9 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(15, 174);
+            label12.Location = new Point(15, 171);
             label12.Name = "label12";
-            label12.Size = new Size(30, 20);
+            label12.Size = new Size(43, 30);
             label12.TabIndex = 2;
             label12.Text = "❤️";
             // 
@@ -449,16 +416,16 @@
             label16.AutoSize = true;
             label16.Location = new Point(165, 175);
             label16.Name = "label16";
-            label16.Size = new Size(30, 20);
+            label16.Size = new Size(43, 30);
             label16.TabIndex = 3;
             label16.Text = "\U0001f6d2";
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(18, 175);
+            label13.Location = new Point(9, 171);
             label13.Name = "label13";
-            label13.Size = new Size(30, 20);
+            label13.Size = new Size(43, 30);
             label13.TabIndex = 2;
             label13.Text = "❤️";
             // 
@@ -485,18 +452,18 @@
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(167, 175);
+            label17.Location = new Point(167, 171);
             label17.Name = "label17";
-            label17.Size = new Size(30, 20);
+            label17.Size = new Size(43, 30);
             label17.TabIndex = 3;
             label17.Text = "\U0001f6d2";
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(15, 175);
+            label14.Location = new Point(15, 171);
             label14.Name = "label14";
-            label14.Size = new Size(30, 20);
+            label14.Size = new Size(43, 30);
             label14.TabIndex = 2;
             label14.Text = "❤️";
             // 
@@ -514,7 +481,7 @@
             pictureBox5.BackColor = SystemColors.Info;
             pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
             pictureBox5.BackgroundImageLayout = ImageLayout.None;
-            pictureBox5.Location = new Point(294, 92);
+            pictureBox5.Location = new Point(300, 92);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(40, 37);
             pictureBox5.TabIndex = 27;
@@ -524,15 +491,15 @@
             // 
             label9.AutoSize = true;
             label9.BackColor = SystemColors.Info;
-            label9.Location = new Point(340, 109);
+            label9.Location = new Point(340, 99);
             label9.Name = "label9";
-            label9.Size = new Size(64, 20);
+            label9.Size = new Size(93, 30);
             label9.TabIndex = 28;
             label9.Text = "SEARCH";
             // 
             // Home
             // 
-            AutoScaleDimensions = new SizeF(8F, 19F);
+            AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
             Controls.Add(label9);
@@ -614,8 +581,5 @@
         private Label label14;
         private Label label16;
         private Label label17;
-        private Label lblMen;
-        private Label lblKids;
-        private Label lblWomen;
     }
 }
