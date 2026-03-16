@@ -45,7 +45,7 @@ namespace FancyDressHiringSystem
             {
                 conn.Open();
 
-                string query = "SELECT Id, Name, Price, ImagePath FROM Costumes";
+                string query = "SELECT Id, Name, Price, ImagePath FROM Clothes";
 
                 // Create a SQL command to execute the query
                 using (SqlCommand cmd = new SqlCommand(query, conn))

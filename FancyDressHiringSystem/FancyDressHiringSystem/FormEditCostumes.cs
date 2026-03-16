@@ -39,7 +39,7 @@ namespace FancyDressHiringSystem
                 conn.Open();
 
                 // SQL query to select the costume details based on the costume ID
-                string query = "SELECT Name, Price FROM Costumes WHERE Id = @Id";
+                string query = "SELECT Name, Price FROM Clothes WHERE Id = @Id";
 
                 // Create a SQL command to execute the query
                 using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -70,7 +70,7 @@ namespace FancyDressHiringSystem
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 conn.Open();
-                string query = "UPDATE Costumes SET Name = @Name, Price = @Price WHERE Id = @Id";
+                string query = "UPDATE Clothes SET Name = @Name, Price = @Price WHERE Id = @Id";
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@Name", txtName.Text);
@@ -88,6 +88,11 @@ namespace FancyDressHiringSystem
 
             // Close the edit form
             this.Close();
+        }
+
+        private void btnSave_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

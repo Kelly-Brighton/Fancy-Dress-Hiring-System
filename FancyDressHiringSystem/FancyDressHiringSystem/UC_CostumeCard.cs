@@ -60,7 +60,7 @@ namespace FancyDressHiringSystem
                         using (SqlConnection conn = new SqlConnection(connString))
                         {
                             conn.Open();
-                            string query = "DELETE FROM Costumes WHERE Id = @Id";
+                            string query = "DELETE FROM Clothes WHERE Id = @Id";
                             using (SqlCommand cmd = new SqlCommand(query, conn))
                             {
                                 cmd.Parameters.AddWithValue("@Id", CostumeID);
@@ -84,8 +84,6 @@ namespace FancyDressHiringSystem
             // Open the edit form and pass the costumeID to it
             FormEditCostumes form = new FormEditCostumes(CostumeID);
             form.ShowDialog();
-
-            new UC_Inventory().LoadClothes(); // Refresh the inventory after editing
         }
 
         // / Properties to set the costume details
@@ -93,14 +91,14 @@ namespace FancyDressHiringSystem
 
         public string CostumeName
         {
-            get { return lblCostumeName.Text; }
-            set { lblCostumeName.Text = value; }
+            get { return lblClothName.Text; }
+            set { lblClothName.Text = value; }
         }
 
         public string Price
         {
-            get { return lblPrice.Text; }
-            set { lblPrice.Text = value; }
+            get { return lblClothPrice.Text; }
+            set { lblClothPrice.Text = value; }
         }
 
         public Image CostumeImage

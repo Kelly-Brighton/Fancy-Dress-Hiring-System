@@ -34,6 +34,8 @@
             label3 = new Label();
             btnEdit = new Button();
             btnDelete = new Button();
+            lblClothName = new Label();
+            lblClothPrice = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -42,7 +44,7 @@
             pictureBox1.Dock = DockStyle.Top;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(220, 150);
+            pictureBox1.Size = new Size(218, 150);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -64,9 +66,9 @@
             lblPrice.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblPrice.Location = new Point(3, 199);
             lblPrice.Name = "lblPrice";
-            lblPrice.Size = new Size(39, 17);
+            lblPrice.Size = new Size(42, 17);
             lblPrice.TabIndex = 2;
-            lblPrice.Text = "Price";
+            lblPrice.Text = "Price:";
             // 
             // label3
             // 
@@ -99,10 +101,33 @@
             btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
             // 
+            // lblClothName
+            // 
+            lblClothName.AutoSize = true;
+            lblClothName.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblClothName.Location = new Point(54, 167);
+            lblClothName.Name = "lblClothName";
+            lblClothName.Size = new Size(38, 15);
+            lblClothName.TabIndex = 6;
+            lblClothName.Text = "label1";
+            // 
+            // lblClothPrice
+            // 
+            lblClothPrice.AutoSize = true;
+            lblClothPrice.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblClothPrice.Location = new Point(54, 200);
+            lblClothPrice.Name = "lblClothPrice";
+            lblClothPrice.Size = new Size(38, 15);
+            lblClothPrice.TabIndex = 7;
+            lblClothPrice.Text = "label2";
+            // 
             // UC_CostumeCard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BorderStyle = BorderStyle.FixedSingle;
+            Controls.Add(lblClothPrice);
+            Controls.Add(lblClothName);
             Controls.Add(btnDelete);
             Controls.Add(btnEdit);
             Controls.Add(label3);
@@ -110,7 +135,7 @@
             Controls.Add(lblCostumeName);
             Controls.Add(pictureBox1);
             Name = "UC_CostumeCard";
-            Size = new Size(220, 260);
+            Size = new Size(218, 258);
             Load += UC_CostumeCard_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -125,5 +150,7 @@
         private Label label3;
         private Button btnEdit;
         private Button btnDelete;
+        private Label lblClothName;
+        private Label lblClothPrice;
     }
 }
