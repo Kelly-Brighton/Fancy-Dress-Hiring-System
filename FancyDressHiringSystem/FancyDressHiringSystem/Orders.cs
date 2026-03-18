@@ -20,7 +20,7 @@ namespace FancyDressHiringSystem
 
         private void Orders_Load(object sender, EventArgs e)
         {
-
+            LoadOrders();
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -41,7 +41,8 @@ namespace FancyDressHiringSystem
             {
                 conn.Open();
 
-                string query = "SELECT Id, OrderDate, Status FROM Orders";
+                string query = "SELECT Orders.Id, Orders.OrderDate, Ordeers.Status, Clothes.ImagePath FROM Orders" +
+                    " JOIN Clothes ON Orders.CostumeId = Clothes.Id";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
@@ -51,7 +52,19 @@ namespace FancyDressHiringSystem
                         {
                             OrderCard orderCard = new OrderCard();
                             orderCard.OrderId = Convert.ToInt32(reader["Id"]);
-                            //orderCard.OrderDate = reader["OrderDate"].ToString();
+                            orderCard.OrderDate = (DateTime)reader["OrderDate"];
+                            orderCard.Status = reader["Status"].ToString();
+                            DateTime dueDate = orderCard.OrderDate.AddDays(10);
+                            orderCard.DueDate = dueDate;
+
+                            string imagePath = Path.Combine(Application.StartupPath, reader["imagePath"].ToString());
+
+                            if (File.Exists(imagePath))
+                            {
+                                orderCard.CostumeImage = Image.FromFile(imagePath);
+                            }
+
+                            flowOrders.Controls.Add(orderCard);
                         }
                     }
                 }
