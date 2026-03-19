@@ -21,7 +21,7 @@ namespace FancyDressHiringSystem
             LoadCostumeData();
         }
 
-        private void FormEditCostumes_Load(object sender, EventArgs e)
+        private void FormEditCostumes_Load(object sender, EventArgs e) 
         {
 
         }
@@ -82,17 +82,12 @@ namespace FancyDressHiringSystem
 
             MessageBox.Show("Costume details updated successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // Show the Admin form
-            Form adminForm = new Admin();
-            adminForm.Show();
+            // Refresh the costume list in the parent control
+            UC_Inventory parentControl = new UC_Inventory();
+            parentControl.LoadClothes();
 
             // Close the edit form
             this.Close();
-        }
-
-        private void btnSave_Click_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

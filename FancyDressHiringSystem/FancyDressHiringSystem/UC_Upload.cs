@@ -63,11 +63,26 @@ namespace FancyDressHiringSystem
             }
 
             // Save the image to the "Images" folder in the application directory
+            if (string.IsNullOrEmpty(selectedImagePath))
+            {
+                MessageBox.Show("Please select an image first.");
+                return;
+            }
+
+            string imagesFolder = Path.Combine(Application.StartupPath, "Images");
+
+            if (!Directory.Exists(imagesFolder))
+            {
+                Directory.CreateDirectory(imagesFolder);
+            }
+
             string fileName = Path.GetFileName(selectedImagePath);
+            string newPath = Path.Combine(imagesFolder, fileName);
 
-            string newPath = Path.Combine(Application.StartupPath, "Images", fileName); // Ensure the "Images" directory exists
-
-            File.Copy(selectedImagePath, newPath, true); // Copy the file to the new location, overwrite if it already exists
+            if (selectedImagePath != newPath)
+            {
+                File.Copy(selectedImagePath, newPath, true);
+            }
 
             string connString = "Server=localhost;Database=FancyDressDB;Trusted_Connection=True;TrustServerCertificate=True;";
 
