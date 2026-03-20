@@ -52,5 +52,10 @@ namespace FancyDressHiringSystem
             Login login = new Login();
             login.Show();
         }
+
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

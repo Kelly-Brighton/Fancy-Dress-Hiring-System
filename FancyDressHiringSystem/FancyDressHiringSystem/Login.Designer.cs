@@ -137,6 +137,7 @@
             txtUser.Size = new Size(330, 39);
             txtUser.TabIndex = 9;
             txtUser.TextAlign = HorizontalAlignment.Center;
+            txtUser.TextChanged += txtUser_TextChanged;
             // 
             // panel3
             // 

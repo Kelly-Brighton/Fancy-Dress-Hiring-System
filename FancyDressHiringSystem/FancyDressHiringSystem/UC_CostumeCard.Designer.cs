@@ -53,20 +53,20 @@
             // lblCostumeName
             // 
             lblCostumeName.AutoSize = true;
-            lblCostumeName.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCostumeName.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblCostumeName.Location = new Point(3, 164);
             lblCostumeName.Name = "lblCostumeName";
-            lblCostumeName.Size = new Size(47, 17);
+            lblCostumeName.Size = new Size(42, 15);
             lblCostumeName.TabIndex = 1;
             lblCostumeName.Text = "Name:";
             // 
             // lblPrice
             // 
             lblPrice.AutoSize = true;
-            lblPrice.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPrice.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPrice.Location = new Point(3, 199);
             lblPrice.Name = "lblPrice";
-            lblPrice.Size = new Size(42, 17);
+            lblPrice.Size = new Size(41, 15);
             lblPrice.TabIndex = 2;
             lblPrice.Text = "Price:";
             // 
@@ -80,13 +80,14 @@
             // 
             // btnEdit
             // 
+            btnEdit.BackColor = SystemColors.Info;
             btnEdit.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnEdit.Location = new Point(18, 219);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(75, 37);
             btnEdit.TabIndex = 4;
             btnEdit.Text = "Edit";
-            btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.UseVisualStyleBackColor = false;
             btnEdit.Click += btnEdit_Click;
             // 
             // btnDelete
@@ -104,20 +105,20 @@
             // lblClothName
             // 
             lblClothName.AutoSize = true;
-            lblClothName.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblClothName.Location = new Point(54, 167);
+            lblClothName.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblClothName.Location = new Point(51, 164);
             lblClothName.Name = "lblClothName";
-            lblClothName.Size = new Size(38, 15);
+            lblClothName.Size = new Size(40, 15);
             lblClothName.TabIndex = 6;
             lblClothName.Text = "label1";
             // 
             // lblClothPrice
             // 
             lblClothPrice.AutoSize = true;
-            lblClothPrice.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblClothPrice.Location = new Point(54, 200);
+            lblClothPrice.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblClothPrice.Location = new Point(50, 199);
             lblClothPrice.Name = "lblClothPrice";
-            lblClothPrice.Size = new Size(38, 15);
+            lblClothPrice.Size = new Size(40, 15);
             lblClothPrice.TabIndex = 7;
             lblClothPrice.Text = "label2";
             // 

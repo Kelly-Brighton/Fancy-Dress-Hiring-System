@@ -35,12 +35,14 @@
             btnOrders = new Button();
             btnHome = new Button();
             panelContainer = new Panel();
+            lblCount = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = SystemColors.GradientActiveCaption;
+            panel1.Controls.Add(lblCount);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(btnLog);
             panel1.Controls.Add(btnLikes);
@@ -61,7 +63,7 @@
             // btnLog
             // 
             btnLog.BackColor = SystemColors.Info;
-            btnLog.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnLog.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLog.Location = new Point(0, 594);
             btnLog.Name = "btnLog";
             btnLog.Size = new Size(200, 49);
@@ -73,19 +75,19 @@
             // btnLikes
             // 
             btnLikes.BackColor = SystemColors.Info;
-            btnLikes.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnLikes.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLikes.Location = new Point(0, 113);
             btnLikes.Name = "btnLikes";
             btnLikes.Size = new Size(200, 49);
             btnLikes.TabIndex = 2;
-            btnLikes.Text = "Likes";
+            btnLikes.Text = "Basket";
             btnLikes.UseVisualStyleBackColor = false;
             btnLikes.Click += btnLikes_Click;
             // 
             // btnOrders
             // 
             btnOrders.BackColor = SystemColors.Info;
-            btnOrders.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnOrders.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnOrders.Location = new Point(0, 58);
             btnOrders.Name = "btnOrders";
             btnOrders.Size = new Size(200, 49);
@@ -97,7 +99,7 @@
             // btnHome
             // 
             btnHome.BackColor = SystemColors.Info;
-            btnHome.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnHome.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnHome.Location = new Point(0, 3);
             btnHome.Name = "btnHome";
             btnHome.Size = new Size(200, 49);
@@ -112,6 +114,18 @@
             panelContainer.Name = "panelContainer";
             panelContainer.Size = new Size(777, 646);
             panelContainer.TabIndex = 1;
+            panelContainer.Paint += panelContainer_Paint;
+            // 
+            // lblCount
+            // 
+            lblCount.AutoSize = true;
+            lblCount.BackColor = SystemColors.Info;
+            lblCount.Font = new Font("Times New Roman", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCount.Location = new Point(128, 122);
+            lblCount.Name = "lblCount";
+            lblCount.Size = new Size(18, 14);
+            lblCount.TabIndex = 4;
+            lblCount.Text = "lbl";
             // 
             // Mainform
             // 
@@ -126,6 +140,7 @@
             Text = "Mainform";
             Load += Mainform_Load;
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -138,5 +153,6 @@
         private Button btnOrders;
         private Panel panel2;
         private Panel panelContainer;
+        private Label lblCount;
     }
 }

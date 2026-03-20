@@ -102,6 +102,7 @@
             panelContainer.Name = "panelContainer";
             panelContainer.Size = new Size(777, 646);
             panelContainer.TabIndex = 1;
+            panelContainer.Paint += panelContainer_Paint;
             // 
             // Admin
             // 

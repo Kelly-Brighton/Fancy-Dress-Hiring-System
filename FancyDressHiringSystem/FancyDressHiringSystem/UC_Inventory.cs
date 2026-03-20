@@ -59,7 +59,7 @@ namespace FancyDressHiringSystem
                             UC_CostumeCard card = new UC_CostumeCard();
                             card.CostumeID = Convert.ToInt32(reader["Id"]);
                             card.CostumeName = reader["Name"].ToString();
-                            card.Price = reader["Price"].ToString();
+                            card.Price = "£" + reader["Price"].ToString();
                             string imagePath = Path.Combine(Application.StartupPath, reader["ImagePath"].ToString());
 
                             // Load the image from the file path if it exists

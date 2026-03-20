@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,7 @@ namespace FancyDressHiringSystem
             panelContainer.Controls.Clear();
             Home home = new Home();
             LoadControl(home);
+            UpdateBasketCount();
         }
 
         private void LoadControl(UserControl uc)
@@ -57,6 +59,34 @@ namespace FancyDressHiringSystem
             this.Close();
             Login login = new Login();
             login.Show();
+        }
+
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        
+        public void UpdateBasketCount()
+        {
+            string connString = "Server=localhost;Database=FancyDressDB;Trusted_Connection=True;TrustServerCertificate=True;";
+
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                conn.Open();
+
+                string query = "SELECT COUNT(*) FROM Basket WHERE CustomerName = @name";
+
+                Login login = new Login();
+                string username = login.Username;
+
+                using (SqlCommand cmd = new SqlCommand(query, conn)) {
+                    cmd.Parameters.AddWithValue("@name", username);
+                    
+                    int count = (int)cmd.ExecuteScalar();
+
+                    lblCount.Text = count.ToString();
+                }
+            }
         }
     }
 }

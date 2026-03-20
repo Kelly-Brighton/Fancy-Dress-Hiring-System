@@ -117,5 +117,15 @@ namespace FancyDressHiringSystem
             signup.Show();
             this.Hide();
         }
+
+        private void txtUser_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public string Username
+        {
+            get { return txtUser.Text; }
+        }
     }
 }
