@@ -28,22 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             panel1 = new Panel();
+            panel10 = new Panel();
+            chkboxL = new CheckBox();
+            label16 = new Label();
+            panel9 = new Panel();
+            chkboxXXL = new CheckBox();
+            label15 = new Label();
+            panel8 = new Panel();
+            chkboxXL = new CheckBox();
+            label14 = new Label();
+            panel6 = new Panel();
+            chkboxM = new CheckBox();
+            label12 = new Label();
+            panel4 = new Panel();
+            chkboxXS = new CheckBox();
+            label10 = new Label();
+            chkboxUnisex = new CheckBox();
+            chkboxWomen = new CheckBox();
+            panel2 = new Panel();
+            label7 = new Label();
+            panel7 = new Panel();
+            chkboxS = new CheckBox();
+            label13 = new Label();
+            panel3 = new Panel();
+            label9 = new Label();
+            panel5 = new Panel();
+            label11 = new Label();
+            chkboxMen = new CheckBox();
             lblPrice = new Label();
             label6 = new Label();
             btnApply = new Button();
-            btnXXL = new Button();
-            btnXL = new Button();
-            btnL = new Button();
-            btnM = new Button();
-            btnS = new Button();
-            btnXS = new Button();
             label8 = new Label();
             trackPrice = new TrackBar();
             label5 = new Label();
-            btnWomen = new Button();
-            btnKids = new Button();
-            btnMen = new Button();
             label4 = new Label();
             label3 = new Label();
             txtSearch = new TextBox();
@@ -52,34 +71,315 @@
             lblSearch = new Label();
             flowHome = new FlowLayoutPanel();
             btnSearch = new Button();
+            timerNoResults = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
+            panel10.SuspendLayout();
+            panel9.SuspendLayout();
+            panel8.SuspendLayout();
+            panel6.SuspendLayout();
+            panel4.SuspendLayout();
+            panel2.SuspendLayout();
+            panel7.SuspendLayout();
+            panel3.SuspendLayout();
+            panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)trackPrice).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = SystemColors.Info;
+            panel1.Controls.Add(panel10);
+            panel1.Controls.Add(panel9);
+            panel1.Controls.Add(panel8);
+            panel1.Controls.Add(panel6);
+            panel1.Controls.Add(panel4);
+            panel1.Controls.Add(chkboxUnisex);
+            panel1.Controls.Add(chkboxWomen);
+            panel1.Controls.Add(panel2);
+            panel1.Controls.Add(panel7);
+            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(panel5);
+            panel1.Controls.Add(chkboxMen);
             panel1.Controls.Add(lblPrice);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(btnApply);
-            panel1.Controls.Add(btnXXL);
-            panel1.Controls.Add(btnXL);
-            panel1.Controls.Add(btnL);
-            panel1.Controls.Add(btnM);
-            panel1.Controls.Add(btnS);
-            panel1.Controls.Add(btnXS);
             panel1.Controls.Add(label8);
             panel1.Controls.Add(trackPrice);
             panel1.Controls.Add(label5);
-            panel1.Controls.Add(btnWomen);
-            panel1.Controls.Add(btnKids);
-            panel1.Controls.Add(btnMen);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Location = new Point(17, 40);
             panel1.Name = "panel1";
             panel1.Size = new Size(235, 574);
             panel1.TabIndex = 0;
+            // 
+            // panel10
+            // 
+            panel10.BackColor = SystemColors.GradientActiveCaption;
+            panel10.Controls.Add(chkboxL);
+            panel10.Controls.Add(label16);
+            panel10.Location = new Point(159, 453);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(59, 46);
+            panel10.TabIndex = 30;
+            // 
+            // chkboxL
+            // 
+            chkboxL.AutoSize = true;
+            chkboxL.Location = new Point(35, 17);
+            chkboxL.Name = "chkboxL";
+            chkboxL.Size = new Size(15, 14);
+            chkboxL.TabIndex = 1;
+            chkboxL.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label16.Location = new Point(6, 14);
+            label16.Name = "label16";
+            label16.Size = new Size(18, 17);
+            label16.TabIndex = 0;
+            label16.Text = "L";
+            // 
+            // panel9
+            // 
+            panel9.BackColor = SystemColors.GradientActiveCaption;
+            panel9.Controls.Add(chkboxXXL);
+            panel9.Controls.Add(label15);
+            panel9.Location = new Point(89, 453);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(59, 46);
+            panel9.TabIndex = 29;
+            // 
+            // chkboxXXL
+            // 
+            chkboxXXL.AutoSize = true;
+            chkboxXXL.Location = new Point(41, 17);
+            chkboxXXL.Name = "chkboxXXL";
+            chkboxXXL.Size = new Size(15, 14);
+            chkboxXXL.TabIndex = 1;
+            chkboxXXL.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label15.Location = new Point(6, 14);
+            label15.Name = "label15";
+            label15.Size = new Size(38, 17);
+            label15.TabIndex = 0;
+            label15.Text = "XXL";
+            // 
+            // panel8
+            // 
+            panel8.BackColor = SystemColors.GradientActiveCaption;
+            panel8.Controls.Add(chkboxXL);
+            panel8.Controls.Add(label14);
+            panel8.Location = new Point(17, 453);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(59, 46);
+            panel8.TabIndex = 28;
+            // 
+            // chkboxXL
+            // 
+            chkboxXL.AutoSize = true;
+            chkboxXL.Location = new Point(35, 17);
+            chkboxXL.Name = "chkboxXL";
+            chkboxXL.Size = new Size(15, 14);
+            chkboxXL.TabIndex = 1;
+            chkboxXL.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.Location = new Point(6, 14);
+            label14.Name = "label14";
+            label14.Size = new Size(28, 17);
+            label14.TabIndex = 0;
+            label14.Text = "XL";
+            // 
+            // panel6
+            // 
+            panel6.BackColor = SystemColors.GradientActiveCaption;
+            panel6.Controls.Add(chkboxM);
+            panel6.Controls.Add(label12);
+            panel6.Location = new Point(159, 392);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(59, 46);
+            panel6.TabIndex = 26;
+            // 
+            // chkboxM
+            // 
+            chkboxM.AutoSize = true;
+            chkboxM.Location = new Point(35, 17);
+            chkboxM.Name = "chkboxM";
+            chkboxM.Size = new Size(15, 14);
+            chkboxM.TabIndex = 1;
+            chkboxM.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.Location = new Point(6, 14);
+            label12.Name = "label12";
+            label12.Size = new Size(23, 17);
+            label12.TabIndex = 0;
+            label12.Text = "M";
+            // 
+            // panel4
+            // 
+            panel4.BackColor = SystemColors.GradientActiveCaption;
+            panel4.Controls.Add(chkboxXS);
+            panel4.Controls.Add(label10);
+            panel4.Location = new Point(17, 392);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(59, 46);
+            panel4.TabIndex = 25;
+            // 
+            // chkboxXS
+            // 
+            chkboxXS.AutoSize = true;
+            chkboxXS.Location = new Point(35, 17);
+            chkboxXS.Name = "chkboxXS";
+            chkboxXS.Size = new Size(15, 14);
+            chkboxXS.TabIndex = 1;
+            chkboxXS.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.Location = new Point(6, 14);
+            label10.Name = "label10";
+            label10.Size = new Size(26, 17);
+            label10.TabIndex = 0;
+            label10.Text = "XS";
+            label10.Click += label10_Click;
+            // 
+            // chkboxUnisex
+            // 
+            chkboxUnisex.AutoSize = true;
+            chkboxUnisex.Location = new Point(159, 206);
+            chkboxUnisex.Name = "chkboxUnisex";
+            chkboxUnisex.Size = new Size(15, 14);
+            chkboxUnisex.TabIndex = 24;
+            chkboxUnisex.UseVisualStyleBackColor = true;
+            chkboxUnisex.CheckedChanged += chkboxUnisex_CheckedChanged;
+            // 
+            // chkboxWomen
+            // 
+            chkboxWomen.AutoSize = true;
+            chkboxWomen.Location = new Point(158, 150);
+            chkboxWomen.Name = "chkboxWomen";
+            chkboxWomen.Size = new Size(15, 14);
+            chkboxWomen.TabIndex = 23;
+            chkboxWomen.UseVisualStyleBackColor = true;
+            chkboxWomen.CheckedChanged += chkboxWomen_CheckedChanged;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = SystemColors.GradientActiveCaption;
+            panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(label7);
+            panel2.Location = new Point(19, 80);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(132, 39);
+            panel2.TabIndex = 20;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Location = new Point(47, 10);
+            label7.Name = "label7";
+            label7.Size = new Size(44, 17);
+            label7.TabIndex = 0;
+            label7.Text = "MEN";
+            label7.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = SystemColors.GradientActiveCaption;
+            panel7.Controls.Add(chkboxS);
+            panel7.Controls.Add(label13);
+            panel7.Location = new Point(89, 392);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(59, 46);
+            panel7.TabIndex = 27;
+            // 
+            // chkboxS
+            // 
+            chkboxS.AutoSize = true;
+            chkboxS.Location = new Point(35, 17);
+            chkboxS.Name = "chkboxS";
+            chkboxS.Size = new Size(15, 14);
+            chkboxS.TabIndex = 1;
+            chkboxS.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.Location = new Point(13, 14);
+            label13.Name = "label13";
+            label13.Size = new Size(16, 17);
+            label13.TabIndex = 0;
+            label13.Text = "S";
+            // 
+            // panel3
+            // 
+            panel3.BackColor = SystemColors.GradientActiveCaption;
+            panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(label9);
+            panel3.Location = new Point(19, 194);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(132, 39);
+            panel3.TabIndex = 21;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.Location = new Point(32, 10);
+            label9.Name = "label9";
+            label9.Size = new Size(64, 17);
+            label9.TabIndex = 0;
+            label9.Text = "UNISEX";
+            label9.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = SystemColors.GradientActiveCaption;
+            panel5.BorderStyle = BorderStyle.FixedSingle;
+            panel5.Controls.Add(label11);
+            panel5.Location = new Point(19, 136);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(132, 39);
+            panel5.TabIndex = 22;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.Location = new Point(31, 11);
+            label11.Name = "label11";
+            label11.Size = new Size(70, 17);
+            label11.TabIndex = 0;
+            label11.Text = "WOMEN";
+            label11.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // chkboxMen
+            // 
+            chkboxMen.AutoSize = true;
+            chkboxMen.Location = new Point(157, 94);
+            chkboxMen.Name = "chkboxMen";
+            chkboxMen.Size = new Size(15, 14);
+            chkboxMen.TabIndex = 19;
+            chkboxMen.UseVisualStyleBackColor = true;
+            chkboxMen.CheckedChanged += chkboxMen_CheckedChanged;
             // 
             // lblPrice
             // 
@@ -112,72 +412,6 @@
             btnApply.Text = "APPLY ALL";
             btnApply.UseVisualStyleBackColor = false;
             // 
-            // btnXXL
-            // 
-            btnXXL.BackColor = SystemColors.GradientInactiveCaption;
-            btnXXL.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnXXL.Location = new Point(157, 448);
-            btnXXL.Name = "btnXXL";
-            btnXXL.Size = new Size(63, 46);
-            btnXXL.TabIndex = 15;
-            btnXXL.Text = "XXL";
-            btnXXL.UseVisualStyleBackColor = false;
-            // 
-            // btnXL
-            // 
-            btnXL.BackColor = SystemColors.GradientInactiveCaption;
-            btnXL.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnXL.Location = new Point(88, 448);
-            btnXL.Name = "btnXL";
-            btnXL.Size = new Size(63, 46);
-            btnXL.TabIndex = 14;
-            btnXL.Text = "XL";
-            btnXL.UseVisualStyleBackColor = false;
-            // 
-            // btnL
-            // 
-            btnL.BackColor = SystemColors.GradientInactiveCaption;
-            btnL.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnL.Location = new Point(19, 448);
-            btnL.Name = "btnL";
-            btnL.Size = new Size(63, 46);
-            btnL.TabIndex = 13;
-            btnL.Text = "L";
-            btnL.UseVisualStyleBackColor = false;
-            // 
-            // btnM
-            // 
-            btnM.BackColor = SystemColors.GradientInactiveCaption;
-            btnM.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnM.Location = new Point(157, 388);
-            btnM.Name = "btnM";
-            btnM.Size = new Size(63, 46);
-            btnM.TabIndex = 12;
-            btnM.Text = "M";
-            btnM.UseVisualStyleBackColor = false;
-            // 
-            // btnS
-            // 
-            btnS.BackColor = SystemColors.GradientInactiveCaption;
-            btnS.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnS.Location = new Point(88, 388);
-            btnS.Name = "btnS";
-            btnS.Size = new Size(63, 46);
-            btnS.TabIndex = 11;
-            btnS.Text = "S";
-            btnS.UseVisualStyleBackColor = false;
-            // 
-            // btnXS
-            // 
-            btnXS.BackColor = SystemColors.GradientInactiveCaption;
-            btnXS.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnXS.Location = new Point(19, 388);
-            btnXS.Name = "btnXS";
-            btnXS.Size = new Size(63, 46);
-            btnXS.TabIndex = 10;
-            btnXS.Text = "XS";
-            btnXS.UseVisualStyleBackColor = false;
-            // 
             // label8
             // 
             label8.AutoSize = true;
@@ -197,7 +431,8 @@
             trackPrice.Size = new Size(162, 45);
             trackPrice.TabIndex = 6;
             trackPrice.TickFrequency = 5;
-            trackPrice.Value = 10;
+            trackPrice.Value = 100;
+            trackPrice.Scroll += trackPrice_Scroll;
             // 
             // label5
             // 
@@ -208,39 +443,6 @@
             label5.Size = new Size(113, 17);
             label5.TabIndex = 5;
             label5.Text = "PRICE RANGE";
-            // 
-            // btnWomen
-            // 
-            btnWomen.BackColor = SystemColors.GradientInactiveCaption;
-            btnWomen.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnWomen.Location = new Point(19, 126);
-            btnWomen.Name = "btnWomen";
-            btnWomen.Size = new Size(155, 54);
-            btnWomen.TabIndex = 4;
-            btnWomen.Text = "WOMEN";
-            btnWomen.UseVisualStyleBackColor = false;
-            // 
-            // btnKids
-            // 
-            btnKids.BackColor = SystemColors.GradientInactiveCaption;
-            btnKids.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnKids.Location = new Point(19, 186);
-            btnKids.Name = "btnKids";
-            btnKids.Size = new Size(155, 50);
-            btnKids.TabIndex = 3;
-            btnKids.Text = "KIDS";
-            btnKids.UseVisualStyleBackColor = false;
-            // 
-            // btnMen
-            // 
-            btnMen.BackColor = SystemColors.GradientInactiveCaption;
-            btnMen.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnMen.Location = new Point(19, 71);
-            btnMen.Name = "btnMen";
-            btnMen.Size = new Size(155, 49);
-            btnMen.TabIndex = 2;
-            btnMen.Text = "MEN";
-            btnMen.UseVisualStyleBackColor = false;
             // 
             // label4
             // 
@@ -324,6 +526,11 @@
             btnSearch.UseVisualStyleBackColor = false;
             btnSearch.Click += btnSearch_Click;
             // 
+            // timerNoResults
+            // 
+            timerNoResults.Interval = 3000;
+            timerNoResults.Tick += timerNoResults_Tick;
+            // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
@@ -343,6 +550,24 @@
             Load += Home_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel10.ResumeLayout(false);
+            panel10.PerformLayout();
+            panel9.ResumeLayout(false);
+            panel9.PerformLayout();
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)trackPrice).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -357,21 +582,40 @@
         private Label label4;
         private TrackBar trackPrice;
         private Label label5;
-        private Button btnWomen;
-        private Button btnKids;
-        private Button btnMen;
         private Label label8;
-        private Button btnXL;
-        private Button btnL;
-        private Button btnM;
-        private Button btnS;
-        private Button btnXS;
-        private Button btnXXL;
         private Button btnApply;
         private Label lblSearch;
         private FlowLayoutPanel flowHome;
         private Label lblPrice;
         private Label label6;
         private Button btnSearch;
+        private Panel panel2;
+        private Label label7;
+        private CheckBox chkboxMen;
+        private Panel panel3;
+        private Label label9;
+        private Panel panel5;
+        private Label label11;
+        private CheckBox chkboxUnisex;
+        private CheckBox chkboxWomen;
+        private Panel panel4;
+        private Label label10;
+        private Panel panel7;
+        private CheckBox chkboxS;
+        private Label label13;
+        private Panel panel6;
+        private CheckBox chkboxM;
+        private Label label12;
+        private CheckBox chkboxXS;
+        private Panel panel10;
+        private CheckBox chkboxL;
+        private Label label16;
+        private Panel panel9;
+        private CheckBox chkboxXXL;
+        private Label label15;
+        private Panel panel8;
+        private CheckBox chkboxXL;
+        private Label label14;
+        private System.Windows.Forms.Timer timerNoResults;
     }
 }

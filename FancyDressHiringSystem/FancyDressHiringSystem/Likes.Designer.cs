@@ -73,10 +73,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Monotype Corsiva", 22.2F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            label1.Location = new Point(862, 64);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(603, 38);
             label1.Name = "label1";
-            label1.Size = new Size(187, 54);
+            label1.Size = new Size(128, 37);
             label1.TabIndex = 3;
             label1.Text = "Attire hire";
             // 
@@ -84,10 +83,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(661, 141);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(463, 85);
             label2.Name = "label2";
-            label2.Size = new Size(137, 32);
+            label2.Size = new Size(93, 21);
             label2.TabIndex = 5;
             label2.Text = "YOUR LIKES";
             label2.Click += label2_Click;
@@ -98,38 +96,36 @@
             panel2.Controls.Add(label3);
             panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(label22);
-            panel2.Location = new Point(590, 194);
-            panel2.Margin = new Padding(4, 4, 4, 4);
+            panel2.Location = new Point(413, 116);
+            panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(269, 248);
+            panel2.Size = new Size(188, 149);
             panel2.TabIndex = 6;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(4, 215);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(3, 129);
             label3.Name = "label3";
-            label3.Size = new Size(84, 25);
+            label3.Size = new Size(54, 15);
             label3.TabIndex = 7;
             label3.Text = "details ▼";
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(35, 45);
-            pictureBox1.Margin = new Padding(4, 4, 4, 4);
+            pictureBox1.Location = new Point(24, 27);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(204, 166);
+            pictureBox1.Size = new Size(143, 100);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
             // label22
             // 
             label22.AutoSize = true;
-            label22.Location = new Point(215, 16);
-            label22.Margin = new Padding(4, 0, 4, 0);
+            label22.Location = new Point(150, 10);
             label22.Name = "label22";
-            label22.Size = new Size(37, 25);
+            label22.Size = new Size(19, 15);
             label22.TabIndex = 14;
             label22.Text = "❤️";
             // 
@@ -139,38 +135,36 @@
             panel1.Controls.Add(label4);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(label5);
-            panel1.Location = new Point(1051, 194);
-            panel1.Margin = new Padding(4, 4, 4, 4);
+            panel1.Location = new Point(736, 116);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(269, 248);
+            panel1.Size = new Size(188, 149);
             panel1.TabIndex = 7;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(4, 215);
-            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Location = new Point(3, 129);
             label4.Name = "label4";
-            label4.Size = new Size(84, 25);
+            label4.Size = new Size(54, 15);
             label4.TabIndex = 18;
             label4.Text = "details ▼";
             // 
             // pictureBox2
             // 
-            pictureBox2.Location = new Point(35, 45);
-            pictureBox2.Margin = new Padding(4, 4, 4, 4);
+            pictureBox2.Location = new Point(24, 27);
+            pictureBox2.Margin = new Padding(3, 2, 3, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(204, 166);
+            pictureBox2.Size = new Size(143, 100);
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(215, 16);
-            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Location = new Point(150, 10);
             label5.Name = "label5";
-            label5.Size = new Size(37, 25);
+            label5.Size = new Size(19, 15);
             label5.TabIndex = 14;
             label5.Text = "❤️";
             // 
@@ -180,38 +174,36 @@
             panel3.Controls.Add(label6);
             panel3.Controls.Add(pictureBox3);
             panel3.Controls.Add(label7);
-            panel3.Location = new Point(590, 500);
-            panel3.Margin = new Padding(4, 4, 4, 4);
+            panel3.Location = new Point(413, 300);
+            panel3.Margin = new Padding(3, 2, 3, 2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(269, 248);
+            panel3.Size = new Size(188, 149);
             panel3.TabIndex = 8;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(4, 215);
-            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Location = new Point(3, 129);
             label6.Name = "label6";
-            label6.Size = new Size(84, 25);
+            label6.Size = new Size(54, 15);
             label6.TabIndex = 18;
             label6.Text = "details ▼";
             // 
             // pictureBox3
             // 
-            pictureBox3.Location = new Point(35, 45);
-            pictureBox3.Margin = new Padding(4, 4, 4, 4);
+            pictureBox3.Location = new Point(24, 27);
+            pictureBox3.Margin = new Padding(3, 2, 3, 2);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(204, 166);
+            pictureBox3.Size = new Size(143, 100);
             pictureBox3.TabIndex = 0;
             pictureBox3.TabStop = false;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(215, 16);
-            label7.Margin = new Padding(4, 0, 4, 0);
+            label7.Location = new Point(150, 10);
             label7.Name = "label7";
-            label7.Size = new Size(37, 25);
+            label7.Size = new Size(19, 15);
             label7.TabIndex = 14;
             label7.Text = "❤️";
             // 
@@ -221,38 +213,36 @@
             panel4.Controls.Add(label8);
             panel4.Controls.Add(pictureBox4);
             panel4.Controls.Add(label9);
-            panel4.Location = new Point(1051, 500);
-            panel4.Margin = new Padding(4, 4, 4, 4);
+            panel4.Location = new Point(736, 300);
+            panel4.Margin = new Padding(3, 2, 3, 2);
             panel4.Name = "panel4";
-            panel4.Size = new Size(269, 248);
+            panel4.Size = new Size(188, 149);
             panel4.TabIndex = 9;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(4, 215);
-            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Location = new Point(3, 129);
             label8.Name = "label8";
-            label8.Size = new Size(84, 25);
+            label8.Size = new Size(54, 15);
             label8.TabIndex = 18;
             label8.Text = "details ▼";
             // 
             // pictureBox4
             // 
-            pictureBox4.Location = new Point(35, 45);
-            pictureBox4.Margin = new Padding(4, 4, 4, 4);
+            pictureBox4.Location = new Point(24, 27);
+            pictureBox4.Margin = new Padding(3, 2, 3, 2);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(204, 166);
+            pictureBox4.Size = new Size(143, 100);
             pictureBox4.TabIndex = 0;
             pictureBox4.TabStop = false;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(215, 16);
-            label9.Margin = new Padding(4, 0, 4, 0);
+            label9.Location = new Point(150, 10);
             label9.Name = "label9";
-            label9.Size = new Size(37, 25);
+            label9.Size = new Size(19, 15);
             label9.TabIndex = 14;
             label9.Text = "❤️";
             // 
@@ -268,9 +258,9 @@
             panel5.Controls.Add(label10);
             panel5.Controls.Add(label24);
             panel5.Location = new Point(0, 0);
-            panel5.Margin = new Padding(4, 4, 4, 4);
+            panel5.Margin = new Padding(3, 2, 3, 2);
             panel5.Name = "panel5";
-            panel5.Size = new Size(451, 774);
+            panel5.Size = new Size(316, 464);
             panel5.TabIndex = 10;
             panel5.Paint += panel5_Paint;
             // 
@@ -278,57 +268,55 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.Location = new Point(130, 676);
-            label11.Margin = new Padding(4, 0, 4, 0);
+            label11.Location = new Point(91, 406);
             label11.Name = "label11";
-            label11.Size = new Size(201, 48);
+            label11.Size = new Size(136, 32);
             label11.TabIndex = 16;
             label11.Text = "🚪Logout  ";
             // 
             // panel9
             // 
             panel9.BackColor = Color.Black;
-            panel9.Location = new Point(0, 621);
-            panel9.Margin = new Padding(4, 4, 4, 4);
+            panel9.Location = new Point(0, 373);
+            panel9.Margin = new Padding(3, 2, 3, 2);
             panel9.Name = "panel9";
-            panel9.Size = new Size(454, 2);
+            panel9.Size = new Size(318, 1);
             panel9.TabIndex = 20;
             // 
             // panel8
             // 
             panel8.BackColor = Color.Black;
-            panel8.Location = new Point(0, 375);
-            panel8.Margin = new Padding(4, 4, 4, 4);
+            panel8.Location = new Point(0, 225);
+            panel8.Margin = new Padding(3, 2, 3, 2);
             panel8.Name = "panel8";
-            panel8.Size = new Size(454, 2);
+            panel8.Size = new Size(318, 1);
             panel8.TabIndex = 12;
             // 
             // panel7
             // 
             panel7.BackColor = Color.Black;
-            panel7.Location = new Point(4, 260);
-            panel7.Margin = new Padding(4, 4, 4, 4);
+            panel7.Location = new Point(3, 156);
+            panel7.Margin = new Padding(3, 2, 3, 2);
             panel7.Name = "panel7";
-            panel7.Size = new Size(454, 2);
+            panel7.Size = new Size(318, 1);
             panel7.TabIndex = 12;
             // 
             // panel6
             // 
             panel6.BackColor = Color.Black;
-            panel6.Location = new Point(0, 132);
-            panel6.Margin = new Padding(4, 4, 4, 4);
+            panel6.Location = new Point(0, 79);
+            panel6.Margin = new Padding(3, 2, 3, 2);
             panel6.Name = "panel6";
-            panel6.Size = new Size(454, 2);
+            panel6.Size = new Size(318, 1);
             panel6.TabIndex = 11;
             // 
             // label23
             // 
             label23.AutoSize = true;
             label23.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label23.Location = new Point(130, 49);
-            label23.Margin = new Padding(4, 0, 4, 0);
+            label23.Location = new Point(91, 29);
             label23.Name = "label23";
-            label23.Size = new Size(176, 48);
+            label23.Size = new Size(119, 32);
             label23.TabIndex = 19;
             label23.Text = "🏠 Home";
             // 
@@ -336,10 +324,9 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.Location = new Point(130, 294);
-            label10.Margin = new Padding(4, 0, 4, 0);
+            label10.Location = new Point(91, 176);
             label10.Name = "label10";
-            label10.Size = new Size(142, 48);
+            label10.Size = new Size(96, 32);
             label10.TabIndex = 17;
             label10.Text = "❤️ Like";
             // 
@@ -347,43 +334,41 @@
             // 
             label24.AutoSize = true;
             label24.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label24.Location = new Point(130, 184);
-            label24.Margin = new Padding(4, 0, 4, 0);
+            label24.Location = new Point(91, 110);
             label24.Name = "label24";
-            label24.Size = new Size(172, 48);
+            label24.Size = new Size(115, 32);
             label24.TabIndex = 18;
             label24.Text = "📦 Order";
             // 
             // label25
             // 
             label25.AutoSize = true;
-            label25.Location = new Point(736, 68);
-            label25.Margin = new Padding(4, 0, 4, 0);
+            label25.Location = new Point(515, 41);
             label25.Name = "label25";
-            label25.Size = new Size(0, 25);
+            label25.Size = new Size(0, 15);
             label25.TabIndex = 15;
             // 
             // panel10
             // 
             panel10.BackColor = Color.Black;
-            panel10.Location = new Point(1356, 170);
-            panel10.Margin = new Padding(4, 4, 4, 4);
+            panel10.Location = new Point(949, 102);
+            panel10.Margin = new Padding(3, 2, 3, 2);
             panel10.Name = "panel10";
-            panel10.Size = new Size(2, 541);
+            panel10.Size = new Size(1, 325);
             panel10.TabIndex = 16;
             // 
             // panel11
             // 
             panel11.BackColor = Color.Black;
-            panel11.Location = new Point(1344, 260);
-            panel11.Margin = new Padding(4, 4, 4, 4);
+            panel11.Location = new Point(941, 156);
+            panel11.Margin = new Padding(3, 2, 3, 2);
             panel11.Name = "panel11";
-            panel11.Size = new Size(30, 20);
+            panel11.Size = new Size(21, 12);
             panel11.TabIndex = 17;
             // 
             // Likes
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel11);
             Controls.Add(panel10);
@@ -395,9 +380,9 @@
             Controls.Add(panel2);
             Controls.Add(label2);
             Controls.Add(label1);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Likes";
-            Size = new Size(1442, 774);
+            Size = new Size(1009, 464);
             Load += Likes_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();

@@ -18,6 +18,7 @@ namespace FancyDressHiringSystem
         {
             InitializeComponent();
             LoadClothes();
+            lblPrice.Text = "£" + trackPrice.Value.ToString(); // Set the initial price label to show the current value of the price trackbar
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -128,46 +129,7 @@ namespace FancyDressHiringSystem
 
         public void LoadClothes()
         {
-            flowHome.Controls.Clear();
-
-            // Connection string for the database
-            string connString = "Server=localhost;Database=FancyDressDB;Trusted_Connection=True;TrustServerCertificate=True;";
-
-            // Create a connection to the database
-            using (SqlConnection conn = new SqlConnection(connString))
-            {
-                conn.Open(); // Open the connection
-
-                string query = "SELECT Id, Name, Price, ImagePath FROM Clothes"; // SQL query to retrieve cloth data
-
-                // Execute the query and read the data
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    // Use a SqlDataReader to read the data from the database
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            // Create a new cloth card for each cloth in the database
-                            ClothCard card = new ClothCard();
-                            card.ClothID = Convert.ToInt32(reader["Id"]);
-                            card.ClothName = reader["Name"].ToString();
-                            card.ClothPrice = "£" + reader["Price"].ToString();
-                            string imagePath = reader["ImagePath"].ToString();
-
-                            // Load the image from the file path and set it to the picture box
-                            if (File.Exists(imagePath))
-                            {
-                                card.ClothImage = Image.FromFile(imagePath);
-                            }
-                            card.ClothGender = reader["Gender"].ToString();
-                            card.ClothSize = reader["Size"].ToString();
-
-                            flowHome.Controls.Add(card); // Add the cloth card to the flow layout panel
-                        }
-                    }
-                }
-            }
+            LoadClothesWithFilters(); // Load clothes with the default filters
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -192,12 +154,16 @@ namespace FancyDressHiringSystem
                     // Use parameterized query to prevent SQL injection
                     cmd.Parameters.AddWithValue("@searchTerm", searchTerm);
 
+                    bool hasResults = false; // Flag to track if any results were found
+
                     // Use a SqlDataReader to read the data from the database
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         // Check if any results were found
                         while (reader.Read())
                         {
+                            hasResults = true; // Set the flag to true if at least one result is found 
+
                             // Create a new cloth card for each cloth in the search results
                             ClothCard card = new ClothCard();
                             card.ClothID = Convert.ToInt32(reader["Id"]);
@@ -214,8 +180,159 @@ namespace FancyDressHiringSystem
                             flowHome.Controls.Add(card); // Add the cloth card to the flow layout panel
                         }
                     }
+
+                    if (!hasResults)
+                    {
+                        // Display a message if no results were found
+                        Label lblNoResults = new Label();
+                        lblNoResults.Text = "No clothes found matching the search term.";
+                        lblNoResults.AutoSize = true;
+                        lblNoResults.Font = new Font("Arial", 14, FontStyle.Bold);
+                        lblNoResults.ForeColor = Color.Red;
+                        lblNoResults.TextAlign = ContentAlignment.MiddleCenter;
+                        lblNoResults.Padding = new Padding(20);
+                        flowHome.Controls.Add(lblNoResults); // Add the label to the flow layout panel
+
+                        timerNoResults.Start(); // Start the timer to reset the search after a short delay
+                    }
                 }
             }
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+        }
+
+        public void LoadClothesWithFilters()
+        {
+            // Clear the flow layout panel before loading the filtered clothes
+            flowHome.Controls.Clear();
+
+            // Connection string for the database
+            string connString = "Server=localhost;Database=FancyDressDB;Trusted_Connection=True;TrustServerCertificate=True;";
+
+            //  Create a connection to the database
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                conn.Open(); // Open the connection
+
+                // SqL query to retrieve clothes based on the selected filters
+                string query = "SELECT * FROM Clothes WHERE 1=1"; // Start with a base query
+
+                // Gender filer
+                List<string> genders = new List<string>();
+
+                // Check which gender checkboxes are checked and add the corresponding genders to the list for the SQL query 
+                if (chkboxMen.Checked)
+                {
+                    genders.Add("Male");
+                }
+
+                if (chkboxWomen.Checked)
+                {
+                    genders.Add("Women");
+                }
+
+                if (chkboxUnisex.Checked)
+                {
+                    genders.Add("Unisex");
+                }
+
+                // If any gender checkboxes are checked add the gender filter to the SQL query using the IN clause to filter by the selected genders  
+                if (genders.Count > 0)
+                {
+                    query += " AND Gender IN (" + string.Join(",", genders.Select(g => $"'{g}'")) + ")";
+                }
+
+                // Price filter
+                query += " AND Price <= @price"; // Add price filter to the SQL query
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    // Add the price parameter to the SQL query
+                    cmd.Parameters.AddWithValue("@price", trackPrice.Value);
+
+                    bool hasResults = false; // Flag to track if any results were found
+
+                    // Use a SqlDataReader to read the data from the database
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            hasResults = true; // Set the flag to true if at least one result is found
+                            // Create a new cloth card for each cloth in the database
+                            ClothCard card = new ClothCard();
+                            card.ClothID = Convert.ToInt32(reader["Id"]);
+                            card.ClothName = reader["Name"].ToString();
+                            card.ClothPrice = "£" + reader["Price"].ToString();
+                            string imagePath = reader["ImagePath"].ToString();
+                            // Load the image from the file path and set it to the picture box
+                            if (File.Exists(imagePath))
+                            {
+                                card.ClothImage = Image.FromFile(imagePath);
+                            }
+                            card.ClothGender = reader["Gender"].ToString();
+                            card.ClothSize = reader["Size"].ToString();
+
+                            flowHome.Controls.Add(card); // Add the cloth card to the flow layout panel
+                        }
+                    }
+
+                    // If no results were found, display a message to the user
+                    if (!hasResults)
+                    {
+                        // Display a message if no results were found
+                        Label lblNoResults = new Label();
+                        lblNoResults.Text = "No clothes found matching the selected filters.";
+                        lblNoResults.AutoSize = true;
+                        lblNoResults.Font = new Font("Arial", 14, FontStyle.Bold);
+                        lblNoResults.ForeColor = Color.Red;
+                        lblNoResults.TextAlign = ContentAlignment.MiddleCenter;
+                        lblNoResults.Padding = new Padding(20);
+                        flowHome.Controls.Add(lblNoResults); // Add the label to the flow layout panel
+
+                        timerNoResults.Start(); // Start the timer to reset the filters after a short delay
+                    }
+                }
+            }
+
+
+        }
+
+        private void chkboxMen_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadClothesWithFilters(); // Reload the clothes with the updated
+        }
+
+        private void chkboxWomen_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadClothesWithFilters(); // Reload the clothes with the updated filters
+        }
+
+        private void chkboxUnisex_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadClothesWithFilters(); // Reload the clothes with the updated filters
+        }
+
+        private void trackPrice_Scroll(object sender, EventArgs e)
+        {
+            lblPrice.Text = "£" + trackPrice.Value.ToString(); // Update the price label to show the current value of the price trackbar
+            LoadClothesWithFilters(); // Reload the clothes with the updated filters
+        }
+
+        private void timerNoResults_Tick(object sender, EventArgs e)
+        {
+            timerNoResults.Stop(); // Stop the timer
+
+            // Reset filters
+            chkboxMen.Checked = false;
+            chkboxWomen.Checked = false;
+            chkboxUnisex.Checked = false;
+
+            trackPrice.Value = trackPrice.Maximum; // Reset the price filter to the maximum value
+
+            // Reload the clothes with the default filters
+            LoadClothesWithFilters();
         }
     }
 }
