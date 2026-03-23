@@ -18,7 +18,7 @@ namespace FancyDressHiringSystem
         {
             InitializeComponent();
             LoadClothes();
-            lblPrice.Text = "£" + trackPrice.Value.ToString(); // Set the initial price label to show the current value of the price trackbar
+            lblPrice.Text = "£" + trackPrice.Maximum.ToString(); // Set the initial price label to show the current value of the price trackbar
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -244,6 +244,45 @@ namespace FancyDressHiringSystem
                     query += " AND Gender IN (" + string.Join(",", genders.Select(g => $"'{g}'")) + ")";
                 }
 
+                // Size filter
+                List<string> sizes = new List<string>();
+
+                // Check which size checkboxes are checked and add the corresponding sizes to the list for the SQL query
+                if (chkboxS.Checked)
+                {
+                    sizes.Add("S");
+                }
+
+                if (chkboxM.Checked)
+                {
+                    sizes.Add("M");
+                }
+
+                if (chkboxL.Checked)
+                {
+                    sizes.Add("L");
+                }
+
+                if (chkboxXS.Checked)
+                {
+                    sizes.Add("XS");
+                }
+
+                if (chkboxXL.Checked)
+                {
+                    sizes.Add("XL");
+                }
+
+                if (chkboxXXL.Checked)
+                {
+                    sizes.Add("XXL");
+                }
+
+                if (sizes.Count > 0)
+                {
+                    query += " AND Size IN (" + string.Join(query, sizes.Select(s => $"'{s}'")) + ")"; // Add size filter to the SQL query using the IN clause to filter by the selected sizes
+                }
+
                 // Price filter
                 query += " AND Price <= @price"; // Add price filter to the SQL query
 
@@ -333,6 +372,60 @@ namespace FancyDressHiringSystem
 
             // Reload the clothes with the default filters
             LoadClothesWithFilters();
+        }
+
+        private void chkboxXS_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadClothesWithFilters();
+        }
+
+        private void chkboxS_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadClothesWithFilters();
+        }
+
+        private void chkboxM_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadClothesWithFilters();
+        }
+
+        private void chkboxXL_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadClothesWithFilters();
+        }
+
+        private void chkboxXXL_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadClothesWithFilters();
+        }
+
+        private void chkboxL_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadClothesWithFilters();
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            // Clear the checkboxes
+            chkboxMen.Checked = false;
+            chkboxWomen.Checked = false;
+            chkboxUnisex.Checked = false;
+            chkboxM.Checked = false;
+            chkboxS.Checked = false;
+            chkboxL.Checked = false;
+            chkboxXS.Checked = false;
+            chkboxXL.Checked = false;
+            chkboxXXL.Checked = false;
+
+            // Track bar reset
+            trackPrice.Value = trackPrice.Maximum; // Reset the price filter to the maximum value
+            lblPrice.Text = "£" + trackPrice.Maximum.ToString();
+
+            txtSearch.Text = ""; // Clear the search box
+
+            LoadClothesWithFilters(); // Reload the clothes with the default filters
+
+            
         }
     }
 }

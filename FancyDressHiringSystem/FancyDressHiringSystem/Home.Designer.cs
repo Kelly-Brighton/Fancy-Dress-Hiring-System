@@ -59,7 +59,7 @@
             chkboxMen = new CheckBox();
             lblPrice = new Label();
             label6 = new Label();
-            btnApply = new Button();
+            btnReset = new Button();
             label8 = new Label();
             trackPrice = new TrackBar();
             label5 = new Label();
@@ -102,7 +102,7 @@
             panel1.Controls.Add(chkboxMen);
             panel1.Controls.Add(lblPrice);
             panel1.Controls.Add(label6);
-            panel1.Controls.Add(btnApply);
+            panel1.Controls.Add(btnReset);
             panel1.Controls.Add(label8);
             panel1.Controls.Add(trackPrice);
             panel1.Controls.Add(label5);
@@ -131,6 +131,7 @@
             chkboxL.Size = new Size(15, 14);
             chkboxL.TabIndex = 1;
             chkboxL.UseVisualStyleBackColor = true;
+            chkboxL.CheckedChanged += chkboxL_CheckedChanged;
             // 
             // label16
             // 
@@ -160,6 +161,7 @@
             chkboxXXL.Size = new Size(15, 14);
             chkboxXXL.TabIndex = 1;
             chkboxXXL.UseVisualStyleBackColor = true;
+            chkboxXXL.CheckedChanged += chkboxXXL_CheckedChanged;
             // 
             // label15
             // 
@@ -189,6 +191,7 @@
             chkboxXL.Size = new Size(15, 14);
             chkboxXL.TabIndex = 1;
             chkboxXL.UseVisualStyleBackColor = true;
+            chkboxXL.CheckedChanged += chkboxXL_CheckedChanged;
             // 
             // label14
             // 
@@ -218,6 +221,7 @@
             chkboxM.Size = new Size(15, 14);
             chkboxM.TabIndex = 1;
             chkboxM.UseVisualStyleBackColor = true;
+            chkboxM.CheckedChanged += chkboxM_CheckedChanged;
             // 
             // label12
             // 
@@ -247,6 +251,7 @@
             chkboxXS.Size = new Size(15, 14);
             chkboxXS.TabIndex = 1;
             chkboxXS.UseVisualStyleBackColor = true;
+            chkboxXS.CheckedChanged += chkboxXS_CheckedChanged;
             // 
             // label10
             // 
@@ -318,6 +323,7 @@
             chkboxS.Size = new Size(15, 14);
             chkboxS.TabIndex = 1;
             chkboxS.UseVisualStyleBackColor = true;
+            chkboxS.CheckedChanged += chkboxS_CheckedChanged;
             // 
             // label13
             // 
@@ -401,16 +407,17 @@
             label6.TabIndex = 17;
             label6.Text = "Max Price:";
             // 
-            // btnApply
+            // btnReset
             // 
-            btnApply.BackColor = SystemColors.GradientActiveCaption;
-            btnApply.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnApply.Location = new Point(31, 517);
-            btnApply.Name = "btnApply";
-            btnApply.Size = new Size(173, 45);
-            btnApply.TabIndex = 16;
-            btnApply.Text = "APPLY ALL";
-            btnApply.UseVisualStyleBackColor = false;
+            btnReset.BackColor = SystemColors.GradientActiveCaption;
+            btnReset.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnReset.Location = new Point(31, 517);
+            btnReset.Name = "btnReset";
+            btnReset.Size = new Size(173, 45);
+            btnReset.TabIndex = 16;
+            btnReset.Text = "RESET ALL";
+            btnReset.UseVisualStyleBackColor = false;
+            btnReset.Click += btnReset_Click;
             // 
             // label8
             // 
@@ -583,7 +590,7 @@
         private TrackBar trackPrice;
         private Label label5;
         private Label label8;
-        private Button btnApply;
+        private Button btnReset;
         private Label lblSearch;
         private FlowLayoutPanel flowHome;
         private Label lblPrice;
