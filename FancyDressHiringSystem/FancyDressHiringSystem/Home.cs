@@ -306,6 +306,7 @@ namespace FancyDressHiringSystem
                             card.ClothPrice = "£" + reader["Price"].ToString();
                             string imagePath = reader["ImagePath"].ToString();
                             // Load the image from the file path and set it to the picture box
+
                             if (File.Exists(imagePath))
                             {
                                 card.ClothImage = Image.FromFile(imagePath);
