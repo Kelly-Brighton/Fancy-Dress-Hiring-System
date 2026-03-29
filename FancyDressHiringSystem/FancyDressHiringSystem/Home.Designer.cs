@@ -520,6 +520,7 @@
             flowHome.Name = "flowHome";
             flowHome.Size = new Size(468, 494);
             flowHome.TabIndex = 29;
+            flowHome.Paint += flowHome_Paint;
             // 
             // btnSearch
             // 

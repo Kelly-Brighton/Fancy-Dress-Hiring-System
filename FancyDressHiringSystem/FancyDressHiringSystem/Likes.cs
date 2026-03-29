@@ -26,12 +26,13 @@ namespace FancyDressHiringSystem
         public void LoadLikes()
         {
             // Clear existing controls before displaying search results
-            flowLayoutPanel1.Controls.Clear();
+            flowLikes.Controls.Clear();
+
             // Connection string for the database
             string connString = "Server=localhost;Database=FancyDressDB;Trusted_Connection=True;TrustServerCertificate=True;";
 
             // Get the current logged-in user's username
-            string username = "testuser";
+            string username = Login.LoggedInUser;
 
             // Create and open a connection to the database
             using (SqlConnection conn = new SqlConnection(connString))
@@ -40,10 +41,10 @@ namespace FancyDressHiringSystem
 
                 // SQL query to retrieve liked items for the current user
                 // Joins Likes table with Clothes table to get full item details
-                string query = @"SELECT Clothes.Id, Clothes.Name, Clothes.ImagePath 
-                         FROM Likes 
-                         JOIN Clothes ON Likes.CostumeId = Clothes.Id
-                         WHERE Likes.CustomerName = @name";
+                string query = @"SELECT Likes.Id, Likes.CostumeId, Likes.Size, Clothes.Price, Clothes.Name, Clothes.Gender, Clothes.ImagePath 
+                 FROM Likes
+                 JOIN Clothes ON Likes.CostumeId = Clothes.Id
+                 WHERE Likes.CustomerName = @name";
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
@@ -56,24 +57,25 @@ namespace FancyDressHiringSystem
                         // Loop through each record returned from the database
                         while (reader.Read())
                         {
-                            // Create a new LikeCard for each liked item
-                            LikeCard card = new LikeCard();
-                            // Set the card properties using database values
-                            card.CostumeID = Convert.ToInt32(reader["Id"]);
-                            card.CostumeName = reader["Name"].ToString();
-                            // Get the image path and check if the file exists
-                            string imagePath = reader["ImagePath"].ToString();
+                            LikesCard card = new LikesCard();
+                            card.ClothID = Convert.ToInt32(reader["CostumeId"]);
+                            card.ClothName = reader["Name"].ToString();
+                            card.ClothPrice = reader["Price"].ToString();
+                            card.ClothGender = reader["Gender"].ToString();
+                            card.ClothSize = reader["Size"].ToString();
 
-                            // Combines with app path
-                            string fullPath = Path.Combine(Application.StartupPath, imagePath);
+                            string imagePath = Path.Combine(Application.StartupPath, reader["ImagePath"].ToString());
 
-                            // Check if file exists before loading
-                            if (File.Exists(fullPath))
+                            // Check if the image file exists before trying to load it
+                            if (File.Exists(imagePath))
                             {
-                                card.CostumeImage = Image.FromFile(fullPath);
+                                using (var img = Image.FromFile(imagePath))
+                                {
+                                    card.ClothImage = new Bitmap(img);
+                                }
                             }
-                            // Add the card to the FlowLayoutPanel
-                            flowLayoutPanel1.Controls.Add(card);
+
+                            flowLikes.Controls.Add(card);
                         }
                     }
                 }
@@ -88,13 +90,7 @@ namespace FancyDressHiringSystem
         // Back button
         private void button1_Click(object sender, EventArgs e)
         {
-            // Get reference to the Mainform
-            Mainform main = this.FindForm() as Mainform;
-            // If Mainform exists, call method to show Home page
-            if (main != null)
-            {
-                main.LoadControl(new Home());
-            }
+            
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)

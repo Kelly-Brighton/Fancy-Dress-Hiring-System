@@ -28,33 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            flowLayoutPanel1 = new FlowLayoutPanel();
+            flowLikes = new FlowLayoutPanel();
             SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // flowLikes
             // 
-            flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.Dock = DockStyle.Fill;
-            flowLayoutPanel1.Location = new Point(0, 0);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(668, 524);
-            flowLayoutPanel1.TabIndex = 25;
-            flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
+            flowLikes.AutoScroll = true;
+            flowLikes.Dock = DockStyle.Fill;
+            flowLikes.FlowDirection = FlowDirection.TopDown;
+            flowLikes.Location = new Point(0, 0);
+            flowLikes.Name = "flowLikes";
+            flowLikes.Size = new Size(777, 646);
+            flowLikes.TabIndex = 25;
+            flowLikes.Paint += flowLayoutPanel1_Paint;
             // 
             // Likes
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
-            Controls.Add(flowLayoutPanel1);
+            Controls.Add(flowLikes);
             Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(5);
             Name = "Likes";
-            Size = new Size(668, 524);
+            Size = new Size(777, 646);
             ResumeLayout(false);
         }
 
         #endregion
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel flowLikes;
     }
 }

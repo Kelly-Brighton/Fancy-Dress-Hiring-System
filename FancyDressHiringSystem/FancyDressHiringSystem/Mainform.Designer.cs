@@ -29,29 +29,58 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnLiked = new Button();
+            lblBasket = new Label();
             panel2 = new Panel();
             btnLog = new Button();
-            btnLikes = new Button();
+            btnBask = new Button();
             btnOrders = new Button();
             btnHome = new Button();
             panelContainer = new Panel();
-            lblCount = new Label();
+            lblLiked = new Label();
+            lblOrders = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = SystemColors.GradientActiveCaption;
-            panel1.Controls.Add(lblCount);
+            panel1.Controls.Add(lblOrders);
+            panel1.Controls.Add(lblLiked);
+            panel1.Controls.Add(btnLiked);
+            panel1.Controls.Add(lblBasket);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(btnLog);
-            panel1.Controls.Add(btnLikes);
+            panel1.Controls.Add(btnBask);
             panel1.Controls.Add(btnOrders);
             panel1.Controls.Add(btnHome);
             panel1.Location = new Point(1, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(200, 646);
             panel1.TabIndex = 0;
+            // 
+            // btnLiked
+            // 
+            btnLiked.BackColor = SystemColors.Info;
+            btnLiked.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLiked.Location = new Point(0, 168);
+            btnLiked.Name = "btnLiked";
+            btnLiked.Size = new Size(200, 49);
+            btnLiked.TabIndex = 5;
+            btnLiked.Text = "Liked";
+            btnLiked.UseVisualStyleBackColor = false;
+            btnLiked.Click += btnLiked_Click;
+            // 
+            // lblBasket
+            // 
+            lblBasket.AutoSize = true;
+            lblBasket.BackColor = SystemColors.Info;
+            lblBasket.Font = new Font("Times New Roman", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblBasket.Location = new Point(128, 122);
+            lblBasket.Name = "lblBasket";
+            lblBasket.Size = new Size(18, 14);
+            lblBasket.TabIndex = 4;
+            lblBasket.Text = "lbl";
             // 
             // panel2
             // 
@@ -72,17 +101,17 @@
             btnLog.UseVisualStyleBackColor = false;
             btnLog.Click += btnLog_Click;
             // 
-            // btnLikes
+            // btnBask
             // 
-            btnLikes.BackColor = SystemColors.Info;
-            btnLikes.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLikes.Location = new Point(0, 113);
-            btnLikes.Name = "btnLikes";
-            btnLikes.Size = new Size(200, 49);
-            btnLikes.TabIndex = 2;
-            btnLikes.Text = "Basket";
-            btnLikes.UseVisualStyleBackColor = false;
-            btnLikes.Click += btnLikes_Click;
+            btnBask.BackColor = SystemColors.Info;
+            btnBask.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBask.Location = new Point(0, 113);
+            btnBask.Name = "btnBask";
+            btnBask.Size = new Size(200, 49);
+            btnBask.TabIndex = 2;
+            btnBask.Text = "Basket";
+            btnBask.UseVisualStyleBackColor = false;
+            btnBask.Click += btnLikes_Click;
             // 
             // btnOrders
             // 
@@ -116,16 +145,27 @@
             panelContainer.TabIndex = 1;
             panelContainer.Paint += panelContainer_Paint;
             // 
-            // lblCount
+            // lblLiked
             // 
-            lblCount.AutoSize = true;
-            lblCount.BackColor = SystemColors.Info;
-            lblCount.Font = new Font("Times New Roman", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCount.Location = new Point(128, 122);
-            lblCount.Name = "lblCount";
-            lblCount.Size = new Size(18, 14);
-            lblCount.TabIndex = 4;
-            lblCount.Text = "lbl";
+            lblLiked.AutoSize = true;
+            lblLiked.BackColor = SystemColors.Info;
+            lblLiked.Font = new Font("Times New Roman", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblLiked.Location = new Point(128, 178);
+            lblLiked.Name = "lblLiked";
+            lblLiked.Size = new Size(18, 14);
+            lblLiked.TabIndex = 6;
+            lblLiked.Text = "lbl";
+            // 
+            // lblOrders
+            // 
+            lblOrders.AutoSize = true;
+            lblOrders.BackColor = SystemColors.Info;
+            lblOrders.Font = new Font("Times New Roman", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblOrders.Location = new Point(128, 68);
+            lblOrders.Name = "lblOrders";
+            lblOrders.Size = new Size(18, 14);
+            lblOrders.TabIndex = 7;
+            lblOrders.Text = "lbl";
             // 
             // Mainform
             // 
@@ -149,10 +189,13 @@
         private Panel panel1;
         private Button btnHome;
         private Button btnLog;
-        private Button btnLikes;
+        private Button btnBask;
         private Button btnOrders;
         private Panel panel2;
         private Panel panelContainer;
-        private Label lblCount;
+        private Label lblBasket;
+        private Button btnLiked;
+        private Label lblLiked;
+        private Label lblOrders;
     }
 }

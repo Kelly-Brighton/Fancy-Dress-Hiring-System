@@ -35,41 +35,62 @@ namespace FancyDressHiringSystem
 
         public void LoadOrders()
         {
+            // Clear existing order cards
             flowOrders.Controls.Clear();
+
+            string username = Login.LoggedInUser;
+
+            // Connection string to the database
             string connString = "Server=localhost;Database=FancyDressDB;Trusted_Connection=True;TrustServerCertificate=True;";
-            using (SqlConnection conn = new SqlConnection(connString))
+            try
             {
-                conn.Open();
-
-                string query = "SELECT Orders.Id, Orders.OrderDate, Ordeers.Status, Clothes.ImagePath FROM Orders" +
-                    " JOIN Clothes ON Orders.CostumeId = Clothes.Id";
-
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                // Connect to the database and retrieve orders for the logged-in user   
+                using (SqlConnection conn = new SqlConnection(connString))
                 {
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    conn.Open();
+
+                    // SQL query to get orders along with the image path of the costume
+                    string query = @"SELECT Orders.Id, Orders.OrderDate, Orders.Status, Clothes.ImagePath FROM Orders" +
+                        " JOIN Clothes ON Orders.CostumeId = Clothes.Id WHERE Orders.CustomerName = @name";
+
+                    // Execute the query and create order cards for each order
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        while (reader.Read())
+                        cmd.Parameters.AddWithValue("@name", username);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            OrderCard orderCard = new OrderCard();
-                            orderCard.OrderId = Convert.ToInt32(reader["Id"]);
-                            orderCard.OrderDate = (DateTime)reader["OrderDate"];
-                            orderCard.Status = reader["Status"].ToString();
-                            DateTime dueDate = orderCard.OrderDate.AddDays(10);
-                            orderCard.DueDate = dueDate;
-
-                            string imagePath = Path.Combine(Application.StartupPath, reader["imagePath"].ToString());
-
-                            if (File.Exists(imagePath))
+                            // Loop through the orders and create order cards
+                            while (reader.Read())
                             {
-                                orderCard.CostumeImage = Image.FromFile(imagePath);
-                            }
+                                OrderCard orderCard = new OrderCard();
+                                orderCard.OrderId = Convert.ToInt32(reader["Id"]);
+                                orderCard.OrderDate = (DateTime)reader["OrderDate"];
+                                orderCard.Status = reader["Status"].ToString();
+                                DateTime dueDate = orderCard.OrderDate.AddDays(10);
+                                orderCard.DueDate = dueDate;
 
-                            flowOrders.Controls.Add(orderCard);
+                                string imagePath = Path.Combine(Application.StartupPath, reader["ImagePath"].ToString());
+
+                                if (File.Exists(imagePath))
+                                {
+                                    using (var img = Image.FromFile(imagePath))
+                                    {
+                                        orderCard.CostumeImage = new Bitmap(img); 
+                                    }
+                                }
+
+                                flowOrders.Controls.Add(orderCard);
+                            }
                         }
                     }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading orders: " + ex.Message);
 
+            }
         }
             
     }

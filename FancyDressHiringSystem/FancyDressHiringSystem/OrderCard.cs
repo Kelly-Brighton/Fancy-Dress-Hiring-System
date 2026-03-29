@@ -48,7 +48,7 @@ namespace FancyDressHiringSystem
                 }
 
                 MessageBox.Show("Order " + OrderId + " has been deleted", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information); // Show a message box to inform the user that the order has been deleted
-                this.Parent.Controls.Remove(this);// Remove the order card from the parent control
+                this.Parent?.Controls.Remove(this);// Remove the order card from the parent control
             }
 
         }
@@ -80,7 +80,12 @@ namespace FancyDressHiringSystem
 
         private DateTime dueDate; // Backing field for the DueDate property
 
-        private void label3_Click(object sender, EventArgs e) 
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OrderCard_Load(object sender, EventArgs e)
         {
 
         }

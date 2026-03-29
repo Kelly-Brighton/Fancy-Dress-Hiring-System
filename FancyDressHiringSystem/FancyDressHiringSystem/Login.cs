@@ -13,6 +13,8 @@ namespace FancyDressHiringSystem
 {
     public partial class Login : Form
     {
+        public static string LoggedInUser;
+
         public Login()
         {
             InitializeComponent();
@@ -90,6 +92,7 @@ namespace FancyDressHiringSystem
                                 {
                                     // If a matching record is found, the login is successful
                                     MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    LoggedInUser = username; // Store the logged-in username in a static variable
                                     Mainform mainForm = new Mainform();
                                     mainForm.Show();
                                     this.Hide();

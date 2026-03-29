@@ -46,7 +46,7 @@
             // pictureBox1
             // 
             pictureBox1.Location = new Point(24, 14);
-            pictureBox1.Margin = new Padding(2, 2, 2, 2);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(142, 123);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -58,7 +58,7 @@
             panel1.BackColor = SystemColors.Info;
             panel1.Controls.Add(pictureBox1);
             panel1.Location = new Point(18, 20);
-            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
             panel1.Size = new Size(191, 151);
             panel1.TabIndex = 1;
@@ -157,7 +157,7 @@
             btnCancel.BackColor = Color.Crimson;
             btnCancel.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCancel.Location = new Point(432, 154);
-            btnCancel.Margin = new Padding(2, 2, 2, 2);
+            btnCancel.Margin = new Padding(2);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(97, 30);
             btnCancel.TabIndex = 10;
@@ -180,9 +180,10 @@
             Controls.Add(lblSize);
             Controls.Add(label1);
             Controls.Add(panel1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "OrderCard";
             Size = new Size(544, 194);
+            Load += OrderCard_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             ResumeLayout(false);

@@ -24,6 +24,8 @@ namespace FancyDressHiringSystem
             Home home = new Home();
             LoadControl(home);
             UpdateBasketCount();
+            UpdateOrdersCount();
+            UpdateLikesCount();
         }
 
         private void LoadControl(UserControl uc)
@@ -65,7 +67,7 @@ namespace FancyDressHiringSystem
         {
 
         }
-        
+
         public void UpdateBasketCount()
         {
             string connString = "Server=localhost;Database=FancyDressDB;Trusted_Connection=True;TrustServerCertificate=True;";
@@ -76,17 +78,60 @@ namespace FancyDressHiringSystem
 
                 string query = "SELECT COUNT(*) FROM Basket WHERE CustomerName = @name";
 
-                Login login = new Login();
-                string username = login.Username;
+                string username = Login.LoggedInUser;
 
-                using (SqlCommand cmd = new SqlCommand(query, conn)) {
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
                     cmd.Parameters.AddWithValue("@name", username);
-                    
+
                     int count = (int)cmd.ExecuteScalar();
 
-                    lblCount.Text = count.ToString();
+                    lblBasket.Text = count.ToString();
                 }
             }
+        }
+
+        public void UpdateLikesCount()
+        {
+            string connString = "Server=localhost;Database=FancyDressDB;Trusted_Connection=True;TrustServerCertificate=True;";
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                conn.Open();
+
+                string query = "SELECT COUNT(*) FROM Likes WHERE CustomerName = @name";
+
+                string username = Login.LoggedInUser;
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@name", username);
+                    int count = (int)cmd.ExecuteScalar();
+                    lblLiked.Text = count.ToString();
+                }
+            }
+        }
+
+        public void UpdateOrdersCount()
+        {
+            string connString = "Server=localhost;Database=FancyDressDB;Trusted_Connection=True;TrustServerCertificate=True;";
+            using (SqlConnection conn = new SqlConnection(connString))
+            {
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM Orders WHERE CustomerName = @name";
+                string username = Login.LoggedInUser;
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@name", username);
+                    int count = (int)cmd.ExecuteScalar();
+                    lblOrders.Text = count.ToString();
+                }
+            }
+        }
+
+        private void btnLiked_Click(object sender, EventArgs e)
+        {
+            panelContainer.Controls.Clear();
+            Likes likes = new Likes();
+            LoadControl(likes);
         }
     }
 }

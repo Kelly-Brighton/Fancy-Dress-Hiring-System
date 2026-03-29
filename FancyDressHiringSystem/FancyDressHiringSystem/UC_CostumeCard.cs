@@ -69,7 +69,7 @@ namespace FancyDressHiringSystem
                         }
                         // Show a success message and remove the costume card from the parent control
                         MessageBox.Show(CostumeName + " has been deleted.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Parent.Controls.Remove(this); // Remove the costume card from the parent control
+                        this.Parent?.Controls.Remove(this); // Remove the costume card from the parent control
                     }
                 }
             }

@@ -309,7 +309,10 @@ namespace FancyDressHiringSystem
 
                             if (File.Exists(imagePath))
                             {
-                                card.ClothImage = Image.FromFile(imagePath);
+                                using (var img = Image.FromFile(imagePath))
+                                {
+                                    card.ClothImage = new Bitmap(img);
+                                }
                             }
                             card.ClothGender = reader["Gender"].ToString();
                             card.ClothSize = reader["Size"].ToString();
@@ -426,7 +429,12 @@ namespace FancyDressHiringSystem
 
             LoadClothesWithFilters(); // Reload the clothes with the default filters
 
-            
+
+        }
+
+        private void flowHome_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

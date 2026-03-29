@@ -1,6 +1,6 @@
 ﻿namespace FancyDressHiringSystem
 {
-    partial class ClothCard
+    partial class LikesCard
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,17 +29,16 @@
         private void InitializeComponent()
         {
             pictureBox1 = new PictureBox();
-            btnAdd = new Button();
-            numericQuantity = new NumericUpDown();
             label1 = new Label();
             label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
             lblName = new Label();
             lblPrice = new Label();
-            label3 = new Label();
             lblSize = new Label();
-            label5 = new Label();
             lblGender = new Label();
-            btnLike = new Button();
+            numericQuantity = new NumericUpDown();
+            btnAdd = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericQuantity).BeginInit();
             SuspendLayout();
@@ -49,150 +48,131 @@
             pictureBox1.Dock = DockStyle.Top;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(221, 154);
+            pictureBox1.Size = new Size(208, 154);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            // 
-            // btnAdd
-            // 
-            btnAdd.BackColor = SystemColors.Info;
-            btnAdd.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAdd.Location = new Point(143, 201);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(75, 33);
-            btnAdd.TabIndex = 1;
-            btnAdd.Text = "Add";
-            btnAdd.UseVisualStyleBackColor = false;
-            btnAdd.Click += btnAdd_Click;
-            // 
-            // numericQuantity
-            // 
-            numericQuantity.BackColor = SystemColors.Info;
-            numericQuantity.Location = new Point(3, 210);
-            numericQuantity.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
-            numericQuantity.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            numericQuantity.Name = "numericQuantity";
-            numericQuantity.Size = new Size(120, 23);
-            numericQuantity.TabIndex = 2;
-            numericQuantity.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(5, 161);
+            label1.Location = new Point(12, 157);
             label1.Name = "label1";
             label1.Size = new Size(42, 15);
-            label1.TabIndex = 3;
+            label1.TabIndex = 4;
             label1.Text = "Name:";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(5, 186);
+            label2.Location = new Point(12, 182);
             label2.Name = "label2";
             label2.Size = new Size(41, 15);
-            label2.TabIndex = 4;
+            label2.TabIndex = 5;
             label2.Text = "Price:";
-            label2.Click += label2_Click;
-            // 
-            // lblName
-            // 
-            lblName.AutoSize = true;
-            lblName.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblName.Location = new Point(43, 161);
-            lblName.Name = "lblName";
-            lblName.Size = new Size(40, 15);
-            lblName.TabIndex = 5;
-            lblName.Text = "label3";
-            lblName.Click += label3_Click;
-            // 
-            // lblPrice
-            // 
-            lblPrice.AutoSize = true;
-            lblPrice.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPrice.Location = new Point(43, 186);
-            lblPrice.Name = "lblPrice";
-            lblPrice.Size = new Size(40, 15);
-            lblPrice.TabIndex = 6;
-            lblPrice.Text = "label4";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(99, 161);
+            label3.Location = new Point(110, 157);
             label3.Name = "label3";
             label3.Size = new Size(35, 15);
-            label3.TabIndex = 7;
+            label3.TabIndex = 6;
             label3.Text = "Size:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(110, 182);
+            label4.Name = "label4";
+            label4.Size = new Size(51, 15);
+            label4.TabIndex = 7;
+            label4.Text = "Gender:";
+            // 
+            // lblName
+            // 
+            lblName.AutoSize = true;
+            lblName.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblName.Location = new Point(49, 157);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(40, 15);
+            lblName.TabIndex = 8;
+            lblName.Text = "label3";
+            // 
+            // lblPrice
+            // 
+            lblPrice.AutoSize = true;
+            lblPrice.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPrice.Location = new Point(49, 182);
+            lblPrice.Name = "lblPrice";
+            lblPrice.Size = new Size(40, 15);
+            lblPrice.TabIndex = 9;
+            lblPrice.Text = "label3";
             // 
             // lblSize
             // 
             lblSize.AutoSize = true;
             lblSize.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSize.Location = new Point(130, 161);
+            lblSize.Location = new Point(140, 157);
             lblSize.Name = "lblSize";
-            lblSize.Size = new Size(21, 15);
-            lblSize.TabIndex = 8;
-            lblSize.Text = "lbl";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(99, 185);
-            label5.Name = "label5";
-            label5.Size = new Size(51, 15);
-            label5.TabIndex = 9;
-            label5.Text = "Gender:";
+            lblSize.Size = new Size(40, 15);
+            lblSize.TabIndex = 10;
+            lblSize.Text = "label3";
             // 
             // lblGender
             // 
             lblGender.AutoSize = true;
             lblGender.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblGender.Location = new Point(146, 186);
+            lblGender.Location = new Point(156, 182);
             lblGender.Name = "lblGender";
-            lblGender.Size = new Size(21, 15);
-            lblGender.TabIndex = 10;
-            lblGender.Text = "lbl";
-            lblGender.Click += lblGender_Click;
+            lblGender.Size = new Size(40, 15);
+            lblGender.TabIndex = 11;
+            lblGender.Text = "label3";
             // 
-            // btnLike
+            // numericQuantity
             // 
-            btnLike.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnLike.BackColor = SystemColors.Info;
-            btnLike.Location = new Point(186, 158);
-            btnLike.Margin = new Padding(4);
-            btnLike.Name = "btnLike";
-            btnLike.Size = new Size(32, 21);
-            btnLike.TabIndex = 11;
-            btnLike.Text = "♥";
-            btnLike.UseVisualStyleBackColor = false;
-            btnLike.Click += btnLike_Click;
+            numericQuantity.BackColor = SystemColors.Info;
+            numericQuantity.Location = new Point(3, 211);
+            numericQuantity.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            numericQuantity.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericQuantity.Name = "numericQuantity";
+            numericQuantity.Size = new Size(120, 23);
+            numericQuantity.TabIndex = 12;
+            numericQuantity.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
-            // ClothCard
+            // btnAdd
+            // 
+            btnAdd.BackColor = SystemColors.Info;
+            btnAdd.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdd.Location = new Point(129, 201);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(75, 33);
+            btnAdd.TabIndex = 13;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
+            // 
+            // LikesCard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BorderStyle = BorderStyle.FixedSingle;
-            Controls.Add(btnLike);
+            Controls.Add(btnAdd);
+            Controls.Add(numericQuantity);
             Controls.Add(lblGender);
-            Controls.Add(label5);
             Controls.Add(lblSize);
-            Controls.Add(label3);
             Controls.Add(lblPrice);
             Controls.Add(lblName);
+            Controls.Add(label4);
+            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(numericQuantity);
-            Controls.Add(btnAdd);
             Controls.Add(pictureBox1);
-            Name = "ClothCard";
-            Size = new Size(221, 237);
-            Load += ClothCard_Load;
+            Name = "LikesCard";
+            Size = new Size(208, 237);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericQuantity).EndInit();
             ResumeLayout(false);
@@ -202,16 +182,15 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private Button btnAdd;
-        private NumericUpDown numericQuantity;
         private Label label1;
         private Label label2;
+        private Label label3;
+        private Label label4;
         private Label lblName;
         private Label lblPrice;
-        private Label label3;
         private Label lblSize;
-        private Label label5;
         private Label lblGender;
-        private Button btnLike;
+        private NumericUpDown numericQuantity;
+        private Button btnAdd;
     }
 }

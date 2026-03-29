@@ -37,6 +37,7 @@
             flowOrders.Dock = DockStyle.Fill;
             flowOrders.FlowDirection = FlowDirection.TopDown;
             flowOrders.Location = new Point(0, 0);
+            flowOrders.Margin = new Padding(2, 2, 2, 2);
             flowOrders.Name = "flowOrders";
             flowOrders.Size = new Size(777, 646);
             flowOrders.TabIndex = 0;
@@ -45,11 +46,11 @@
             // 
             // Orders
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
             Controls.Add(flowOrders);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Orders";
             Size = new Size(777, 646);
             Load += Orders_Load;

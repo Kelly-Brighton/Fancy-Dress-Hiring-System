@@ -65,7 +65,10 @@ namespace FancyDressHiringSystem
                             // Load the image from the file path if it exists
                             if (File.Exists(imagePath))
                             {
-                                card.CostumeImage = Image.FromFile(imagePath);
+                                using (var img = Image.FromFile(imagePath))
+                                {
+                                    card.CostumeImage = new Bitmap(img);
+                                }
                             }
                             // Add the costume card to the flow layout panel
                             flowInventory.Controls.Add(card);
