@@ -1,6 +1,6 @@
 ﻿namespace FancyDressHiringSystem
 {
-    partial class Orders
+    partial class Basket
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,37 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            flowOrders = new FlowLayoutPanel();
+            flowBasket = new FlowLayoutPanel();
             SuspendLayout();
             // 
-            // flowOrders
+            // flowBasket
             // 
-            flowOrders.AutoScroll = true;
-            flowOrders.Dock = DockStyle.Fill;
-            flowOrders.FlowDirection = FlowDirection.TopDown;
-            flowOrders.Location = new Point(0, 0);
-            flowOrders.Margin = new Padding(2);
-            flowOrders.Name = "flowOrders";
-            flowOrders.Size = new Size(777, 646);
-            flowOrders.TabIndex = 0;
-            flowOrders.WrapContents = false;
-            flowOrders.Paint += flowOrders_Paint;
+            flowBasket.AutoScroll = true;
+            flowBasket.Dock = DockStyle.Fill;
+            flowBasket.FlowDirection = FlowDirection.TopDown;
+            flowBasket.Location = new Point(0, 0);
+            flowBasket.Name = "flowBasket";
+            flowBasket.Size = new Size(777, 646);
+            flowBasket.TabIndex = 0;
+            flowBasket.Paint += flowBasket_Paint;
             // 
-            // Orders
+            // Basket
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
-            Controls.Add(flowOrders);
-            Margin = new Padding(3, 2, 3, 2);
-            Name = "Orders";
+            Controls.Add(flowBasket);
+            Name = "Basket";
             Size = new Size(777, 646);
-            Load += Orders_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
-        private FlowLayoutPanel flowOrders;
+        private FlowLayoutPanel flowBasket;
     }
 }

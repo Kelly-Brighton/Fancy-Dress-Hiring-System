@@ -39,16 +39,18 @@
             label4 = new Label();
             lblStatus = new Label();
             btnCancel = new Button();
+            label5 = new Label();
+            lblCostumeName = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(24, 14);
+            pictureBox1.Location = new Point(4, 2);
             pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(142, 123);
+            pictureBox1.Size = new Size(194, 141);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -57,17 +59,17 @@
             // 
             panel1.BackColor = SystemColors.Info;
             panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(18, 20);
+            panel1.Location = new Point(23, 2);
             panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(191, 151);
+            panel1.Size = new Size(200, 147);
             panel1.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(231, 41);
+            label1.Location = new Point(225, 50);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(52, 19);
@@ -78,7 +80,7 @@
             // 
             lblSize.AutoSize = true;
             lblSize.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSize.Location = new Point(285, 42);
+            lblSize.Location = new Point(281, 52);
             lblSize.Margin = new Padding(2, 0, 2, 0);
             lblSize.Name = "lblSize";
             lblSize.Size = new Size(42, 17);
@@ -89,7 +91,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(231, 71);
+            label2.Location = new Point(487, 8);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(122, 19);
@@ -100,7 +102,7 @@
             // 
             lblOrderDate.AutoSize = true;
             lblOrderDate.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblOrderDate.Location = new Point(357, 73);
+            lblOrderDate.Location = new Point(613, 10);
             lblOrderDate.Margin = new Padding(2, 0, 2, 0);
             lblOrderDate.Name = "lblOrderDate";
             lblOrderDate.Size = new Size(42, 17);
@@ -111,7 +113,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(231, 103);
+            label3.Location = new Point(487, 50);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(127, 19);
@@ -123,7 +125,7 @@
             // 
             lblOrderDueDate.AutoSize = true;
             lblOrderDueDate.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblOrderDueDate.Location = new Point(362, 105);
+            lblOrderDueDate.Location = new Point(618, 52);
             lblOrderDueDate.Margin = new Padding(2, 0, 2, 0);
             lblOrderDueDate.Name = "lblOrderDueDate";
             lblOrderDueDate.Size = new Size(42, 17);
@@ -134,7 +136,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(231, 138);
+            label4.Location = new Point(227, 96);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new Size(76, 19);
@@ -145,7 +147,7 @@
             // 
             lblStatus.AutoSize = true;
             lblStatus.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblStatus.Location = new Point(312, 139);
+            lblStatus.Location = new Point(307, 98);
             lblStatus.Margin = new Padding(2, 0, 2, 0);
             lblStatus.Name = "lblStatus";
             lblStatus.Size = new Size(42, 17);
@@ -156,7 +158,7 @@
             // 
             btnCancel.BackColor = Color.Crimson;
             btnCancel.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCancel.Location = new Point(432, 154);
+            btnCancel.Location = new Point(487, 115);
             btnCancel.Margin = new Padding(2);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(97, 30);
@@ -165,11 +167,33 @@
             btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(226, 8);
+            label5.Name = "label5";
+            label5.Size = new Size(63, 19);
+            label5.TabIndex = 11;
+            label5.Text = "NAME:";
+            // 
+            // lblCostumeName
+            // 
+            lblCostumeName.AutoSize = true;
+            lblCostumeName.Font = new Font("Times New Roman", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCostumeName.Location = new Point(288, 10);
+            lblCostumeName.Name = "lblCostumeName";
+            lblCostumeName.Size = new Size(42, 17);
+            lblCostumeName.TabIndex = 12;
+            lblCostumeName.Text = "label6";
+            // 
             // OrderCard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
+            Controls.Add(lblCostumeName);
+            Controls.Add(label5);
             Controls.Add(btnCancel);
             Controls.Add(lblStatus);
             Controls.Add(label4);
@@ -182,7 +206,7 @@
             Controls.Add(panel1);
             Margin = new Padding(2);
             Name = "OrderCard";
-            Size = new Size(544, 194);
+            Size = new Size(771, 156);
             Load += OrderCard_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
@@ -203,5 +227,7 @@
         private Label label4;
         private Label lblStatus;
         private Button btnCancel;
+        private Label label5;
+        private Label lblCostumeName;
     }
 }

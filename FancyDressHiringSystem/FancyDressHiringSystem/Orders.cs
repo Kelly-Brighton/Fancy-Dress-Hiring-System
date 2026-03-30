@@ -50,7 +50,7 @@ namespace FancyDressHiringSystem
                     conn.Open();
 
                     // SQL query to get orders along with the image path of the costume
-                    string query = @"SELECT Orders.Id, Orders.OrderDate, Orders.Status, Clothes.ImagePath FROM Orders" +
+                    string query = @"SELECT Orders.Id, Orders.OrderDate, Orders.Status, Clothes.Name, Clothes.ImagePath FROM Orders" +
                         " JOIN Clothes ON Orders.CostumeId = Clothes.Id WHERE Orders.CustomerName = @name";
 
                     // Execute the query and create order cards for each order
@@ -67,6 +67,7 @@ namespace FancyDressHiringSystem
                                 orderCard.OrderId = Convert.ToInt32(reader["Id"]);
                                 orderCard.OrderDate = (DateTime)reader["OrderDate"];
                                 orderCard.Status = reader["Status"].ToString();
+                                orderCard.CostumeName = reader["Name"].ToString();
                                 DateTime dueDate = orderCard.OrderDate.AddDays(10);
                                 orderCard.DueDate = dueDate;
 

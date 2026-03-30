@@ -67,6 +67,12 @@ namespace FancyDressHiringSystem
             }
         }
 
+        public string CostumeName // Property to get and set the costume name
+        {
+            get { return lblCostumeName.Text; }
+            set { lblCostumeName.Text = value; }
+        }
+
         public string Status // Property to get and set the order status
         {
             get { return lblStatus.Text; }

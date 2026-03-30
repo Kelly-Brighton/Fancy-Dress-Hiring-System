@@ -35,7 +35,6 @@
             // 
             flowLikes.AutoScroll = true;
             flowLikes.Dock = DockStyle.Fill;
-            flowLikes.FlowDirection = FlowDirection.TopDown;
             flowLikes.Location = new Point(0, 0);
             flowLikes.Name = "flowLikes";
             flowLikes.Size = new Size(777, 646);
