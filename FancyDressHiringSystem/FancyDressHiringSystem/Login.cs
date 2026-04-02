@@ -93,7 +93,7 @@ namespace FancyDressHiringSystem
                                     // If a matching record is found, the login is successful
                                     MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     LoggedInUser = username; // Store the logged-in username in a static variable
-                                    Mainform mainForm = new Mainform();
+                                    Mainform mainForm = new Mainform(username);
                                     mainForm.Show();
                                     this.Hide();
                                     return;

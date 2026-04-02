@@ -16,6 +16,7 @@ namespace FancyDressHiringSystem
         public Likes()
         {
             InitializeComponent();
+            LoadLikes();
         }
         // When the Likes page loads, call the method to load liked items
         private void Likes_Load(object sender, EventArgs e)

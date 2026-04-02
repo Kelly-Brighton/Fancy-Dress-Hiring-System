@@ -29,35 +29,81 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            btnLiked = new Button();
             lblBasket = new Label();
+            btnBasket = new Button();
+            lblOrders = new Label();
+            lblLiked = new Label();
+            btnLiked = new Button();
             panel2 = new Panel();
             btnLog = new Button();
-            btnBask = new Button();
             btnOrders = new Button();
             btnHome = new Button();
             panelContainer = new Panel();
-            lblLiked = new Label();
-            lblOrders = new Label();
+            lblUser = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = SystemColors.GradientActiveCaption;
+            panel1.Controls.Add(lblUser);
+            panel1.Controls.Add(lblBasket);
+            panel1.Controls.Add(btnBasket);
             panel1.Controls.Add(lblOrders);
             panel1.Controls.Add(lblLiked);
             panel1.Controls.Add(btnLiked);
-            panel1.Controls.Add(lblBasket);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(btnLog);
-            panel1.Controls.Add(btnBask);
             panel1.Controls.Add(btnOrders);
             panel1.Controls.Add(btnHome);
             panel1.Location = new Point(1, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(200, 646);
             panel1.TabIndex = 0;
+            // 
+            // lblBasket
+            // 
+            lblBasket.AutoSize = true;
+            lblBasket.BackColor = SystemColors.Info;
+            lblBasket.Location = new Point(129, 120);
+            lblBasket.Name = "lblBasket";
+            lblBasket.Size = new Size(20, 15);
+            lblBasket.TabIndex = 9;
+            lblBasket.Text = "lbl";
+            // 
+            // btnBasket
+            // 
+            btnBasket.BackColor = SystemColors.Info;
+            btnBasket.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBasket.Location = new Point(0, 113);
+            btnBasket.Name = "btnBasket";
+            btnBasket.Size = new Size(200, 49);
+            btnBasket.TabIndex = 8;
+            btnBasket.Text = "Basket";
+            btnBasket.UseVisualStyleBackColor = false;
+            btnBasket.Click += btnBasket_Click;
+            // 
+            // lblOrders
+            // 
+            lblOrders.AutoSize = true;
+            lblOrders.BackColor = SystemColors.Info;
+            lblOrders.Font = new Font("Times New Roman", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblOrders.Location = new Point(128, 68);
+            lblOrders.Name = "lblOrders";
+            lblOrders.Size = new Size(18, 14);
+            lblOrders.TabIndex = 7;
+            lblOrders.Text = "lbl";
+            // 
+            // lblLiked
+            // 
+            lblLiked.AutoSize = true;
+            lblLiked.BackColor = SystemColors.Info;
+            lblLiked.Font = new Font("Times New Roman", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblLiked.Location = new Point(128, 178);
+            lblLiked.Name = "lblLiked";
+            lblLiked.Size = new Size(18, 14);
+            lblLiked.TabIndex = 6;
+            lblLiked.Text = "lbl";
             // 
             // btnLiked
             // 
@@ -70,17 +116,6 @@
             btnLiked.Text = "Liked";
             btnLiked.UseVisualStyleBackColor = false;
             btnLiked.Click += btnLiked_Click;
-            // 
-            // lblBasket
-            // 
-            lblBasket.AutoSize = true;
-            lblBasket.BackColor = SystemColors.Info;
-            lblBasket.Font = new Font("Times New Roman", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblBasket.Location = new Point(128, 122);
-            lblBasket.Name = "lblBasket";
-            lblBasket.Size = new Size(18, 14);
-            lblBasket.TabIndex = 4;
-            lblBasket.Text = "lbl";
             // 
             // panel2
             // 
@@ -100,18 +135,6 @@
             btnLog.Text = "Log out";
             btnLog.UseVisualStyleBackColor = false;
             btnLog.Click += btnLog_Click;
-            // 
-            // btnBask
-            // 
-            btnBask.BackColor = SystemColors.Info;
-            btnBask.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnBask.Location = new Point(0, 113);
-            btnBask.Name = "btnBask";
-            btnBask.Size = new Size(200, 49);
-            btnBask.TabIndex = 2;
-            btnBask.Text = "Basket";
-            btnBask.UseVisualStyleBackColor = false;
-            btnBask.Click += btnLikes_Click;
             // 
             // btnOrders
             // 
@@ -145,27 +168,14 @@
             panelContainer.TabIndex = 1;
             panelContainer.Paint += panelContainer_Paint;
             // 
-            // lblLiked
+            // lblUser
             // 
-            lblLiked.AutoSize = true;
-            lblLiked.BackColor = SystemColors.Info;
-            lblLiked.Font = new Font("Times New Roman", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblLiked.Location = new Point(128, 178);
-            lblLiked.Name = "lblLiked";
-            lblLiked.Size = new Size(18, 14);
-            lblLiked.TabIndex = 6;
-            lblLiked.Text = "lbl";
-            // 
-            // lblOrders
-            // 
-            lblOrders.AutoSize = true;
-            lblOrders.BackColor = SystemColors.Info;
-            lblOrders.Font = new Font("Times New Roman", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblOrders.Location = new Point(128, 68);
-            lblOrders.Name = "lblOrders";
-            lblOrders.Size = new Size(18, 14);
-            lblOrders.TabIndex = 7;
-            lblOrders.Text = "lbl";
+            lblUser.AutoSize = true;
+            lblUser.Location = new Point(20, 273);
+            lblUser.Name = "lblUser";
+            lblUser.Size = new Size(38, 15);
+            lblUser.TabIndex = 10;
+            lblUser.Text = "label1";
             // 
             // Mainform
             // 
@@ -189,13 +199,14 @@
         private Panel panel1;
         private Button btnHome;
         private Button btnLog;
-        private Button btnBask;
         private Button btnOrders;
         private Panel panel2;
         private Panel panelContainer;
-        private Label lblBasket;
         private Button btnLiked;
         private Label lblLiked;
         private Label lblOrders;
+        private Label lblBasket;
+        private Button btnBasket;
+        private Label lblUser;
     }
 }

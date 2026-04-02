@@ -16,6 +16,7 @@ namespace FancyDressHiringSystem
         public Orders()
         {
             InitializeComponent();
+            LoadOrders();
         }
 
         private void Orders_Load(object sender, EventArgs e)

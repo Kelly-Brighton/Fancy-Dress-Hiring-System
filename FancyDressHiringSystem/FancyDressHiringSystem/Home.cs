@@ -205,6 +205,7 @@ namespace FancyDressHiringSystem
 
         public void LoadClothesWithFilters()
         {
+            
             // Clear the flow layout panel before loading the filtered clothes
             flowHome.Controls.Clear();
 

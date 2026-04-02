@@ -17,7 +17,7 @@ namespace FancyDressHiringSystem
         {
             InitializeComponent();
             this.Margin = new Padding(15);
-            UpdateShippingLabel();
+            
         }
 
         private void btnBuy_Click(object sender, EventArgs e)
@@ -112,7 +112,7 @@ namespace FancyDressHiringSystem
         public string CostumePrice //  Property to get and set the costume price
         {
             get { return lblPrice.Text; }
-            set { lblPrice.Text = value; }
+            set { lblPrice.Text = value; UpdateShippingLabel(); }
         }
 
         public Image CostumeImage // Property to get and set the costume image

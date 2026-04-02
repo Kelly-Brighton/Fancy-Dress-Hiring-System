@@ -13,9 +13,12 @@ namespace FancyDressHiringSystem
 {
     public partial class Mainform : Form
     {
-        public Mainform()
+        private string username;
+
+        public Mainform(string userName)
         {
             InitializeComponent();
+            username = userName;
         }
 
         private void Mainform_Load(object sender, EventArgs e)
@@ -26,6 +29,7 @@ namespace FancyDressHiringSystem
             UpdateBasketCount();
             UpdateOrdersCount();
             UpdateLikesCount();
+            lblUser.Text = "Welcome " + username;
         }
 
         private void LoadControl(UserControl uc)
@@ -47,13 +51,6 @@ namespace FancyDressHiringSystem
             panelContainer.Controls.Clear();
             Orders orders = new Orders();
             LoadControl(orders);
-        }
-
-        private void btnLikes_Click(object sender, EventArgs e)
-        {
-            panelContainer.Controls.Clear();
-            Likes likes = new Likes();
-            LoadControl(likes);
         }
 
         private void btnLog_Click(object sender, EventArgs e)
@@ -132,6 +129,13 @@ namespace FancyDressHiringSystem
             panelContainer.Controls.Clear();
             Likes likes = new Likes();
             LoadControl(likes);
+        }
+
+        private void btnBasket_Click(object sender, EventArgs e)
+        {
+            panelContainer.Controls.Clear();
+            Basket basket = new Basket();
+            LoadControl(basket);
         }
     }
 }
