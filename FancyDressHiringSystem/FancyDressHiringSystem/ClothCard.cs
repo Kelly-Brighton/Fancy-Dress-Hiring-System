@@ -16,6 +16,7 @@ namespace FancyDressHiringSystem
         public ClothCard()
         {
             InitializeComponent();
+            this.Margin = new Padding(15);
         }
 
         private void label2_Click(object sender, EventArgs e)

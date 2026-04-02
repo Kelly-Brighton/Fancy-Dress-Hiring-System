@@ -69,10 +69,10 @@ namespace FancyDressHiringSystem
         {
             // Get the costume price as a string and try to parse it to an integer
             string input = CostumePrice;
-            int number;
+            decimal number;
 
             // If the parsing is successful, check if the price is greater than 35 to determine the shipping cost
-            if (int.TryParse(input, out number))
+            if (decimal.TryParse(input, out number))
             {
                 if (number > 35)
                 {

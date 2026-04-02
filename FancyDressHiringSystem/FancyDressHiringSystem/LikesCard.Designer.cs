@@ -48,7 +48,7 @@
             pictureBox1.Dock = DockStyle.Top;
             pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(208, 154);
+            pictureBox1.Size = new Size(206, 154);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -148,7 +148,7 @@
             // 
             btnAdd.BackColor = SystemColors.Info;
             btnAdd.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAdd.Location = new Point(129, 201);
+            btnAdd.Location = new Point(130, 201);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(75, 33);
             btnAdd.TabIndex = 13;
@@ -160,6 +160,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(btnAdd);
             Controls.Add(numericQuantity);
             Controls.Add(lblGender);
@@ -172,7 +173,7 @@
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Name = "LikesCard";
-            Size = new Size(208, 237);
+            Size = new Size(206, 235);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericQuantity).EndInit();
             ResumeLayout(false);

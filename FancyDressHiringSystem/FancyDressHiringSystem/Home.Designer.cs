@@ -475,7 +475,7 @@
             // txtSearch
             // 
             txtSearch.BackColor = SystemColors.Info;
-            txtSearch.Location = new Point(268, 61);
+            txtSearch.Location = new Point(268, 49);
             txtSearch.Multiline = true;
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(328, 49);
@@ -485,7 +485,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(387, 40);
+            label1.Location = new Point(387, 28);
             label1.Name = "label1";
             label1.Size = new Size(0, 20);
             label1.TabIndex = 4;
@@ -494,7 +494,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Script MT Bold", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            label2.Location = new Point(320, 0);
+            label2.Location = new Point(259, -12);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(267, 58);
@@ -506,7 +506,7 @@
             lblSearch.AutoSize = true;
             lblSearch.BackColor = SystemColors.Info;
             lblSearch.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSearch.Location = new Point(268, 75);
+            lblSearch.Location = new Point(268, 63);
             lblSearch.Name = "lblSearch";
             lblSearch.Size = new Size(64, 20);
             lblSearch.TabIndex = 28;
@@ -516,9 +516,9 @@
             // flowHome
             // 
             flowHome.AutoScroll = true;
-            flowHome.Location = new Point(268, 120);
+            flowHome.Location = new Point(268, 102);
             flowHome.Name = "flowHome";
-            flowHome.Size = new Size(468, 494);
+            flowHome.Size = new Size(506, 541);
             flowHome.TabIndex = 29;
             flowHome.Paint += flowHome_Paint;
             // 
@@ -526,7 +526,7 @@
             // 
             btnSearch.BackColor = SystemColors.GradientActiveCaption;
             btnSearch.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSearch.Location = new Point(601, 63);
+            btnSearch.Location = new Point(601, 51);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(135, 45);
             btnSearch.TabIndex = 17;

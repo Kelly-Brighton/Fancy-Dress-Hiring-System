@@ -29,7 +29,6 @@ namespace FancyDressHiringSystem
             UpdateBasketCount();
             UpdateOrdersCount();
             UpdateLikesCount();
-            lblUser.Text = "Welcome " + username;
         }
 
         private void LoadControl(UserControl uc)

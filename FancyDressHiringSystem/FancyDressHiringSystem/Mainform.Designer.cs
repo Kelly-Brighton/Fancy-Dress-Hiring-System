@@ -39,14 +39,12 @@
             btnOrders = new Button();
             btnHome = new Button();
             panelContainer = new Panel();
-            lblUser = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = SystemColors.GradientActiveCaption;
-            panel1.Controls.Add(lblUser);
             panel1.Controls.Add(lblBasket);
             panel1.Controls.Add(btnBasket);
             panel1.Controls.Add(lblOrders);
@@ -167,15 +165,6 @@
             panelContainer.Size = new Size(777, 646);
             panelContainer.TabIndex = 1;
             panelContainer.Paint += panelContainer_Paint;
-            // 
-            // lblUser
-            // 
-            lblUser.AutoSize = true;
-            lblUser.Location = new Point(20, 273);
-            lblUser.Name = "lblUser";
-            lblUser.Size = new Size(38, 15);
-            lblUser.TabIndex = 10;
-            lblUser.Text = "label1";
             // 
             // Mainform
             // 

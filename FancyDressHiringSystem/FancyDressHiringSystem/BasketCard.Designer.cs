@@ -52,6 +52,7 @@
             pictureBox1.Location = new Point(3, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(194, 141);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -120,7 +121,7 @@
             // 
             btnBuy.BackColor = SystemColors.Info;
             btnBuy.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnBuy.Location = new Point(455, 116);
+            btnBuy.Location = new Point(451, 116);
             btnBuy.Name = "btnBuy";
             btnBuy.Size = new Size(112, 36);
             btnBuy.TabIndex = 7;
@@ -132,7 +133,7 @@
             // 
             btnDelete.BackColor = Color.Red;
             btnDelete.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDelete.Location = new Point(654, 116);
+            btnDelete.Location = new Point(644, 116);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(112, 36);
             btnDelete.TabIndex = 8;
@@ -210,7 +211,7 @@
             Controls.Add(label1);
             Controls.Add(panel1);
             Name = "BasketCard";
-            Size = new Size(769, 154);
+            Size = new Size(757, 154);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)numericCount).EndInit();

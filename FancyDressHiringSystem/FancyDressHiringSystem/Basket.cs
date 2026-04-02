@@ -17,6 +17,7 @@ namespace FancyDressHiringSystem
         {
             InitializeComponent();
             LoadBasket();
+
         }
 
         private void flowBasket_Paint(object sender, PaintEventArgs e)
@@ -32,8 +33,7 @@ namespace FancyDressHiringSystem
             string connString = "Server=localhost;Database=FancyDressDB;Trusted_Connection=True;TrustServerCertificate=True;";
 
             string username = Login.LoggedInUser; // Get the logged-in user's username
-            MessageBox.Show("Loading basket for user: " + username); // Debug message to check the username
-
+           
             try
             {
                 // Connect to the database and retrieve the basket items for the logged-in user
