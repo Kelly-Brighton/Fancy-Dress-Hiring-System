@@ -44,7 +44,6 @@
             dataOrders.Name = "dataOrders";
             dataOrders.Size = new Size(777, 646);
             dataOrders.TabIndex = 0;
-            dataOrders.CellContentClick += dataOrders_CellContentClick;
             // 
             // panel1
             // 

@@ -14,6 +14,7 @@ namespace FancyDressHiringSystem
     public partial class Login : Form
     {
         public static string LoggedInUser;
+        public static string UserEmail;
 
         public Login()
         {
@@ -77,6 +78,7 @@ namespace FancyDressHiringSystem
                             cmd.Parameters.AddWithValue("@Username", username);
                             cmd.Parameters.AddWithValue("@Password", password);
 
+                           
                             // Execute the query and get the count of matching records
                             int count = (int)cmd.ExecuteScalar();
                             if (count > 0)
@@ -103,7 +105,19 @@ namespace FancyDressHiringSystem
                             {
                                 MessageBox.Show("Invalid username or password. Please try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
+
+                            using (SqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                string email = "";
+                                if (reader.Read())
+                                {
+                                    email = reader["Email"].ToString();
+                                    UserEmail = email; // Store the email in a static variable for later use
+                                }
+                            }
                         }
+
+
                     }
                 }
                 catch (Exception ex)

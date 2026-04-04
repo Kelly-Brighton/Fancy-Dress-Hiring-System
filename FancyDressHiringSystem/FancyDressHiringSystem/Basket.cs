@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace FancyDressHiringSystem
 {
-    public partial class Basket : UserControl
+    public partial class lblTotal : UserControl
     {
-        public Basket()
+        public lblTotal()
         {
             InitializeComponent();
             LoadBasket();
@@ -22,7 +22,7 @@ namespace FancyDressHiringSystem
 
         private void flowBasket_Paint(object sender, PaintEventArgs e)
         {
-            
+
         }
 
         public void LoadBasket()
@@ -33,7 +33,7 @@ namespace FancyDressHiringSystem
             string connString = "Server=localhost;Database=FancyDressDB;Trusted_Connection=True;TrustServerCertificate=True;";
 
             string username = Login.LoggedInUser; // Get the logged-in user's username
-           
+
             try
             {
                 // Connect to the database and retrieve the basket items for the logged-in user
@@ -42,7 +42,7 @@ namespace FancyDressHiringSystem
                     conn.Open();
 
                     // SQL query to get the basket items for the logged-in user
-                    string query = @"SELECT Basket.Id, Clothes.Name, Clothes.Price, Clothes.Gender, Basket.Size, Basket.Quantity, Clothes.ImagePath
+                    string query = @"SELECT Basket.Id, Basket.CostumeId, Clothes.Name, Clothes.Price, Clothes.Gender, Basket.Size, Basket.Quantity, Clothes.ImagePath
                     FROM Basket
                     JOIN Clothes ON Basket.CostumeId = Clothes.Id
                     WHERE Basket.CustomerName = @name";
@@ -57,6 +57,7 @@ namespace FancyDressHiringSystem
                             {
                                 BasketCard card = new BasketCard();
                                 card.BasketId = Convert.ToInt32(reader["Id"]);
+                                card.CostumeId = Convert.ToInt32(reader["CostumeId"]);
                                 card.CostumeName = reader["Name"].ToString();
                                 card.CostumePrice = reader["Price"].ToString();
                                 card.CostumeSize = reader["Size"].ToString();
@@ -84,6 +85,46 @@ namespace FancyDressHiringSystem
             {
                 MessageBox.Show("Error loading basket: " + ex.Message);
             }
+        }
+
+        public List<BasketCard> GetSelectedItems()
+        {
+            List<BasketCard> selectedItems = new List<BasketCard>();
+
+            foreach (Control control in flowBasket.Controls)
+            {
+                if (control is BasketCard card && card.IsSelected)
+                {
+                    selectedItems.Add(card);
+                }
+            }
+            return selectedItems;
+        }
+
+        private void btnCheckout_Click(object sender, EventArgs e)
+        {
+            List<BasketCard> selectedItems = GetSelectedItems();
+
+            // Check if any items are selected
+            if (selectedItems.Count == 0)
+            {
+                // Proceed to checkout with the selected items
+                selectedItems = flowBasket.Controls.OfType<BasketCard>().ToList();
+            }
+
+            if (selectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select at least one item to checkout.");
+                return;
+            }
+
+            CheckOut checkoutForm = new CheckOut(selectedItems);
+            checkoutForm.Show();
+        }
+
+        private void lblTotal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -35,13 +35,13 @@
             label3 = new Label();
             label4 = new Label();
             numericCount = new NumericUpDown();
-            btnBuy = new Button();
             btnDelete = new Button();
             lblShipping = new Label();
             lblName = new Label();
             lblGender = new Label();
             lblSize = new Label();
             lblPrice = new Label();
+            chkSelect = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericCount).BeginInit();
@@ -79,7 +79,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(504, 6);
+            label2.Location = new Point(414, 4);
             label2.Name = "label2";
             label2.Size = new Size(47, 17);
             label2.TabIndex = 3;
@@ -117,23 +117,11 @@
             numericCount.TabIndex = 2;
             numericCount.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
-            // btnBuy
-            // 
-            btnBuy.BackColor = SystemColors.Info;
-            btnBuy.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnBuy.Location = new Point(451, 116);
-            btnBuy.Name = "btnBuy";
-            btnBuy.Size = new Size(112, 36);
-            btnBuy.TabIndex = 7;
-            btnBuy.Text = "Buy";
-            btnBuy.UseVisualStyleBackColor = false;
-            btnBuy.Click += btnBuy_Click;
-            // 
             // btnDelete
             // 
             btnDelete.BackColor = Color.Red;
             btnDelete.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDelete.Location = new Point(644, 116);
+            btnDelete.Location = new Point(457, 116);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(112, 36);
             btnDelete.TabIndex = 8;
@@ -145,7 +133,7 @@
             // 
             lblShipping.AutoSize = true;
             lblShipping.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblShipping.Location = new Point(504, 48);
+            lblShipping.Location = new Point(414, 46);
             lblShipping.Name = "lblShipping";
             lblShipping.Size = new Size(47, 17);
             lblShipping.TabIndex = 9;
@@ -185,11 +173,21 @@
             // 
             lblPrice.AutoSize = true;
             lblPrice.Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblPrice.Location = new Point(547, 8);
+            lblPrice.Location = new Point(457, 6);
             lblPrice.Name = "lblPrice";
             lblPrice.Size = new Size(40, 15);
             lblPrice.TabIndex = 13;
             lblPrice.Text = "label5";
+            // 
+            // chkSelect
+            // 
+            chkSelect.AutoSize = true;
+            chkSelect.Location = new Point(554, 1);
+            chkSelect.Name = "chkSelect";
+            chkSelect.Size = new Size(15, 14);
+            chkSelect.TabIndex = 14;
+            chkSelect.UseVisualStyleBackColor = true;
+            chkSelect.CheckedChanged += chkSelect_CheckedChanged;
             // 
             // BasketCard
             // 
@@ -197,13 +195,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
             BorderStyle = BorderStyle.FixedSingle;
+            Controls.Add(chkSelect);
             Controls.Add(lblPrice);
             Controls.Add(lblSize);
             Controls.Add(lblGender);
             Controls.Add(lblName);
             Controls.Add(lblShipping);
             Controls.Add(btnDelete);
-            Controls.Add(btnBuy);
             Controls.Add(numericCount);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -211,7 +209,7 @@
             Controls.Add(label1);
             Controls.Add(panel1);
             Name = "BasketCard";
-            Size = new Size(757, 154);
+            Size = new Size(572, 154);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)numericCount).EndInit();
@@ -228,12 +226,12 @@
         private Label label3;
         private Label label4;
         private NumericUpDown numericCount;
-        private Button btnBuy;
         private Button btnDelete;
         private Label lblShipping;
         private Label lblName;
         private Label lblGender;
         private Label lblSize;
         private Label lblPrice;
+        private CheckBox chkSelect;
     }
 }

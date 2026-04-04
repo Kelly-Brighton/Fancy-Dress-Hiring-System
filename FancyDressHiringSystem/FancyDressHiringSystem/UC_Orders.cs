@@ -1,15 +1,9 @@
 ﻿using Microsoft.Data.SqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
+using System.Windows.Forms;
 
 namespace FancyDressHiringSystem
 {
@@ -18,115 +12,130 @@ namespace FancyDressHiringSystem
         public UC_Orders()
         {
             InitializeComponent();
-            LoadOrders();
+            LoadOrders(); // Load orders when control is created
         }
-
-        private void dataOrders_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    // Method to load all orders into the DataGridView
+    private void LoadOrders()
         {
-
-        }
-
-        private void LoadOrders()
-        {
-            // Connection string to connect to the SQL Server database
             string connString = "Server=localhost;Database=FancyDressDB;Trusted_Connection=True;TrustServerCertificate=True;";
 
-            // Create a connection to the database
             using (SqlConnection conn = new SqlConnection(connString))
             {
-                conn.Open(); // Open the connection
+                conn.Open();
 
-                // SQL query to retrieve order details along with the costume name
+                // ✅ FIX 1: Include CustomerEmail in SELECT so we can use it later
                 string query = @"SELECT Orders.Id,
-                                Orders.CustomerName,
-                                Clothes.Name AS Costume,
-                                Orders.Size,
-                                Orders.OrderDate,
-                                Orders.Status
-                            FROM Orders
-                            JOIN Clothes ON Orders.CostumeId = Clothes.Id";
+                                    Orders.CustomerName,
+                                    Orders.CustomerEmail,
+                                    Clothes.Name AS Costume,
+                                    Orders.Size,
+                                    Orders.OrderDate,
+                                    Orders.Status
+                             FROM Orders
+                             JOIN Clothes ON Orders.CostumeId = Clothes.Id";
 
-                // Create a SqlDataAdapter to execute the query and fill a DataTable
                 using (SqlDataAdapter adapter = new SqlDataAdapter(query, conn))
                 {
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
-                    dataOrders.DataSource = dt;
+                    dataOrders.DataSource = dt; // Bind data to grid
                 }
 
-                // Create a DataGridViewComboBoxColumn for the Status column
-                DataGridViewComboBoxColumn statusColumn = new DataGridViewComboBoxColumn();
+                // ✅ Hide email column from UI (still accessible in code)
+                if (dataOrders.Columns.Contains("CustomerEmail"))
+                {
+                    dataOrders.Columns["CustomerEmail"].Visible = false;
+                }
 
-                // Set the properties of the status column
-                statusColumn.HeaderText = "Status";
-                statusColumn.DataPropertyName = "Status";
+                // ✅ FIX 2: Prevent adding multiple ComboBox columns on reload
+                if (!(dataOrders.Columns["Status"] is DataGridViewComboBoxColumn))
+                {
+                    DataGridViewComboBoxColumn statusColumn = new DataGridViewComboBoxColumn();
 
-                // Add the status options to the combo box
-                statusColumn.Items.Add("Pending");
-                statusColumn.Items.Add("Ready for Pickup");
-                statusColumn.Items.Add("Picked Up");
-                statusColumn.Items.Add("Returned");
-                statusColumn.Items.Add("Cancelled");
+                    statusColumn.HeaderText = "Status"; // Column title
+                    statusColumn.DataPropertyName = "Status"; // Bind to DB column
 
-                int columnIndex = dataOrders.Columns["Status"].Index; // Get the index of the existing Status column
+                    // Add status options
+                    statusColumn.Items.Add("Pending");
+                    statusColumn.Items.Add("Ready for Pickup");
+                    statusColumn.Items.Add("Picked Up");
+                    statusColumn.Items.Add("Returned");
+                    statusColumn.Items.Add("Cancelled");
 
-                dataOrders.Columns.Remove("Status"); // Remove the existing Status column
-
-                dataOrders.Columns.Insert(columnIndex, statusColumn); // Insert the new combo box column at the same index
-
+                    // Replace existing Status column with ComboBox column
+                    int columnIndex = dataOrders.Columns["Status"].Index;
+                    dataOrders.Columns.Remove("Status");
+                    dataOrders.Columns.Insert(columnIndex, statusColumn);
+                }
             }
         }
 
+        // Button click to update order status
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            int orderId = Convert.ToInt32(dataOrders.CurrentRow.Cells["Id"].Value); // Get the Order ID from the selected row
-            string newStatus = dataOrders.CurrentRow.Cells["Status"].Value.ToString(); // Get the new status from the combo box
-            string customerEmail = dataOrders.CurrentRow.Cells["CustomerEmail"].Value.ToString(); // Get the customer email from the selected row
+            // Get selected row values
+            int orderId = Convert.ToInt32(dataOrders.CurrentRow.Cells["Id"].Value);
+            string newStatus = dataOrders.CurrentRow.Cells["Status"].Value.ToString();
+
+            // ✅ FIX 3: Safe retrieval of email (avoid null crash)
+            string customerEmail = dataOrders.CurrentRow.Cells["CustomerEmail"].Value?.ToString();
+
+            if (string.IsNullOrEmpty(customerEmail))
+            {
+                MessageBox.Show("Customer email not found!");
+                return;
+            }
 
             string connString = "Server=localhost;Database=FancyDressDB;Trusted_Connection=True;TrustServerCertificate=True;";
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
-                conn.Open(); // Open the connection
+                conn.Open();
 
-                string query = "Update Orders SET Status=@status WHERE Id=@id"; // SQL query to update the order status
+                string query = "UPDATE Orders SET Status = @status WHERE Id = @id";
 
-                // Create a SqlCommand to execute the update query
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@status", newStatus);
                     cmd.Parameters.AddWithValue("@id", orderId);
-                    cmd.ExecuteNonQuery(); // Execute the update query
+                    cmd.ExecuteNonQuery(); // Execute update
                 }
             }
-            // Send an email notification to the customer about the status update
+
+            // Send email after updating status
             SendEmail(customerEmail, newStatus);
 
-            MessageBox.Show("Order status updated successfully!"); // Show a success message
+            MessageBox.Show("Order status updated successfully!");
 
-            LoadOrders(); // Reload the orders to reflect the updated status
+            LoadOrders(); // Refresh grid
         }
 
+        // Method to send email notification
         private void SendEmail(string toEmail, string status)
         {
             try
             {
                 MailMessage mail = new MailMessage();
 
-                mail.From = new MailAddress("fancydresshiring@gmail.com");
-                mail.To.Add(toEmail);
+                mail.From = new MailAddress("fancydresshiring@gmail.com"); // sender email
+                mail.To.Add(toEmail); // recipient email
 
                 mail.Subject = "Fancy Dress Order Update";
 
+                // Email body content
                 mail.Body = $"Hello,\n\nYour order status has been updated to: {status}.\n\nThank you for using our service.";
 
+                // SMTP configuration (Gmail)
                 SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
 
-                smtp.Credentials = new NetworkCredential("fancydresshiring@gmail.com", "vkelxobsaexirwcq");
+                smtp.Credentials = new NetworkCredential(
+                    "fancydresshiring@gmail.com",
+                    "vkelxobsaexirwcq"
+                );
 
                 smtp.EnableSsl = true;
 
-                smtp.Send(mail);
+                smtp.Send(mail); // Send email
             }
             catch (Exception ex)
             {
@@ -135,3 +144,4 @@ namespace FancyDressHiringSystem
         }
     }
 }
+

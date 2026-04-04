@@ -133,7 +133,7 @@ namespace FancyDressHiringSystem
         private void btnBasket_Click(object sender, EventArgs e)
         {
             panelContainer.Controls.Clear();
-            Basket basket = new Basket();
+            lblTotal basket = new lblTotal();
             LoadControl(basket);
         }
     }

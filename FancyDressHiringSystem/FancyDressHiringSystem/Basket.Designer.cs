@@ -1,6 +1,6 @@
 ﻿namespace FancyDressHiringSystem
 {
-    partial class Basket
+    partial class lblTotal
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,32 +29,48 @@
         private void InitializeComponent()
         {
             flowBasket = new FlowLayoutPanel();
+            btnCheckout = new Button();
             SuspendLayout();
             // 
             // flowBasket
             // 
             flowBasket.AutoScroll = true;
-            flowBasket.Dock = DockStyle.Fill;
+            flowBasket.Dock = DockStyle.Left;
             flowBasket.FlowDirection = FlowDirection.TopDown;
             flowBasket.Location = new Point(0, 0);
             flowBasket.Name = "flowBasket";
-            flowBasket.Size = new Size(777, 646);
+            flowBasket.Size = new Size(594, 646);
             flowBasket.TabIndex = 0;
             flowBasket.Paint += flowBasket_Paint;
             // 
-            // Basket
+            // btnCheckout
+            // 
+            btnCheckout.BackColor = SystemColors.Info;
+            btnCheckout.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCheckout.Location = new Point(600, 3);
+            btnCheckout.Name = "btnCheckout";
+            btnCheckout.Size = new Size(174, 35);
+            btnCheckout.TabIndex = 1;
+            btnCheckout.Text = "Checkout";
+            btnCheckout.UseVisualStyleBackColor = false;
+            btnCheckout.Click += btnCheckout_Click;
+            // 
+            // lblTotal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
+            Controls.Add(btnCheckout);
             Controls.Add(flowBasket);
-            Name = "Basket";
+            Name = "lblTotal";
             Size = new Size(777, 646);
+            Load += lblTotal_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
         private FlowLayoutPanel flowBasket;
+        private Button btnCheckout;
     }
 }

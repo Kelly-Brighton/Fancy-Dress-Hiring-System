@@ -17,11 +17,6 @@ namespace FancyDressHiringSystem
         {
             InitializeComponent();
             this.Margin = new Padding(15);
-            
-        }
-
-        private void btnBuy_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -89,7 +84,14 @@ namespace FancyDressHiringSystem
             }
         }
 
+        private void chkSelect_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
         public int BasketId { get; set; } // Property to hold the basket item ID, used for deletion from the database
+
+        public int CostumeId { get; set; } // Property to hold the costume ID, can be used for further operations if needed
 
         public string CostumeName // Property to get and set the costume name
         {
@@ -127,6 +129,9 @@ namespace FancyDressHiringSystem
             set { numericCount.Value = value; }
         }
 
-
+        public bool IsSelected // Property to get the selection state of the item card
+        {
+            get { return chkSelect.Checked; }
+        }
     }
 }
