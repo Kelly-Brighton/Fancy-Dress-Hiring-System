@@ -73,6 +73,12 @@ namespace FancyDressHiringSystem
             set { lblCostumeName.Text = value; }
         }
 
+        public string CostumeSize // Property to get and set the costume size
+        {
+            get { return lblSize.Text; }
+            set { lblSize.Text = value; }
+        }
+
         public string Status // Property to get and set the order status
         {
             get { return lblStatus.Text; }

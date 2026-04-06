@@ -70,7 +70,6 @@
             label2 = new Label();
             lblSearch = new Label();
             flowHome = new FlowLayoutPanel();
-            btnSearch = new Button();
             timerNoResults = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             panel10.SuspendLayout();
@@ -478,7 +477,7 @@
             txtSearch.Location = new Point(268, 49);
             txtSearch.Multiline = true;
             txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(328, 49);
+            txtSearch.Size = new Size(506, 49);
             txtSearch.TabIndex = 1;
             txtSearch.TextChanged += textBox1_TextChanged_2;
             // 
@@ -522,18 +521,6 @@
             flowHome.TabIndex = 29;
             flowHome.Paint += flowHome_Paint;
             // 
-            // btnSearch
-            // 
-            btnSearch.BackColor = SystemColors.GradientActiveCaption;
-            btnSearch.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSearch.Location = new Point(601, 51);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(135, 45);
-            btnSearch.TabIndex = 17;
-            btnSearch.Text = "SEARCH";
-            btnSearch.UseVisualStyleBackColor = false;
-            btnSearch.Click += btnSearch_Click;
-            // 
             // timerNoResults
             // 
             timerNoResults.Interval = 3000;
@@ -544,7 +531,6 @@
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
-            Controls.Add(btnSearch);
             Controls.Add(flowHome);
             Controls.Add(lblSearch);
             Controls.Add(label2);
@@ -596,7 +582,6 @@
         private FlowLayoutPanel flowHome;
         private Label lblPrice;
         private Label label6;
-        private Button btnSearch;
         private Panel panel2;
         private Label label7;
         private CheckBox chkboxMen;

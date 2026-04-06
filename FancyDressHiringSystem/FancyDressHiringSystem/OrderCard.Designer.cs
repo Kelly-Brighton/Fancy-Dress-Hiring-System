@@ -192,6 +192,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
+            BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(lblCostumeName);
             Controls.Add(label5);
             Controls.Add(btnCancel);
@@ -206,7 +207,7 @@
             Controls.Add(panel1);
             Margin = new Padding(2);
             Name = "OrderCard";
-            Size = new Size(771, 156);
+            Size = new Size(741, 154);
             Load += OrderCard_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);

@@ -38,12 +38,13 @@
             // dataOrders
             // 
             dataOrders.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataOrders.BackgroundColor = SystemColors.GradientActiveCaption;
             dataOrders.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataOrders.Dock = DockStyle.Fill;
-            dataOrders.Location = new Point(0, 0);
+            dataOrders.Location = new Point(0, 53);
             dataOrders.Name = "dataOrders";
-            dataOrders.Size = new Size(777, 646);
+            dataOrders.Size = new Size(777, 593);
             dataOrders.TabIndex = 0;
+            dataOrders.CellContentClick += dataOrders_CellContentClick;
             // 
             // panel1
             // 

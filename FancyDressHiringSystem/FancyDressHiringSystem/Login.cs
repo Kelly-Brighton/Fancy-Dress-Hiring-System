@@ -48,82 +48,69 @@ namespace FancyDressHiringSystem
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            // Get the username and password from the text boxes
-            string username = txtUser.Text;
+            // Get user input
+            string username = txtUser.Text.Trim();
             string password = SecurityHelper.HashPassword(txtPassword.Text.Trim());
 
-            // Connection string to connect to the SQL Server database
+            // Connection string
             string connString = "Server=localhost;Database=FancyDressDB;Trusted_Connection=True;TrustServerCertificate=True;";
 
-            // Check if any fields are empty
-            if (txtUser.Text == "" || txtPassword.Text == "")
+            // Validate input
+            if (username == "" || txtPassword.Text.Trim() == "")
             {
-                MessageBox.Show("Please fill in all fields.", "Information Message", MessageBoxButtons.RetryCancel, MessageBoxIcon.Information);
+                MessageBox.Show("Please fill in all fields.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            else
+
+            try
             {
-                try
+                using (SqlConnection conn = new SqlConnection(connString))
                 {
-                    // Create a connection to the database
-                    using (SqlConnection conn = new SqlConnection(connString))
+                    conn.Open();
+
+                    // Get BOTH username + email
+                    string query = "SELECT Username, Email FROM USERS WHERE Username=@Username AND Password=@Password";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        conn.Open(); // Open the connection
+                        cmd.Parameters.AddWithValue("@Username", username);
+                        cmd.Parameters.AddWithValue("@Password", password);
 
-                        // SQL query to check if the username and password exist in the USERS table
-                        string query = "SELECT COUNT(1) FROM USERS WHERE Username=@Username AND Password=@Password";
-                        using (SqlCommand cmd = new SqlCommand(query, conn))
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            // Use parameters to prevent SQL injection
-                            cmd.Parameters.AddWithValue("@Username", username);
-                            cmd.Parameters.AddWithValue("@Password", password);
-
-                           
-                            // Execute the query and get the count of matching records
-                            int count = (int)cmd.ExecuteScalar();
-                            if (count > 0)
+                            if (reader.Read())
                             {
-                                if (username == "admin")
+                                LoggedInUser = reader["Username"].ToString();
+                                UserEmail = reader["Email"].ToString();
+
+                                // Admin check
+                                if (LoggedInUser == "admin")
                                 {
+                                    MessageBox.Show("Admin login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     Admin adminForm = new Admin();
                                     adminForm.Show();
-                                    this.Hide();
-                                    return;
                                 }
                                 else
                                 {
-                                    // If a matching record is found, the login is successful
                                     MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    LoggedInUser = username; // Store the logged-in username in a static variable
-                                    Mainform mainForm = new Mainform(username);
+
+                                    Mainform mainForm = new Mainform(LoggedInUser);
                                     mainForm.Show();
-                                    this.Hide();
-                                    return;
                                 }
+
+                                this.Hide();
                             }
                             else
                             {
-                                MessageBox.Show("Invalid username or password. Please try again.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-
-                            using (SqlDataReader reader = cmd.ExecuteReader())
-                            {
-                                string email = "";
-                                if (reader.Read())
-                                {
-                                    email = reader["Email"].ToString();
-                                    UserEmail = email; // Store the email in a static variable for later use
-                                }
+                                MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
-
-
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
             }
         }
 

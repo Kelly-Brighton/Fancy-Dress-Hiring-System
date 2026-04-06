@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -113,8 +114,10 @@ namespace FancyDressHiringSystem
 
         private void textBox1_TextChanged_2(object sender, EventArgs e)
         {
-            // Clear the search label when the user starts typing in the search box
-            lblSearch.Text = "";
+            LoadClothesWithFilters(); // Load clothes with the updated search term
+
+            // I want to delete the search label when the user starts typing in the search box, but I also want to show it again when the search box is empty
+            lblSearch.Text = string.IsNullOrEmpty(txtSearch.Text) ? "Search for clothes..." : ""; // Show the search label when the search box is empty, otherwise hide it
         }
 
         private void label15_Click(object sender, EventArgs e)
@@ -132,181 +135,68 @@ namespace FancyDressHiringSystem
             LoadClothesWithFilters(); // Load clothes with the default filters
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            flowHome.Controls.Clear(); // Clear existing controls before displaying search results
-
-            // Connection string for the database
-            string connString = "Server=localhost;Database=FancyDressDB;Trusted_Connection=True;TrustServerCertificate=True;";
-
-            // Create a connection to the database
-            using (SqlConnection conn = new SqlConnection(connString))
-            {
-                conn.Open();
-                string searchTerm = txtSearch.Text.Trim(); // Get the search term from the text box
-
-                // SQL query to search for clothes based on the search term
-                string query = "SELECT Id, Name, Price, ImagePath FROM Clothes WHERE Name = @searchTerm";
-
-                // Execute the query and read the data
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    // Use parameterized query to prevent SQL injection
-                    cmd.Parameters.AddWithValue("@searchTerm", searchTerm);
-
-                    bool hasResults = false; // Flag to track if any results were found
-
-                    // Use a SqlDataReader to read the data from the database
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        // Check if any results were found
-                        while (reader.Read())
-                        {
-                            hasResults = true; // Set the flag to true if at least one result is found 
-
-                            // Create a new cloth card for each cloth in the search results
-                            ClothCard card = new ClothCard();
-                            card.ClothID = Convert.ToInt32(reader["Id"]);
-                            card.ClothName = reader["Name"].ToString();
-                            card.ClothPrice = "£" + reader["Price"].ToString();
-                            string imagePath = reader["ImagePath"].ToString();
-                            if (File.Exists(imagePath))
-                            {
-                                card.ClothImage = Image.FromFile(imagePath);
-                            }
-                            card.ClothGender = reader["Gender"].ToString();
-                            card.ClothSize = reader["Size"].ToString();
-
-                            flowHome.Controls.Add(card); // Add the cloth card to the flow layout panel
-                        }
-                    }
-
-                    if (!hasResults)
-                    {
-                        // Display a message if no results were found
-                        Label lblNoResults = new Label();
-                        lblNoResults.Text = "No clothes found matching the search term.";
-                        lblNoResults.AutoSize = true;
-                        lblNoResults.Font = new Font("Arial", 14, FontStyle.Bold);
-                        lblNoResults.ForeColor = Color.Red;
-                        lblNoResults.TextAlign = ContentAlignment.MiddleCenter;
-                        lblNoResults.Padding = new Padding(20);
-                        flowHome.Controls.Add(lblNoResults); // Add the label to the flow layout panel
-
-                        timerNoResults.Start(); // Start the timer to reset the search after a short delay
-                    }
-                }
-            }
-        }
-
         private void label10_Click(object sender, EventArgs e)
         {
         }
 
         public void LoadClothesWithFilters()
         {
-            
-            // Clear the flow layout panel before loading the filtered clothes
             flowHome.Controls.Clear();
 
-            // Connection string for the database
+            string searchTerm = txtSearch.Text.Trim();
+
             string connString = "Server=localhost;Database=FancyDressDB;Trusted_Connection=True;TrustServerCertificate=True;";
 
-            //  Create a connection to the database
             using (SqlConnection conn = new SqlConnection(connString))
             {
-                conn.Open(); // Open the connection
+                conn.Open();
 
-                // SqL query to retrieve clothes based on the selected filters
-                string query = "SELECT * FROM Clothes WHERE 1=1"; // Start with a base query
-
-                // Gender filer
+                // Collect filters
                 List<string> genders = new List<string>();
-
-                // Check which gender checkboxes are checked and add the corresponding genders to the list for the SQL query 
-                if (chkboxMen.Checked)
-                {
-                    genders.Add("Male");
-                }
-
-                if (chkboxWomen.Checked)
-                {
-                    genders.Add("Women");
-                }
-
-                if (chkboxUnisex.Checked)
-                {
-                    genders.Add("Unisex");
-                }
-
-                // If any gender checkboxes are checked add the gender filter to the SQL query using the IN clause to filter by the selected genders  
-                if (genders.Count > 0)
-                {
-                    query += " AND Gender IN (" + string.Join(",", genders.Select(g => $"'{g}'")) + ")";
-                }
-
-                // Size filter
                 List<string> sizes = new List<string>();
 
-                // Check which size checkboxes are checked and add the corresponding sizes to the list for the SQL query
-                if (chkboxS.Checked)
-                {
-                    sizes.Add("S");
-                }
+                if (chkboxMen.Checked) genders.Add("Male");
+                if (chkboxWomen.Checked) genders.Add("Women");
+                if (chkboxUnisex.Checked) genders.Add("Unisex");
 
-                if (chkboxM.Checked)
-                {
-                    sizes.Add("M");
-                }
+                if (chkboxS.Checked) sizes.Add("S");
+                if (chkboxM.Checked) sizes.Add("M");
+                if (chkboxL.Checked) sizes.Add("L");
+                if (chkboxXS.Checked) sizes.Add("XS");
+                if (chkboxXL.Checked) sizes.Add("XL");
+                if (chkboxXXL.Checked) sizes.Add("XXL");
 
-                if (chkboxL.Checked)
-                {
-                    sizes.Add("L");
-                }
-
-                if (chkboxXS.Checked)
-                {
-                    sizes.Add("XS");
-                }
-
-                if (chkboxXL.Checked)
-                {
-                    sizes.Add("XL");
-                }
-
-                if (chkboxXXL.Checked)
-                {
-                    sizes.Add("XXL");
-                }
-
-                if (sizes.Count > 0)
-                {
-                    query += " AND Size IN (" + string.Join(query, sizes.Select(s => $"'{s}'")) + ")"; // Add size filter to the SQL query using the IN clause to filter by the selected sizes
-                }
-
-                // Price filter
-                query += " AND Price <= @price"; // Add price filter to the SQL query
+                // Build query ONLY using helper
+                string query = FilterHelper.BuildQuery(
+                    genders,
+                    sizes,
+                    !string.IsNullOrEmpty(searchTerm)
+                );
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
-                    // Add the price parameter to the SQL query
+                    // Add parameters BEFORE execution
                     cmd.Parameters.AddWithValue("@price", trackPrice.Value);
 
-                    bool hasResults = false; // Flag to track if any results were found
+                    if (!string.IsNullOrEmpty(searchTerm))
+                    {
+                        cmd.Parameters.AddWithValue("@searchTerm", "%" + searchTerm + "%");
+                    }
 
-                    // Use a SqlDataReader to read the data from the database
+                    bool hasResults = false;
+
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            hasResults = true; // Set the flag to true if at least one result is found
-                            // Create a new cloth card for each cloth in the database
+                            hasResults = true;
+
                             ClothCard card = new ClothCard();
                             card.ClothID = Convert.ToInt32(reader["Id"]);
                             card.ClothName = reader["Name"].ToString();
                             card.ClothPrice = "£" + reader["Price"].ToString();
+
                             string imagePath = reader["ImagePath"].ToString();
-                            // Load the image from the file path and set it to the picture box
 
                             if (File.Exists(imagePath))
                             {
@@ -315,17 +205,17 @@ namespace FancyDressHiringSystem
                                     card.ClothImage = new Bitmap(img);
                                 }
                             }
+
                             card.ClothGender = reader["Gender"].ToString();
                             card.ClothSize = reader["Size"].ToString();
 
-                            flowHome.Controls.Add(card); // Add the cloth card to the flow layout panel
+                            flowHome.Controls.Add(card);
                         }
                     }
 
-                    // If no results were found, display a message to the user
+                    // No results message
                     if (!hasResults)
                     {
-                        // Display a message if no results were found
                         Label lblNoResults = new Label();
                         lblNoResults.Text = "No clothes found matching the selected filters.";
                         lblNoResults.AutoSize = true;
@@ -333,14 +223,13 @@ namespace FancyDressHiringSystem
                         lblNoResults.ForeColor = Color.Red;
                         lblNoResults.TextAlign = ContentAlignment.MiddleCenter;
                         lblNoResults.Padding = new Padding(20);
-                        flowHome.Controls.Add(lblNoResults); // Add the label to the flow layout panel
 
-                        timerNoResults.Start(); // Start the timer to reset the filters after a short delay
+                        flowHome.Controls.Add(lblNoResults);
+
+                        timerNoResults.Start();
                     }
                 }
             }
-
-
         }
 
         private void chkboxMen_CheckedChanged(object sender, EventArgs e)

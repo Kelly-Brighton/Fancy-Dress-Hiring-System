@@ -3,4 +3,5 @@
     <File Path=".gitignore" />
   </Folder>
   <Project Path="FancyDressHiringSystem/FancyDressHiringSystem.csproj" />
+  <Project Path="FancyDressTest/FancyDressTest.csproj" Id="3f8bd9f7-fef1-47bc-a1b0-cce6351dd1e8" />
 </Solution>

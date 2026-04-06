@@ -14,8 +14,8 @@ namespace FancyDressHiringSystem
             InitializeComponent();
             LoadOrders(); // Load orders when control is created
         }
-    // Method to load all orders into the DataGridView
-    private void LoadOrders()
+        // Method to load all orders into the DataGridView
+        private void LoadOrders()
         {
             string connString = "Server=localhost;Database=FancyDressDB;Trusted_Connection=True;TrustServerCertificate=True;";
 
@@ -23,51 +23,59 @@ namespace FancyDressHiringSystem
             {
                 conn.Open();
 
-                // ✅ FIX 1: Include CustomerEmail in SELECT so we can use it later
                 string query = @"SELECT Orders.Id,
-                                    Orders.CustomerName,
-                                    Orders.CustomerEmail,
-                                    Clothes.Name AS Costume,
-                                    Orders.Size,
-                                    Orders.OrderDate,
-                                    Orders.Status
-                             FROM Orders
-                             JOIN Clothes ON Orders.CostumeId = Clothes.Id";
+                                Orders.CustomerName,
+                                Orders.CustomerEmail,
+                                Clothes.Name AS Costume,
+                                Orders.Size,
+                                Orders.OrderDate,
+                                Orders.Status
+                         FROM Orders
+                         JOIN Clothes ON Orders.CostumeId = Clothes.Id";
 
                 using (SqlDataAdapter adapter = new SqlDataAdapter(query, conn))
                 {
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
-                    dataOrders.DataSource = dt; // Bind data to grid
+
+                    dataOrders.DataSource = null;
+                    dataOrders.Columns.Clear();
+                    dataOrders.AutoGenerateColumns = true;
+                    dataOrders.DataSource = dt;
+                    AddStatusDropdown();
                 }
 
-                // ✅ Hide email column from UI (still accessible in code)
+                // Hide email column (optional)
                 if (dataOrders.Columns.Contains("CustomerEmail"))
                 {
                     dataOrders.Columns["CustomerEmail"].Visible = false;
                 }
-
-                // ✅ FIX 2: Prevent adding multiple ComboBox columns on reload
-                if (!(dataOrders.Columns["Status"] is DataGridViewComboBoxColumn))
-                {
-                    DataGridViewComboBoxColumn statusColumn = new DataGridViewComboBoxColumn();
-
-                    statusColumn.HeaderText = "Status"; // Column title
-                    statusColumn.DataPropertyName = "Status"; // Bind to DB column
-
-                    // Add status options
-                    statusColumn.Items.Add("Pending");
-                    statusColumn.Items.Add("Ready for Pickup");
-                    statusColumn.Items.Add("Picked Up");
-                    statusColumn.Items.Add("Returned");
-                    statusColumn.Items.Add("Cancelled");
-
-                    // Replace existing Status column with ComboBox column
-                    int columnIndex = dataOrders.Columns["Status"].Index;
-                    dataOrders.Columns.Remove("Status");
-                    dataOrders.Columns.Insert(columnIndex, statusColumn);
-                }
             }
+        }
+
+        private void AddStatusDropdown()
+        {
+            // Prevent duplicate column
+            if (dataOrders.Columns["Status"] is DataGridViewComboBoxColumn)
+                return;
+
+            int index = dataOrders.Columns["Status"].Index;
+
+            // Create combo column
+            DataGridViewComboBoxColumn combo = new DataGridViewComboBoxColumn();
+            combo.HeaderText = "Status";
+            combo.Name = "Status";
+            combo.DataPropertyName = "Status";
+
+            combo.Items.Add("Pending");
+            combo.Items.Add("Ready for Pickup");
+            combo.Items.Add("Picked Up");
+            combo.Items.Add("Returned");
+            combo.Items.Add("Cancelled");
+
+            // Replace column SAFELY
+            dataOrders.Columns.RemoveAt(index);
+            dataOrders.Columns.Insert(index, combo);
         }
 
         // Button click to update order status
@@ -75,9 +83,17 @@ namespace FancyDressHiringSystem
         {
             // Get selected row values
             int orderId = Convert.ToInt32(dataOrders.CurrentRow.Cells["Id"].Value);
-            string newStatus = dataOrders.CurrentRow.Cells["Status"].Value.ToString();
+            var statusCell = dataOrders.CurrentRow.Cells["Status"].Value;
 
-            // ✅ FIX 3: Safe retrieval of email (avoid null crash)
+            if (statusCell == null)
+            {
+                MessageBox.Show("Please select a status.");
+                return;
+            }
+
+            string newStatus = statusCell.ToString();
+
+            // Safe retrieval of email (avoid null crash)
             string customerEmail = dataOrders.CurrentRow.Cells["CustomerEmail"].Value?.ToString();
 
             if (string.IsNullOrEmpty(customerEmail))
@@ -141,6 +157,11 @@ namespace FancyDressHiringSystem
             {
                 MessageBox.Show("Failed to send email: " + ex.Message);
             }
+        }
+
+        private void dataOrders_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

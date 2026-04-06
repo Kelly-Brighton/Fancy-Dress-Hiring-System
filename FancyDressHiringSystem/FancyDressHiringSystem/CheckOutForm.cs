@@ -60,6 +60,8 @@ namespace FancyDressHiringSystem
             string username = Login.LoggedInUser;
             string email = Login.UserEmail;
 
+            MessageBox.Show("Email: " + email);
+
             try
             {
                 using (SqlConnection conn = new SqlConnection(connString))
