@@ -1,6 +1,6 @@
 ﻿namespace FancyDressHiringSystem
 {
-    partial class lblTotal
+    partial class Basket
     {
         /// <summary> 
         /// Required designer variable.
@@ -55,14 +55,14 @@
             btnCheckout.UseVisualStyleBackColor = false;
             btnCheckout.Click += btnCheckout_Click;
             // 
-            // lblTotal
+            // Basket
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
             Controls.Add(btnCheckout);
             Controls.Add(flowBasket);
-            Name = "lblTotal";
+            Name = "Basket";
             Size = new Size(777, 646);
             Load += lblTotal_Load;
             ResumeLayout(false);

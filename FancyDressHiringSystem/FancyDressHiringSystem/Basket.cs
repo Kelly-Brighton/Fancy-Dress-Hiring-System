@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace FancyDressHiringSystem
 {
-    public partial class lblTotal : UserControl
+    public partial class Basket : UserControl
     {
-        public lblTotal()
+        public Basket()
         {
             InitializeComponent();
             LoadBasket();

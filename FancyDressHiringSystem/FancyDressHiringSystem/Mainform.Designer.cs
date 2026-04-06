@@ -39,12 +39,14 @@
             btnOrders = new Button();
             btnHome = new Button();
             panelContainer = new Panel();
+            btnAsk = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = SystemColors.GradientActiveCaption;
+            panel1.Controls.Add(btnAsk);
             panel1.Controls.Add(lblBasket);
             panel1.Controls.Add(btnBasket);
             panel1.Controls.Add(lblOrders);
@@ -166,6 +168,18 @@
             panelContainer.TabIndex = 1;
             panelContainer.Paint += panelContainer_Paint;
             // 
+            // btnAsk
+            // 
+            btnAsk.BackColor = SystemColors.Info;
+            btnAsk.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAsk.Location = new Point(0, 223);
+            btnAsk.Name = "btnAsk";
+            btnAsk.Size = new Size(200, 49);
+            btnAsk.TabIndex = 10;
+            btnAsk.Text = "Ask AI";
+            btnAsk.UseVisualStyleBackColor = false;
+            btnAsk.Click += btnAsk_Click;
+            // 
             // Mainform
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -197,5 +211,6 @@
         private Label lblBasket;
         private Button btnBasket;
         private Label lblUser;
+        private Button btnAsk;
     }
 }

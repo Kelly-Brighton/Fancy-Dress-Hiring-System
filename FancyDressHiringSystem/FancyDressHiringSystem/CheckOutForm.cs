@@ -44,6 +44,16 @@ namespace FancyDressHiringSystem
                 );
 
                 total += price * item.Quantity;
+
+                if (total > 35)
+                {
+                    lblShipping.Text = "Free Shipping";
+                }
+                else
+                {
+                    lblShipping.Text = "Shipping: £5.00";
+                    total += 5;
+                }
             }
 
             lblTotal.Text = total.ToString("0.00");

@@ -480,6 +480,8 @@
             txtSearch.Size = new Size(506, 49);
             txtSearch.TabIndex = 1;
             txtSearch.TextChanged += textBox1_TextChanged_2;
+            txtSearch.Enter += txtSearch_Enter;
+            txtSearch.Leave += txtSearch_Leave;
             // 
             // label1
             // 
@@ -507,17 +509,16 @@
             lblSearch.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblSearch.Location = new Point(268, 63);
             lblSearch.Name = "lblSearch";
-            lblSearch.Size = new Size(64, 20);
+            lblSearch.Size = new Size(0, 20);
             lblSearch.TabIndex = 28;
-            lblSearch.Text = "SEARCH";
             lblSearch.Click += label9_Click;
             // 
             // flowHome
             // 
             flowHome.AutoScroll = true;
-            flowHome.Location = new Point(268, 102);
+            flowHome.Location = new Point(268, 104);
             flowHome.Name = "flowHome";
-            flowHome.Size = new Size(506, 541);
+            flowHome.Size = new Size(506, 539);
             flowHome.TabIndex = 29;
             flowHome.Paint += flowHome_Paint;
             // 

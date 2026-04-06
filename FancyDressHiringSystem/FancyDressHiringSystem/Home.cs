@@ -20,6 +20,7 @@ namespace FancyDressHiringSystem
             InitializeComponent();
             LoadClothes();
             lblPrice.Text = "£" + trackPrice.Maximum.ToString(); // Set the initial price label to show the current value of the price trackbar
+            txtSearch.Text = "Search"; // Clear the search box
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -115,9 +116,6 @@ namespace FancyDressHiringSystem
         private void textBox1_TextChanged_2(object sender, EventArgs e)
         {
             LoadClothesWithFilters(); // Load clothes with the updated search term
-
-            // I want to delete the search label when the user starts typing in the search box, but I also want to show it again when the search box is empty
-            lblSearch.Text = string.IsNullOrEmpty(txtSearch.Text) ? "Search for clothes..." : ""; // Show the search label when the search box is empty, otherwise hide it
         }
 
         private void label15_Click(object sender, EventArgs e)
@@ -144,6 +142,11 @@ namespace FancyDressHiringSystem
             flowHome.Controls.Clear();
 
             string searchTerm = txtSearch.Text.Trim();
+
+            if (searchTerm == "Search")
+            {
+                searchTerm = ""; // Ignore the placeholder text in the search box
+            }
 
             string connString = "Server=localhost;Database=FancyDressDB;Trusted_Connection=True;TrustServerCertificate=True;";
 
@@ -325,6 +328,22 @@ namespace FancyDressHiringSystem
         private void flowHome_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void txtSearch_Enter(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "Search")
+            {
+                txtSearch.Text = ""; // Clear the placeholder text when the user clicks on the search box
+            }
+        }
+
+        private void txtSearch_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtSearch.Text))
+            {
+                txtSearch.Text = "Search"; // Restore the placeholder text if the search box is empty when the user leaves it
+            }
         }
     }
 }

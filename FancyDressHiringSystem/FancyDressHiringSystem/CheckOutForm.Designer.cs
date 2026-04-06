@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            lblTotal = new Label();
-            label1 = new Label();
             colName = new DataGridViewTextBoxColumn();
             colQty = new DataGridViewTextBoxColumn();
             colPrice = new DataGridViewTextBoxColumn();
+            lblTotal = new Label();
+            label1 = new Label();
             label2 = new Label();
             txtCard = new TextBox();
             label3 = new Label();
@@ -43,6 +43,7 @@
             txtCVV = new TextBox();
             txtName = new TextBox();
             btnOrder = new Button();
+            lblShipping = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -55,26 +56,6 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(342, 307);
             dataGridView1.TabIndex = 0;
-            // 
-            // lblTotal
-            // 
-            lblTotal.AutoSize = true;
-            lblTotal.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold);
-            lblTotal.Location = new Point(512, 310);
-            lblTotal.Name = "lblTotal";
-            lblTotal.Size = new Size(59, 22);
-            lblTotal.TabIndex = 5;
-            lblTotal.Text = "label2";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold);
-            label1.Location = new Point(458, 310);
-            label1.Name = "label1";
-            label1.Size = new Size(73, 22);
-            label1.TabIndex = 4;
-            label1.Text = "Price: £";
             // 
             // colName
             // 
@@ -90,6 +71,26 @@
             // 
             colPrice.HeaderText = "Price (£)";
             colPrice.Name = "colPrice";
+            // 
+            // lblTotal
+            // 
+            lblTotal.AutoSize = true;
+            lblTotal.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold);
+            lblTotal.Location = new Point(512, 338);
+            lblTotal.Name = "lblTotal";
+            lblTotal.Size = new Size(59, 22);
+            lblTotal.TabIndex = 5;
+            lblTotal.Text = "label2";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold);
+            label1.Location = new Point(458, 338);
+            label1.Name = "label1";
+            label1.Size = new Size(73, 22);
+            label1.TabIndex = 4;
+            label1.Text = "Price: £";
             // 
             // label2
             // 
@@ -179,12 +180,22 @@
             btnOrder.UseVisualStyleBackColor = false;
             btnOrder.Click += btnOrder_Click;
             // 
+            // lblShipping
+            // 
+            lblShipping.AutoSize = true;
+            lblShipping.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblShipping.Location = new Point(458, 310);
+            lblShipping.Name = "lblShipping";
+            lblShipping.Size = new Size(0, 22);
+            lblShipping.TabIndex = 17;
+            // 
             // CheckOut
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientActiveCaption;
             ClientSize = new Size(819, 359);
+            Controls.Add(lblShipping);
             Controls.Add(btnOrder);
             Controls.Add(txtName);
             Controls.Add(txtCVV);
@@ -222,5 +233,6 @@
         private TextBox txtCVV;
         private TextBox txtName;
         private Button btnOrder;
+        private Label lblShipping;
     }
 }

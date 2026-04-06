@@ -66,6 +66,12 @@ namespace FancyDressHiringSystem
                                     MessageBox.Show("Item added to cart successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 }
 
+                                // Update the basket count in the main form
+                                Mainform main = this.FindForm() as Mainform;
+                                if (main != null)
+                                {
+                                    main.UpdateBasketCount();
+                                }
                             }
                         }
                     }
