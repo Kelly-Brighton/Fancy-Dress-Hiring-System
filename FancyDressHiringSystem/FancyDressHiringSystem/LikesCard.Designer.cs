@@ -173,7 +173,7 @@
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Name = "LikesCard";
-            Size = new Size(206, 235);
+            Size = new Size(206, 244);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericQuantity).EndInit();
             ResumeLayout(false);

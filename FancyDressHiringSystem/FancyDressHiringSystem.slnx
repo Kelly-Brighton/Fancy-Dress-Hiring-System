@@ -1,4 +1,41 @@
 <Solution>
+  <Folder Name="/MeetingMinutes/">
+    <File Path="../../../SEM Templates/Daily Standup Meeting 1.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 10.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 11.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 12.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 13.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 14.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 15.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 16.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 17.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 18.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 19.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 2.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 20.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 21.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 22.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 23.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 24.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 25.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 26.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 27.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 28.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 29.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 3.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 30.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 31.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 32.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 33.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 34.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 35.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 4.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 5.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 6.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 7.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 8.docx" />
+    <File Path="../../../SEM Templates/Daily Standup Meeting 9.docx" />
+  </Folder>
   <Folder Name="/Solution Items/">
     <File Path=".gitignore" />
   </Folder>

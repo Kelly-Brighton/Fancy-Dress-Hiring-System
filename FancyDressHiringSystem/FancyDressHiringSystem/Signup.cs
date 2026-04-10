@@ -82,7 +82,7 @@ namespace FancyDressHiringSystem
             {
                 try
                 {
-                    using(SqlConnection conn = new SqlConnection(connString))
+                    using (SqlConnection conn = new SqlConnection(connString))
                     {
                         conn.Open();
                         // Check if the email already exists in the database
@@ -120,11 +120,12 @@ namespace FancyDressHiringSystem
                     }
 
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString(), "Error message", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
                 }
             }
         }
+
     }
 }
